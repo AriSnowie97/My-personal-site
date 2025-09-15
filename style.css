@@ -1,0 +1,88 @@
+/* Підключення шрифту Ukraine */
+@import url('https://fonts.googleapis.com/css2?family=Ukraine&display=swap');
+
+body {
+  font-family: 'Ukraine', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #fdfdfd;
+  color: #333;
+}
+
+/* Шапка */
+header {
+  background: #a8dadc; /* пастельно-блакитний */
+  color: #1d3557;
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #1d3557;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #e63946; /* ніжно-червоний акцент */
+}
+
+/* Секції */
+section {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  background: #f1faee; /* м’ятний/молочний */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Таблиця */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background: #457b9d; /* пастельний синій */
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #ffe8d6; /* легкий абрикосовий відтінок */
+}
+
+/* Футер */
+footer {
+  background: #a8dadc;
+  color: #1d3557;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  border-top: 3px solid #457b9d;
+}
