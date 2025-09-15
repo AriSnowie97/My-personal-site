@@ -19,6 +19,21 @@ header {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Плавний скролл */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Подсветка активного пункта меню */
+nav ul li a.active {
+  color: #e63946; /* акцентный цвет для активного пункта */
+}
+
+/* Можно добавить небольшой эффект при наведении */
+nav ul li a:hover {
+  color: #e76f51;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
