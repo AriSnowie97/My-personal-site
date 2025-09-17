@@ -1,111 +1,24 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Особистий веб-сайт Бадовської Аріни</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lab2.css">
+    <title>CSS Selectors Challenge</title>
 </head>
 <body>
-  <header>
-    <h1>Особистий веб-сайт Бадовської Аріни</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="#about">Про мене</a></li>
-        <li><a href="praktichni.html">Практичні роботи</a></li>
-        <li><a href="laboratorni.html">Лабораторні заняття</a></li>
-      </ul>
-    </nav>
-  </header>
-<style>
-section {
-      background-color: lightyellow;
-      padding: 20px;
-      border: 1px solid black;
-    }
-	/* 1. Перший <li> жирним */
-li:first-child {
-  font-weight: bold;
-}
-
-/* 2. Останні <a> у батьків червоні */
-a:last-child {
-  color: red;
-}
-
-/* 3. input[disabled] з сірим фоном */
-input:disabled {
-  background-color: gray;
-}
-
-/* 4. <p> прямі дочірні <div> жирні */
-div > p {
-  font-weight: bold;
-}
-
-/* 5. href, що починається з https — зелені */
-a[href^="https"] {
-  color: green;
-}
-
-/* 6. input[type="text"] синя рамка */
-input[type="text"] {
-  border: 1px solid blue;
-}
-
-/* 7. li перший і останній — 24px */
-li:first-child,
-li:last-child {
-  font-size: 24px;
-}
-
-/* 8. Усі <p> всередині div — 16px */
-div p {
-  font-size: 16px;
-}
-
-/* 9. input[checked] світло-блакитні */
-input:checked {
-  background-color: lightblue;
-}
-
-/* 10. <a> прямі діти <li> — підкреслені */
-li > a {
-  text-decoration: underline;
-}
-
-/* 11. парні <li> — жирні */
-li:nth-child(even) {
-  font-weight: bold;
-}
-
-/* 12. input[type="text"]:not([disabled]) — сірий фон */
-input[type="text"]:not(:disabled) {
-  background-color: lightgray;
-}
-
-/* 13. перші <p> у батьків — 24px */
-p:first-child {
-  font-size: 24px;
-}
-
-/* 14. li після .special — перекреслений */
-.special + li {
-  text-decoration: line-through;
-}
-
-/* 15. перша літера кожного <p> — 36px */
-p::first-letter {
-  font-size: 36px;
-}
-
-/* 16. ::after для <a> з ↗ */
-a::after {
-  content: "↗";
-}
-	</style>
-<section>
-	<h1>CSS Selectors Challenge</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="https://example.com">Про нас</a></li>
+                <li><a href="#">Послуги</a></li>
+                <li><a href="http://notrealsite.ua">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>CSS Selectors Challenge</h1>
         <p>Це абзац тексту.</p>
         <ul>
             <li>Перший пункт списку</li>
@@ -129,8 +42,8 @@ a::after {
             <label for="check2">Чекбокс 2:</label>
             <input type="checkbox" id="check2">
         </form>
-    </section>
-<section>
+    </div>
+    <section>
         <h2>Додатковий розділ</h2>
         <p>Це ще один абзац тексту в іншому розділі.</p>
         <ul>
@@ -138,10 +51,9 @@ a::after {
             <li>Другий пункт списку</li>
         </ul>
     </section>
-  <footer>
-    <p>© 2025 Бадовська Аріна | <a href="https://github.com/AriSnowie97">GitHub</a></p>
-    <p>Контакти: diysylveon@gmail.com</p>
-  </footer>
-
+    <footer>
+        <p>&copy; 2023 Ваша компанія. Усі права захищені.</p>
+        <a href="#">Home</a>
+    </footer>
 </body>
 </html>
