@@ -2,8 +2,8 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Особистий веб-сайт Бадовської Аріни</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Особистий веб-сайт Бадовської Аріни | Клон YouTube FlexBox</title>
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
   <header>
@@ -19,39 +19,150 @@
   </header>
 
   <section>
-    <h2>Практична робота №3: Клон структури YouTube за допомогою FlexBox</h2>
+    <h2>Практична робота №3 та Лабораторна робота №3: Клон структури YouTube за допомогою FlexBox</h2>
   </section>
   
   <div class="youtube-layout">
-      
-      <div class="header-youtube">
-          <p>Логотип | Пошук | Іконки користувача</p>
-      </div>
+    
+    <div class="header-youtube">
+        <div class="header-left">
+            <span class="icon menu-icon">☰</span>
+            <span class="logo">YouTube</span>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Пошук">
+            <button class="search-btn icon">🔍</button>
+            <span class="voice-search icon">🎙️</span>
+        </div>
+        
+        <div class="header-right">
+            <span class="icon">🔔</span>
+            <span class="icon">🖼️</span>
+            <span class="icon">👤</span>
+        </div>
+    </div>
 
-      <div class="main-content-wrapper">
+    <div class="main-content-wrapper">
 
-          <nav class="sidebar">
-              <ul>
-                  <li>Головна</li>
-                  <li>Шорти</li>
-                  <li>Підписки</li>
-                  <li>Бібліотека</li>
-              </ul>
-          </nav>
+        <nav class="sidebar">
+            <ul class="main-nav">
+                <li class="active-item"><span class="icon">🏠</span>Головна</li>
+                <li><span class="icon">🔥</span>YouTube Shorts</li>
+                <li><span class="icon">🎵</span>YouTube Music</li>
+            </ul>
+            <hr>
+            <ul class="user-nav">
+                <li><span class="icon">👉</span>Ви</li>
+                <li><span class="icon">⏱️</span>Ваш канал</li>
+                <li><span class="icon">📜</span>Історія</li>
+                <li><span class="icon">▶️</span>Ваші відео</li>
+                </ul>
+            <hr>
+            <ul class="subscriptions">
+                <li class="section-title">Підписки</li>
+                <li><span class="icon-sub">🔴</span>ROZETKA</li>
+                <li><span class="icon-sub">🔵</span>TheDRiZJ</li>
+                <li><span class="icon-sub">🟢</span>Канал 3</li>
+            </ul>
+        </nav>
 
-          <main class="video-grid-container">
-              <div class="video-card">Відео 1</div>
-              <div class="video-card">Відео 2</div>
-              <div class="video-card">Відео 3</div>
-              <div class="video-card">Відео 4</div>
-              <div class="video-card">Відео 5</div>
-              <div class="video-card">Відео 6</div>
-              <div class="video-card">Відео 7</div>
-              <div class="video-card">Відео 8</div>
-          </main>
-      </div>
-  </div>
-  <footer>
+        <main class="video-grid-container">
+            
+            <nav class="categories">
+                <button class="category-button active">Усі</button>
+                <button class="category-button">Ігри</button>
+                <button class="category-button">Музика</button>
+                <button class="category-button">Новини</button>
+                <button class="category-button">Пряма трансляція</button>
+                <button class="category-button">Популярне</button>
+                <button class="category-button">Спорт</button>
+                <button class="category-button">Програмування</button>
+            </nav>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 1">
+                </div>
+                <div class="video-info">
+                    <p class="title">Назва відео, яке всіх бісить</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">1,2 млн переглядів • 3 тижні тому</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 2">
+                </div>
+                <div class="video-info">
+                    <p class="title">Заголовок відео 2</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">500 тис. переглядів • 1 тиждень тому</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 3">
+                </div>
+                <div class="video-info">
+                    <p class="title">Заголовок відео 3</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">80 тис. переглядів • 2 дні тому</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 4">
+                </div>
+                <div class="video-info">
+                    <p class="title">Заголовок відео 4</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">2,1 млн переглядів • 1 місяць тому</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 5">
+                </div>
+                <div class="video-info">
+                    <p class="title">Заголовок відео 5</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">900 тис. переглядів • 4 тижні тому</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 6">
+                </div>
+                <div class="video-info">
+                    <p class="title">Заголовок відео 6</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">70 тис. переглядів • 6 днів тому</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 7">
+                </div>
+                <div class="video-info">
+                    <p class="title">Заголовок відео 7</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">100 тис. переглядів • 1 день тому</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Мініатюра відео 8">
+                </div>
+                <div class="video-info">
+                    <p class="title">Заголовок відео 8</p>
+                    <p class="channel">Канал UA</p>
+                    <p class="meta">3 млн переглядів • 2 місяці тому</p>
+                </div>
+            </div>
+        </main>
+    </div>
+  </div> <footer>
     <p>© 2025 Бадовська Аріна | <a href="https://github.com/AriSnowie97">GitHub</a></p>
     <p>Контакти: diysylveon@gmail.com</p>
   </footer>
