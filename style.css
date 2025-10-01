@@ -19,7 +19,7 @@ body {
 
 /* Шапка сайту */
 header {
-  background: #a8dadc; /* пастельно-блакитний */
+  background: #a8dadc;
   color: #1d3557;
   padding: 1.5rem 0;
   text-align: center;
@@ -50,15 +50,15 @@ nav ul li a {
 }
 
 nav ul li a:hover, nav ul li a.active {
-  color: #e63946; /* ніжно-червоний акцент */
+  color: #e63946;
 }
 
 /* Секції */
 section {
   padding: 20px;
   margin: 20px auto;
-  max-width: 900px; /* Обмежує ширину контенту секцій */
-  background: #f1faee; /* м’ятний/молочний */
+  max-width: 900px;
+  background: #f1faee;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
@@ -117,32 +117,6 @@ form input[type="submit"]:hover {
   background-color: #457b9d;
 }
 
-/* Таблиця */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-table th, table td {
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-
-table th {
-  background: #457b9d;
-  color: #fff;
-}
-
-table tr:nth-child(even) {
-  background: #f9f9f9;
-}
-
-table tr:hover {
-  background: #ffe8d6;
-}
-
 /* Футер */
 footer {
   background: #a8dadc;
@@ -158,91 +132,244 @@ footer {
 
 /* 1. LAYOUT: Головний контейнер Flex */
 .youtube-layout {
+    margin: 0; 
+    padding: 0;
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Шапка зверху, контент знизу */
-    /* Забезпечує, що Flex-контейнер займає місце під футер, якщо контенту мало */
-    min-height: calc(100vh - 100px); /* Приблизно, щоб врахувати висоту шапки/футера сайту */
+    flex-direction: column; 
 }
 
 /* 2. HEADER: Шапка YouTube (Пошук/Іконки) */
 .header-youtube {
-    background-color: white;
-    padding: 10px 20px;
-    height: 60px; /* Фіксована висота */
-    border-bottom: 1px solid #ddd;
     display: flex;
-    justify-content: center; 
+    justify-content: space-between; 
     align-items: center;
-    position: sticky; /* Щоб була фіксована */
+    height: 56px;
+    background-color: #fff;
+    padding: 0 16px;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
     top: 0;
-    z-index: 10;
-    font-weight: bold;
-    color: #cc0000; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100;
 }
 
-/* 3. MAIN CONTENT WRAPPER: Обгортка для Sidebar та Video Grid */
-.main-content-wrapper {
-    display: flex; /* Ключовий момент: Sidebar зліва, Content справа */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    font-size: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ff0000; 
+}
+
+.search-container {
+    display: flex;
     flex-grow: 1; 
+    max-width: 700px; 
+    margin: 0 40px;
+    align-items: center;
+}
+
+.search-container input {
+    flex-grow: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px 0 0 40px; 
+    font-size: 16px;
+}
+
+.search-btn {
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    border-radius: 0 40px 40px 0; 
+    cursor: pointer;
+    margin-left: -1px; 
+    font-size: 16px;
+}
+
+.voice-search {
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+}
+
+/* 3. MAIN CONTENT WRAPPER (Flex для сайдбару та контенту) */
+.main-content-wrapper {
+    display: flex;
+    flex-grow: 1;
 }
 
 /* 4. SIDEBAR: Бічна панель */
 .sidebar {
     width: 240px; 
     min-width: 240px;
-    background-color: white;
-    padding: 20px 0;
-    border-right: 1px solid #eee;
-    /* Зробимо сайдбар на повну висоту екрана, якщо потрібно */
-    /* position: sticky; top: 60px; height: calc(100vh - 60px); */
+    background-color: #fff;
+    padding-top: 10px;
+    position: sticky; 
+    top: 56px; 
+    height: calc(100vh - 56px); 
+    overflow-y: auto; 
+    border-right: 1px solid #e5e5e5;
 }
 
 .sidebar ul {
     list-style: none;
-    padding: 0 20px;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
-.sidebar li {
-    padding: 10px 10px;
-    margin-bottom: 5px;
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.sidebar li:hover {
-    background-color: #f0f0f0;
+.sidebar ul li:hover {
+    background-color: #f2f2f2;
+}
+
+.sidebar ul li .icon {
+    margin-right: 24px;
+    font-size: 18px;
+    color: #0f0f0f;
+}
+
+.sidebar .active-item {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.sidebar .section-title {
+    font-weight: 600;
+    color: #606060;
+    padding: 10px 24px 5px;
+}
+
+.sidebar hr {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 8px 0;
 }
 
 /* 5. VIDEO GRID CONTAINER: Основний простір для відео */
 .video-grid-container {
     flex-grow: 1; 
-    padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; 
+    padding: 24px 20px; 
+    
     display: flex;
-    flex-wrap: wrap; /* Дозволяє карткам переноситися */
-    gap: 15px; /* Проміжок між елементами */
+    flex-wrap: wrap; 
+    gap: 16px; 
 }
 
-/* Стиль для окремої відеокартки */
+/* Панель категорій */
+.categories {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 10px 0; 
+    background-color: #fff; 
+    border-top: 1px solid #e5e5e5; 
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 56px; 
+    z-index: 50; 
+    overflow-x: scroll;
+    width: 100%; 
+    margin-bottom: 24px; 
+    /* Добавляем padding для внутренних кнопок, так как padding удален выше */
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+
+.category-button {
+    white-space: nowrap; 
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #e5e5e5; 
+    color: #0f0f0f;
+    border: 1px solid #d3d3d3;
+    border-radius: 18px; 
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s; 
+}
+
+.category-button:hover {
+    background-color: #d8d8d8; 
+}
+
+.category-button.active {
+    background-color: #0f0f0f; 
+    color: #ffffff; 
+    border-color: #0f0f0f;
+}
+
+/* 6. Стиль для окремої відеокартки */
 .video-card {
-    /* Розрахунок для 4 колонок */
-    width: calc(25% - 15px * 3 / 4); 
-    min-height: 200px;
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    /* Расчет для 4 колонок */
+    width: calc(25% - 12px); 
+    
+    min-height: unset; 
+    padding: 0;
+    text-align: left;
+    display: block; 
+    margin-bottom: 40px; 
+    box-shadow: none;
 }
 
-.video-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* 7. СТИЛІ МІНІАТЮР (для коректного співвідношення сторін 16:9) */
+.video-card .thumbnail {
+    width: 100%;
+    height: 0; 
+    padding-bottom: 56.25%; /* 16:9 соотношение */
+    
+    background-color: #cccccc; 
+    border-radius: 8px;
+    margin-bottom: 8px;
+    
+    position: relative; /* Ключ для позиционирования img */
+    overflow: hidden; 
+}
+
+/* НОВОЕ ПРАВИЛО: Корректное масштабирование изображения внутри контейнера 16:9 */
+.video-card .thumbnail img {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover гарантирует, что изображение заполнит контейнер, обрезая лишнее */
+    object-fit: cover; 
+    border-radius: 0; 
+}
+
+.video-info .title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #0f0f0f;
+    margin-bottom: 4px;
+}
+
+.video-info .channel,
+.video-info .meta {
+    font-size: 13px;
+    color: #606060;
 }
