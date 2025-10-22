@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №4 - Планер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Особистий веб-сайт Бадовської Аріни</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+    	<li><a href="#about">Про мене</a></li>
+    	<li><a href="#praktichni">Практичні роботи</a></li>
+    	<li><a href="#laboratorni">Лабораторні заняття</a></li>
+      </ul>
+    </nav>
+  </header>
+ <section>
+        <h2>Лабораторна робота №4: Використовуючи шаблон розробити сторінку планера.</h2>
+    </section>
+    <div class="planner-container">
+
+        <header class="planner-header">
+            <h1>Weekly Plan</h1>
+            <div class="header-fields">
+                <div class="field-group">
+                    <label for="week_of">Week of:</label>
+                    <input type="text" id="week_of" class="editable-line">
+                </div>
+                <div class="field-group">
+                    <label for="habit">Healthy Habit:</label>
+                    <input type="text" id="habit" class="editable-line">
+                </div>
+            </div>
+            <div class="header-checks">
+                <div class="check-group">
+                    <input type="checkbox" id="rocked">
+                    <label for="rocked">Rocked it</label>
+                </div>
+                <div class="check-group">
+                    <input type="checkbox" id="improve">
+                    <label for="improve">Room for improvement</label>
+                </div>
+            </div>
+        </header>
+
+        <aside class="planner-sidebar">
+            <section class="sidebar-section">
+                <h2>Top 3 Goals</h2>
+                <ul>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                </ul>
+            </section>
+            
+            <section class="sidebar-section">
+                <h2>Everything Else</h2>
+                <ul>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h2>Next Week</h2>
+                <ul>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                    <li><input type="checkbox"><input type="text" class="editable-line" placeholder="..."></li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="day day-monday">
+            <div class="day-header">
+                <h2>Monday</h2>
+                <input type="checkbox" title="To Do">
+            </div>
+            <textarea class="editable-area" placeholder="..."></textarea>
+        </main>
+
+        <main class="day day-tuesday">
+            <div class="day-header">
+                <h2>Tuesday</h2>
+                <input type="checkbox" title="To Do">
+            </div>
+            <textarea class="editable-area" placeholder="..."></textarea>
+        </main>
+
+        <main class="day day-wednesday">
+            <div class="day-header">
+                <h2>Wednesday</h2>
+                <input type="checkbox" title="To Do">
+            </div>
+            <textarea class="editable-area" placeholder="..."></textarea>
+        </main>
+
+        <main class="day day-thursday">
+            <div class="day-header">
+                <h2>Thursday</h2>
+                <input type="checkbox" title="To Do">
+            </div>
+            <textarea class="editable-area" placeholder="..."></textarea>
+        </main>
+
+        <main class="day day-friday">
+            <div class="day-header">
+                <h2>Friday</h2>
+                <input type="checkbox" title="To Do">
+            </div>
+            <textarea class="editable-area" placeholder="..."></textarea>
+        </main>
+
+        <main class="day day-saturday">
+            <div class="day-header">
+                <h2>Saturday</h2>
+                <input type="checkbox" title="To Do">
+            </div>
+            <textarea class="editable-area" placeholder="..."></textarea>
+        </main>
+
+        <main class="day day-sunday">
+            <div class="day-header">
+                <h2>Sunday</h2>
+                <input type="checkbox" title="To Do">
+            </div>
+            <textarea class="editable-area" placeholder="..."></textarea>
+        </main>
+
+    </div> <footer class="back-link">
+        <a href="index.html">Повернутися на головну</a>
+    </footer>
+
+</body>
+</html>
