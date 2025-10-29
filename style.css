@@ -183,7 +183,12 @@ footer {
 }
 .key:hover { background-color: #5d6777; }
 .key:active { transform: translateY(2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 #2c313a; }
-
+.key.pressed {
+    background-color: #e63946; /* Яркий цвет для акцента */
+    color: #f1faee;
+    transform: translateY(2px); /* Эффект "нажатия" */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 #2c313a;
+}
 
 /* --- 1. MAIN KEYS BLOCK --- */
 .main-keys {
