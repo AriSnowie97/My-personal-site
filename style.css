@@ -137,24 +137,19 @@ footer {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 5px #1e2127; 
     
-    /* Используем Grid для разделения клавиатуры на 3 основных блока:
-      1. Основные клавиши (1fr - займет все доступное место)
-      2. Навигационные клавиши (auto - по ширине контента)
-      3. Numpad (auto - по ширине контента)
-    */
     display: grid;
     grid-template-columns: 1fr auto auto;
     grid-template-areas: "main nav numpad";
     gap: 25px; /* Увеличим зазор между блоками */
 }
 
-/* Присваиваем блокам их grid-area */
+
 .main-keys { grid-area: main; }
 .nav-keys { grid-area: nav; }
 .numpad-keys { grid-area: numpad; }
 
 
-/* --- Стили для всех элементов внутри клавиатуры --- */
+
 .keyboard-container * { 
     font-family: 'Roboto Mono', monospace; 
 }
@@ -173,10 +168,7 @@ footer {
     height: 45px;
     padding: 0 5px;
     
-    /* Используем flex-grow: 1 и flex-basis: 45px.
-      Это значит, что базовая ширина клавиши 45px, 
-      но она может растягиваться (flex-grow: 1)
-    */
+
     flex-grow: 1;
     flex-basis: 45px;
     min-width: 45px;
@@ -186,24 +178,23 @@ footer {
 .key.pressed {
     background-color: #e63946; /* Яркий цвет для акцента */
     color: #f1faee;
-    transform: translateY(2px); /* Эффект "нажатия" */
+    transform: translateY(2px); 
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 #2c313a;
 }
 
 /* --- 1. MAIN KEYS BLOCK --- */
 .main-keys {
     display: flex;
-    flex-direction: column; /* Располагаем ряды клавиш вертикально */
-    gap: 8px; /* Расстояние между рядами */
+    flex-direction: column; 
+    gap: 8px; 
 }
 
 .key-row {
-    display: flex; /* Клавиши в ряду выстраиваем горизонтально */
-    gap: 8px; /* Расстояние между клавишами */
+    display: flex; 
+    gap: 8px; 
 }
 
-/* --- Растягиваем специальные клавиши --- */
-/* F-row spacers */
+
 .f-row .spacer { flex-basis: 45px; flex-grow: 1; }
 .f-row .spacer-small { flex-basis: 22px; flex-grow: 0.5; }
 
@@ -226,25 +217,25 @@ footer {
 .ctrl { flex-grow: 1.8; }
 .win { flex-grow: 1.5; }
 .alt { flex-grow: 1.5; }
-.space { flex-grow: 10; } /* Делаем пробел самым большим */
+.space { flex-grow: 10; } 
 
 
 /* --- 2. NAV KEYS BLOCK --- */
 .nav-keys {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Расстояние между .function-keys, .edit-keys, .arrow-keys */
+    gap: 20px; 
 }
 
 .function-keys {
     display: grid;
-    grid-template-columns: repeat(3, 45px); /* 3 колонки по 45px */
+    grid-template-columns: repeat(3, 45px); 
     gap: 8px;
 }
 
 .edit-keys {
     display: grid;
-    grid-template-columns: repeat(3, 45px); /* 3 колонки по 45px */
+    grid-template-columns: repeat(3, 45px); 
     gap: 8px;
 }
 
@@ -256,7 +247,7 @@ footer {
         "left down right";
     gap: 8px;
 }
-/* Расставляем стрелки по grid-areas */
+
 .arrow-up { grid-area: up; }
 .arrow-left { grid-area: left; }
 .arrow-down { grid-area: down; }
@@ -290,8 +281,6 @@ footer {
     grid-template-columns: repeat(4, 45px); /* 4 колонки по 45px */
     gap: 8px;
 }
-
-/* Растягиваем клавиши Numpad */
 .numpad-grid .num-plus { grid-row: span 2; height: 100%; }
 .numpad-grid .num-enter { grid-row: span 2; height: 100%; }
 .numpad-grid .num-0 { grid-column: span 2; }
