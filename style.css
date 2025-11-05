@@ -1,24 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap'); /* Добавил, ты его использовал в planner */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap'); /* Добавил, ты его использовал в keyboard */
 
-/* --- АДАПТАЦІЯ ДЛЯ BOOTSTRAP ---
-   
-   1. Я видалив твій глобальний reset (* { ... }), 
-      оскільки Bootstrap підключає свій власний (reboot.css),
-      який робить це більш грамотно.
 
-   2. Я залишив твої базові стилі для body.
+/* Я удалил твой reset (*), так как Bootstrap 
+  уже содержит свой (reboot.css).
 */
+
 body {
   font-family: 'Mulish', sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
   background: #fdfdfd;
   color: #333;
-  /* margin та padding видалені, Bootstrap про них подбає */
 }
 
 /* --- ІСНУЮЧІ СТИЛІ САЙТУ --- */
-/* Шапка та футер - це твої кастомні компоненти.
-   Вони не конфліктують з Bootstrap, залишаємо як є. */
 
 /* Шапка сайту */
 header {
@@ -45,10 +43,6 @@ nav ul li {
   margin: 0 15px;
 }
 
-/* ПОРАДА: Bootstrap має свої класи для навігації (.nav, .nav-item, .nav-link).
-  Твої стилі не конфліктують, але в майбутньому розглянь 
-  використання <nav class="nav">...</nav> від Bootstrap.
-*/
 nav ul li a {
   color: #1d3557;
   text-decoration: none;
@@ -62,12 +56,11 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Секції */
 /*
-  ПОРАДА: Цей блок стилів - твій власний "контейнер".
-  Він не конфліктує, але Bootstrap пропонує свій клас .container, 
-  який робить те саме, але адаптивно. 
-  
-  Рекомендую в HTML замінити <section> на <section class="container">
-  і видалити або закоментувати цей блок стилів.
+  ПОРАДА: Ти вже підключив Bootstrap. 
+  Замість цього стилю, краще в HTML писати:
+  <section class="container my-4 p-4 rounded shadow-sm" style="background-color: #f1faee;">
+  ...це дасть той самий результат, але "мовою" Bootstrap.
+  Поки залишаю, як є.
 */
 section {
   padding: 20px;
@@ -78,13 +71,23 @@ section {
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-/* --- АДАПТАЦІЯ ФОРМИ --- */
+/* Форма реєстрації */
 /*
-   Bootstrap повністю керує стилями форм 
-   для крос-браузерної сумісності.
+  ВАЖЛИВО: Я видалив стилі для полів вводу та кнопки.
+  Тобі потрібно додати класи Bootstrap в HTML, щоб форма виглядала добре.
+  Наприклад:
+  <form>
+    ...
+    <label class="form-label">Ім'я</label>
+    <input type="text" class="form-control mb-3">
+    
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control mb-3">
+    
+    <input type="submit" class="btn btn-primary w-100" value="Відправити">
+  </form>
 */
 form {
-  /* Ці стилі в порядку, вони не конфліктують */
   max-width: 500px;
   margin: 0 auto;
   background: #ffffff;
@@ -99,72 +102,33 @@ form h2 {
   margin-bottom: 20px;
 }
 
-/*
-  ПОРАДА: В HTML додай клас .form-label до тегів <label>
-*/
 form label {
+  /* В Bootstrap для <label> використовуй клас .form-label */
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
   color: #457b9d;
 }
 
-/*
-  ДІЯ: Я видалив усі стилі (width, padding, border...) звідси.
-  В HTML тобі потрібно додати клас .form-control до цих інпутів
-  і клас .form-select до тегу <select>.
-  
-  Наприклад: <input type="text" class="form-control">
-*/
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="date"],
 form select {
-  /* Стилі Bootstrap (.form-control, .form-select) 
-    тепер керують виглядом цих елементів.
-    Твої старі стилі (width, padding, border...) тут видалені,
-    щоб уникнути конфліктів.
+  /* Ці стилі тепер контролює Bootstrap.
+    Додай клас .form-control до інпутів 
+    і .form-select до селектів в HTML.
   */
 }
 
-/*
-  ДІЯ: Це кнопка. 
-  1. Я видалив УСІ стилі звідси.
-  2. В HTML додай цій кнопці класи:
-     class="btn btn-primary w-100"
-     
-  3. Якщо тобі потрібен твій кастомний синій колір (#1d3557)
-     замість синього Bootstrap, створи новий клас:
-     
-     .btn-custom-submit {
-        background-color: #1d3557;
-        border-color: #1d3557;
-     }
-     .btn-custom-submit:hover {
-        background-color: #457b9d;
-        border-color: #457b9d;
-     }
-     
-     І в HTML використовуй:
-     class="btn btn-custom-submit w-100"
-*/
 form input[type="submit"] {
-  /* Всі стилі видалені. Використовуй класи .btn від Bootstrap в HTML */
+  /* Ці стилі тепер контролює Bootstrap.
+    Додай клас .btn .btn-primary .w-100 до кнопки в HTML.
+  */
 }
-
-/* Цей :hover був для submit. Він більше не потрібен,
-  оскільки Bootstrap (.btn) сам обробляє :hover.
-  Якщо створив .btn-custom-submit (див. вище), додай :hover до нього.
-*/
-/* form input[type="submit"]:hover {
-  background-color: #457b9d;
-}
-*/
 
 
 /* Футер */
-/* Цей компонент кастомний, не конфліктує. Залишаємо. */
 footer {
   background: #a8dadc;
   color: #1d3557;
@@ -173,16 +137,6 @@ footer {
   margin-top: 30px;
   border-top: 3px solid #457b9d;
 }
-
-/* --- KEYBOARD, YOUTUBE, PLANNER STYLES ---
-  
-  Усі стилі нижче стосуються твоїх УНІКАЛЬНИХ компонентів.
-  Вони використовують специфічні класи (.keyboard-container, .youtube-layout, .planner-container)
-  і НЕ конфліктують з Bootstrap.
-  
-  Залишаємо їх як є.
-*/
-
 
 /* --- KEYBOARD STYLES --- */
 
@@ -197,7 +151,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr auto auto;
     grid-template-areas: "main nav numpad";
-    gap: 25px; /* Увеличим зазор между блоками */
+    gap: 25px; 
 }
 
 
@@ -225,7 +179,6 @@ footer {
     height: 45px;
     padding: 0 5px;
     
-
     flex-grow: 1;
     flex-basis: 45px;
     min-width: 45px;
@@ -233,7 +186,7 @@ footer {
 .key:hover { background-color: #5d6777; }
 .key:active { transform: translateY(2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 #2c313a; }
 .key.pressed {
-    background-color: #e63946; /* Яркий цвет для акцента */
+    background-color: #e63946;
     color: #f1faee;
     transform: translateY(2px); 
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 #2c313a;
@@ -255,22 +208,13 @@ footer {
 .f-row .spacer { flex-basis: 45px; flex-grow: 1; }
 .f-row .spacer-small { flex-basis: 22px; flex-grow: 0.5; }
 
-/* Row 2 */
 .backspace { flex-grow: 3; }
-
-/* Row 3 */
 .tab { flex-grow: 2; }
 .slash { flex-grow: 2; }
-
-/* Row 4 */
 .caps { flex-grow: 2.2; }
 .enter { flex-grow: 2.8; }
-
-/* Row 5 */
 .shift-left { flex-grow: 3; }
 .shift-right { flex-grow: 3.5; }
-
-/* Row 6 */
 .ctrl { flex-grow: 1.8; }
 .win { flex-grow: 1.5; }
 .alt { flex-grow: 1.5; }
@@ -284,13 +228,7 @@ footer {
     gap: 20px; 
 }
 
-.function-keys {
-    display: grid;
-    grid-template-columns: repeat(3, 45px); 
-    gap: 8px;
-}
-
-.edit-keys {
+.function-keys, .edit-keys {
     display: grid;
     grid-template-columns: repeat(3, 45px); 
     gap: 8px;
@@ -335,15 +273,15 @@ footer {
 
 .numpad-grid {
     display: grid;
-    grid-template-columns: repeat(4, 45px); /* 4 колонки по 45px */
+    grid-template-columns: repeat(4, 45px); 
     gap: 8px;
 }
 .numpad-grid .num-plus { grid-row: span 2; height: 100%; }
 .numpad-grid .num-enter { grid-row: span 2; height: 100%; }
 .numpad-grid .num-0 { grid-column: span 2; }
+
 /* --- НОВІ СТИЛІ ДЛЯ ПРАКТИЧНОЇ РОБОТИ №3 (YOUTUBE FLEXBOX) --- */
 
-/* 1. LAYOUT: Головний контейнер Flex */
 .youtube-layout {
     margin: 0; 
     padding: 0;
@@ -352,7 +290,6 @@ footer {
     flex-direction: column; 
 }
 
-/* 2. HEADER: Шапка YouTube (Пошук/Іконки) */
 .header-youtube {
     display: flex;
     justify-content: space-between; 
@@ -386,11 +323,6 @@ footer {
     align-items: center;
 }
 
-/* ПОРАДА: В YouTube-макеті у тебе є інпути.
-  Їм теж можна дати клас .form-control від Bootstrap,
-  але твої стилі ВЖЕ достатньо специфічні (.search-container input),
-  щоб не конфліктувати. Залишаємо як є.
-*/
 .search-container input {
     flex-grow: 1;
     padding: 8px 10px;
@@ -399,10 +331,6 @@ footer {
     font-size: 16px;
 }
 
-/* ПОРАДА: Це кнопка. Їй можна дати клас .btn, 
-  але твої стилі .search-btn знову ж таки дуже специфічні.
-  Конфлікту не буде.
-*/
 .search-btn {
     padding: 8px 20px;
     border: 1px solid #ccc;
@@ -428,13 +356,11 @@ footer {
     font-size: 20px;
 }
 
-/* 3. MAIN CONTENT WRAPPER (Flex для сайдбару та контенту) */
 .main-content-wrapper {
     display: flex;
     flex-grow: 1;
 }
 
-/* 4. SIDEBAR: Бічна панель */
 .sidebar {
     width: 240px; 
     min-width: 240px;
@@ -461,6 +387,7 @@ footer {
     font-size: 14px;
     font-weight: 500;
 }
+
 
 .sidebar ul li:hover {
     background-color: #f2f2f2;
@@ -489,35 +416,29 @@ footer {
     margin: 8px 0;
 }
 
-/* 5. VIDEO GRID CONTAINER: Основний простір для відео */
 .video-grid-container {
     flex-grow: 1; 
     background-color: #f9f9f9; 
     padding: 24px 20px; 
-    
     display: flex;
     flex-wrap: wrap; 
     gap: 16px; 
 }
 
-/* Панель категорій */
 .categories {
     display: flex;
     flex-wrap: nowrap;
     gap: 12px;
-    padding: 10px 0; 
+    padding: 10px 20px; 
     background-color: #fff; 
     border-top: 1px solid #e5e5e5; 
     border-bottom: 1px solid #e5e5e5;
     position: sticky;
     top: 56px; 
     z-index: 50; 
-    overflow-x: scroll;
+    overflow-x: auto; /* Дозволяє скролити категорії по горизонталі */
     width: 100%; 
     margin-bottom: 24px; 
-    /* Добавляем padding для внутренних кнопок, так как padding удален выше */
-    padding-left: 20px; 
-    padding-right: 20px; 
 }
 
 .category-button {
@@ -533,21 +454,15 @@ footer {
     transition: background-color 0.2s, color 0.2s; 
 }
 
-.category-button:hover {
-    background-color: #d8d8d8; 
-}
-
+.category-button:hover { background-color: #d8d8d8; }
 .category-button.active {
     background-color: #0f0f0f; 
     color: #ffffff; 
     border-color: #0f0f0f;
 }
 
-/* 6. Стиль для окремої відеокартки */
 .video-card {
-    /* Расчет для 4 колонок */
-    width: calc(25% - 12px); 
-    
+    width: calc(25% - 12px); /* 4 колонки */
     min-height: unset; 
     padding: 0;
     text-align: left;
@@ -556,28 +471,23 @@ footer {
     box-shadow: none;
 }
 
-/* 7. СТИЛІ МІНІАТЮР (для коректного співвідношення сторін 16:9) */
 .video-card .thumbnail {
     width: 100%;
     height: 0; 
-    padding-bottom: 56.25%; /* 16:9 соотношение */
-    
+    padding-bottom: 56.25%; /* 16:9 */
     background-color: #cccccc; 
     border-radius: 8px;
     margin-bottom: 8px;
-    
-    position: relative; /* Ключ для позиционирования img */
+    position: relative; 
     overflow: hidden; 
 }
 
-/* НОВЕ ПРАВИЛО: Коректне масштабування зображення всередині контейнера 16:9 */
 .video-card .thumbnail img {
     position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* object-fit: cover гарантує, що зображення заповнить контейнер, обрізаючи зайве */
     object-fit: cover; 
     border-radius: 0; 
 }
@@ -595,38 +505,29 @@ footer {
     font-size: 13px;
     color: #606060;
 }
-/* --- Вимога 1: Розмітка сторінки створена за допомогою grid --- */
+
+/* --- PLANNER STYLES --- */
+
 .planner-container {
     display: grid;
     max-width: 1600px;
     margin: 0 auto;
     border: 2px solid #000;
     background-color: #fff;
-
-    /* Визначаємо 4 колонки: 1 для сайдбару, 3 для днів */
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    
-    /* Визначаємо рядки: заголовок, 2 ряди днів, 1 ряд для неділі */
     grid-template-rows: auto 1fr 1fr auto;
-
-    /* "Малюємо" нашу сітку */
     grid-template-areas:
         "header  header    header    header"
         "sidebar monday    tuesday   wednesday"
         "sidebar thursday  friday    saturday"
         "sidebar sunday    sunday    sunday";
-    
-    /* --- Вимога 5: Реакція на зміни розміру екрану --- */
-    /* (Досягається за рахунок fr-одиниць та відсутності фіксованої ширини) */
 }
 
-/* Стилізація елементів сітки */
 .planner-container > * {
     border-left: 2px solid #000;
     border-top: 2px solid #000;
     padding: 15px;
 }
-/* Прибираємо зайві рамки */
 .planner-header,
 .planner-container > *:nth-child(2), /* sidebar */
 .planner-container > *:nth-child(3), /* monday */
@@ -638,14 +539,12 @@ footer {
     border-left: none;
 }
 
-
-/* 1. Заголовок */
 .planner-header {
     grid-area: header;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Для кращої реакції на малих екранах */
+    flex-wrap: wrap; 
     gap: 20px;
     background-color: #fdfdfd;
 }
@@ -672,7 +571,6 @@ footer {
     text-transform: uppercase;
 }
 
-/* 2. Бічна панель */
 .planner-sidebar {
     grid-area: sidebar;
     background-color: #fdfdfd;
@@ -698,7 +596,6 @@ footer {
     margin-bottom: 8px;
 }
 
-/* 3. Дні тижня */
 .day {
     min-height: 250px;
     display: flex;
@@ -718,7 +615,6 @@ footer {
     font-size: 1.2rem;
 }
 
-/* Прив'язка до сітки */
 .day-monday    { grid-area: monday; }
 .day-tuesday   { grid-area: tuesday; }
 .day-wednesday { grid-area: wednesday; }
@@ -727,19 +623,12 @@ footer {
 .day-saturday  { grid-area: saturday; }
 .day-sunday    { grid-area: sunday; }
 
-
-/* --- Вимога 4: Всі поля для вводу можна редагувати --- */
-/*
-  ПОРАДА: Цей інпут теж можна замінити на .form-control,
-  але твої стилі .editable-line дуже специфічні і 
-  не повинні конфліктувати.
-*/
 .editable-line {
     border: none;
     border-bottom: 1.5px solid #ccc;
     font-family: 'Mulish', sans-serif;
     font-size: 1rem;
-    width: 100%; /* Займає доступне місце */
+    width: 100%;
 }
 .editable-line:focus {
     outline: none;
@@ -747,9 +636,9 @@ footer {
 }
 
 .editable-area {
-    flex-grow: 1; /* Займає весь вільний простір в .day */
+    flex-grow: 1; 
     border: none;
-    resize: none; /* Забороняємо змінювати розмір */
+    resize: none; 
     font-family: 'Mulish', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
@@ -758,17 +647,13 @@ footer {
     outline: none;
 }
 
-/* --- Вимога 3: Всі чекбокси клікабельні --- */
 /*
-  ДІЯ: Bootstrap має свої стилі для чекбоксів.
-  Вони складніші, ніж просто input, зазвичай використовується:
+  ПОРАДА: Для чекбоксів використовуй структуру Bootstrap:
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" ...>
-    <label class="form-check-label" ...>
+    <input class="form-check-input" type="checkbox" id="check1">
+    <label class="form-check-label" for="check1">Мій чекбокс</label>
   </div>
-  
-  Рекомендую закоментувати цей стиль і 
-  використовувати структуру .form-check від Bootstrap в HTML.
+  Я закоментував твій старий стиль.
 */
 /*
 input[type="checkbox"] {
@@ -778,19 +663,10 @@ input[type="checkbox"] {
 }
 */
 
-
-/* Посилання для повернення */
 .back-link {
     text-align: center;
     margin-top: 20px;
 }
-/* ПОРАДА: Цьому посиланню можна дати класи .btn .btn-outline-dark,
-  щоб воно виглядало як кнопка Bootstrap.
-  
-  <a class="btn btn-outline-dark" ...>
-  
-  Твої стилі не конфліктують, але так буде консистентно.
-*/
 .back-link a {
     font-family: 'Oswald', sans-serif;
     text-decoration: none;
@@ -807,5 +683,202 @@ input[type="checkbox"] {
     color: #fff;
 }
 
-/* Кінець файлу style.css
+
+/* --- --- --- --- --- --- --- --- --- --- --- */
+/* --- АДАПТАЦІЯ (MEDIA QUERIES) --- */
+/* --- --- --- --- --- --- --- --- --- --- --- */
+
+/* Брейкпойнти Bootstrap:
+  - lg (large): 992px
+  - md (medium): 768px
+  - sm (small): 576px
+  
+  Ми будемо використовувати max-width (спочатку стилі для великого екрану).
 */
+
+/* 1. Планшети (Medium) і менші */
+@media (max-width: 992px) {
+
+    /* --- YOUTUBE --- */
+    .video-card {
+        width: calc(33.333% - 11px); /* 3 колонки */
+    }
+    .search-container input {
+        display: none; /* Ховаємо поле пошуку, залишаємо іконку */
+    }
+    .search-container {
+        max-width: fit-content;
+        margin: 0 10px;
+    }
+    .search-btn {
+        border-radius: 40px; /* Робимо кнопку круглою */
+        margin-left: 0;
+    }
+
+    /* --- PLANNER --- */
+    .planner-container {
+        /* На планшетах - 2 колонки контенту */
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header  header"
+            "sidebar sidebar"  /* Сайдбар на всю ширину */
+            "monday    tuesday"
+            "wednesday thursday"
+            "friday    saturday"
+            "sunday    sunday";
+    }
+    /* Виправляємо рамки для 2-колонкового макету */
+    .planner-container > *:nth-child(n) { border-left: 2px solid #000; } /* Скидання */
+    .planner-header, .planner-sidebar, .day-monday, .day-wednesday, .day-friday, .day-sunday {
+        border-left: none; /* Перший елемент у ряду */
+    }
+    .planner-header h1 {
+        font-size: 2rem; /* Трохи менший заголовок */
+    }
+
+    /* --- KEYBOARD --- */
+    .keyboard-container {
+        /* Клавіатура вже стає завеликою, складаємо її */
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main"
+            "nav"
+            "numpad";
+        max-width: 95%;
+        gap: 15px;
+    }
+    .main-keys { max-width: 100%; overflow-x: auto; } /* Дозволяємо скрол, якщо не влазить */
+}
+
+
+/* 2. Телефони (Small) і менші */
+@media (max-width: 768px) {
+
+    /* --- ЗАГАЛЬНІ СТИЛІ --- */
+    body {
+        line-height: 1.5; /* Щільніший текст */
+    }
+    header nav ul li {
+        display: block; /* Складаємо навігацію у стовпчик */
+        margin: 8px 0;
+    }
+    section {
+        margin: 10px; /* Менші відступи по боках */
+        padding: 15px;
+    }
+    form {
+        padding: 20px;
+    }
+
+    /* --- YOUTUBE --- */
+    .main-content-wrapper {
+        flex-direction: column; /* Складаємо сайдбар і контент у стовпчик */
+    }
+    .sidebar {
+        position: static; /* Сайдбар більше не "липне" */
+        height: auto;
+        width: 100%;
+        min-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+        overflow-y: hidden;
+    }
+    .video-card {
+        width: calc(50% - 8px); /* 2 колонки на телефоні */
+    }
+    .header-right {
+        display: none; /* Ховаємо праві іконки, забагато всього */
+    }
+    .header-left {
+        gap: 10px;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .video-grid-container {
+        padding: 15px 10px;
+    }
+    .categories {
+        padding: 8px 10px;
+        margin-bottom: 15px;
+    }
+
+    /* --- PLANNER --- */
+    
+    .planner-container {
+        /* На телефонах - 1 колонка */
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "monday"
+            "tuesday"
+            "wednesday"
+            "thursday"
+            "friday"
+            "saturday"
+            "sunday";
+    }
+    /* Виправляємо рамки для 1-колонкового макету */
+    .planner-container > * {
+        border-left: none; /* Немає лівих рамок */
+        border-top: 2px solid #000; /* Повертаємо верхню рамку для всіх */
+    }
+    .planner-header {
+        border-top: none; /* ...крім хедера */
+        flex-direction: column; /* Складаємо хедер у стовпчик */
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .header-fields, .header-checks {
+        flex-direction: column; /* Складаємо поля хедера */
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    /* --- KEYBOARD --- */
+    .key {
+        height: 40px;
+        min-width: 35px;
+        flex-basis: 35px;
+        font-size: 12px;
+    }
+    .function-keys, .edit-keys, .numpad-grid, .arrow-keys {
+        grid-template-columns: repeat(3, 35px);
+    }
+    .numpad-grid {
+        grid-template-columns: repeat(4, 35px);
+    }
+}
+
+
+/* 3. Дуже малі екрани (Extra Small) */
+@media (max-width: 576px) {
+    /* --- YOUTUBE --- */
+    .video-card {
+        width: 100%; /* 1 колонка на малих екранах */
+        margin-bottom: 25px;
+    }
+    .video-info .title {
+        font-size: 15px;
+    }
+    
+    /* --- PLANNER --- */
+    .planner-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* --- KEYBOARD --- */
+    .keyboard-container {
+        padding: 10px;
+        gap: 10px;
+    }
+    .key {
+        height: 35px;
+        min-width: 28px;
+        flex-basis: 28px;
+        font-size: 11px;
+    }
+    /* ...і так далі, клавіатуру адаптувати складно, 
+       можливо, деякі ряди доведеться ховати */
+}
