@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap'); /* Добавил, ты его использовал в planner */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap'); /* Добавил, ты его использовал в keyboard */
+
+
+
 /* --- --- --- --- --- --- --- --- --- --- --- */
 /* --- КАСТОМНЫЕ ЦВЕТА ДЛЯ ТАБЛИЦЫ --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
@@ -5,32 +11,29 @@
 /* 1. Переопределяем цвета "темной" шапки (.table-dark) */
 .table-dark {
   /* Берем твой темно-синий из header */
-  --bs-table-bg: #1d3557; 
+  bs-table-bg: #1d3557; 
   
   /* Берем твой светло-кремовый из section для текста */
-  --bs-table-color: #f1faee; 
+  bs-table-color: #f1faee; 
   
   /* Берем твой средне-синий для рамок */
-  --bs-table-border-color: #457b9d; 
+  bs-table-border-color: #457b9d; 
 }
 
 /* 2. Переопределяем цвет "зебры" (.table-striped) */
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   /* Вместо серого используем твой светло-кремовый */
-  --bs-table-striped-bg: #f1faee; 
+  bs-table-striped-bg: #f1faee; 
   
   /* Оставляем обычный темный текст */
-  --bs-table-striped-color: #333; 
+  bs-table-striped-color: #333; 
 }
 
 /* 3. Делаем все рамки в цвет сайта (.table-bordered) */
 .table-bordered {
   /* Используем твой светло-голубой из header/footer */
-  --bs-table-border-color: #a8dadc; 
-}@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap'); /* Добавил, ты его использовал в planner */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap'); /* Добавил, ты его использовал в keyboard */
-
+  bs-table-border-color: #a8dadc; 
+}
 
 /* Я удалил твой reset (*), так как Bootstrap 
   уже содержит свой (reboot.css).
