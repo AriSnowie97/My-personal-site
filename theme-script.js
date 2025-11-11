@@ -1,12 +1,13 @@
-/* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 1. НОВЫЙ КОД ДЛЯ ПЕРЕКЛЮЧЕНИЯ ТЕМЫ --- */
-/* --- --- --- --- --- --- --- --- --- --- --- */
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* --- --- --- --- --- --- --- --- --- --- --- */
+    /* --- 1. КОД ДЛЯ ПЕРЕМИКАННЯ ТЕМИ --- */
+    /* --- --- --- --- --- --- --- --- --- --- --- */
+    
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement; // <html>
 
-    // 1. Функция для применения темы
+    // 1. Функція для застосування теми
     function setTheme(theme) {
         if (theme === 'dark') {
             htmlElement.setAttribute('data-theme', 'dark');
@@ -17,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. Проверяем сохраненную тему в localStorage при загрузке
-    const savedTheme = localStorage.getItem('theme') || 'light'; // Светлая по умолчанию
+    // 2. Перевіряємо збережену тему в localStorage під час завантаження
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Світла за замовчуванням
     setTheme(savedTheme);
 
-    // 3. Вешаем обработчик на кнопку
-    if (themeToggle) { // Проверяем, что кнопка есть на странице
+    // 3. Вішаємо обробник на кнопку
+    if (themeToggle) { // Перевіряємо, що кнопка є на сторінці
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.hasAttribute('data-theme') ? 'dark' : 'light';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -32,13 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* --- --- --- --- --- --- --- --- --- --- --- --- */
-    /* --- 2. ВАШ СТАРЫЙ КОД ДЛЯ КЛАВИАТУРЫ --- */
-    /* --- (он находится внутри того же 'DOMContentLoaded') --- */
+    /* --- 2. ВАШ СТАРИЙ КОД ДЛЯ КЛАВІАТУРИ --- */
+    /* --- (Знаходиться в тому ж 'DOMContentLoaded') --- */
     /* --- --- --- --- --- --- --- --- --- --- --- --- */
 
-    // Функция для поиска нужной кнопки в HTML
+    // Функція для пошуку потрібної кнопки в HTML
     function findKeyElement(eventCode) {
-        // Проверяем специальные клавиши по их классам
+        // (Цей код працює тільки на practice4.html, 
+        // але не буде викликати помилок на інших сторінках)
+        
+        // Перевіряємо спеціальні клавіші за їх класами
         switch (eventCode) {
             case 'Tab':         return document.querySelector('.tab');
             case 'Backspace':   return document.querySelector('.backspace');
@@ -50,12 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'ControlRight':return document.querySelectorAll('.ctrl')[1];
             case 'AltLeft':     return document.querySelectorAll('.alt')[0];
             case 'AltRight':    return document.querySelectorAll('.alt')[1];
-            case 'MetaLeft':    return document.querySelectorAll('.win')[0]; // Meta - это Win/Cmd
+            case 'MetaLeft':    return document.querySelectorAll('.win')[0]; // Meta - це Win/Cmd
             case 'MetaRight':   return document.querySelectorAll('.win')[1];
             case 'ContextMenu': return document.querySelector('.menu');
             case 'Space':       return document.querySelector('.space');
             
-            // F-клавиши
+            // F-клавіші
             case 'Escape':      return document.querySelector('.key:not([class*=" "])'); // Esc
             case 'F1':          return document.querySelector('.f-row .key:nth-of-type(2)');
             case 'F2':          return document.querySelector('.f-row .key:nth-of-type(3)');
@@ -71,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			case 'F12':          return document.querySelector('.f-row .key:nth-of-type(13)');
         }
 
-        // Карта для "текстовых" клавиш
+        // Карта для "текстових" клавіш
         const textKeyMap = {
             'Backquote':    '` ~', 'Digit1':       '1 !', 'Digit2':       '2 @',
             'Digit3':       '3 #', 'Digit4':       '4 $', 'Digit5':       '5 %',
@@ -94,13 +98,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetText = textKeyMap[eventCode];
         if (targetText) {
             const allKeys = document.querySelectorAll('.main-keys .key');
-            return Array.from(allKeys).find(key => key.textContent.trim() === targetText);
+            // Перевіряємо, що allKeys не null
+            if(allKeys) {
+                return Array.from(allKeys).find(key => key.textContent.trim() === targetText);
+            }
         }
         
-        return null; // Клавиша не найдена
+        return null; // Клавішу не знайдено
     }
 
-    // --- Обработчик нажатия (keydown) ---
+    // --- Обробник натискання (keydown) ---
     window.addEventListener('keydown', (e) => {
         const keyElement = findKeyElement(e.code);
         if (keyElement) {
@@ -108,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Обработчик отпускания (keyup) ---
+    // --- Обробник відпускання (keyup) ---
     window.addEventListener('keyup', (e) => {
         const keyElement = findKeyElement(e.code);
         if (keyElement) {
@@ -116,4 +123,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-}); // --- КОНЕЦ 'DOMContentLoaded' ---
+}); // --- КІНЕЦЬ 'DOMContentLoaded' ---

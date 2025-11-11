@@ -1,13 +1,13 @@
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 1. ОПРЕДЕЛЕНИЕ ТЕМ (ПЕРЕМЕННЫЕ) --- */
+/* --- 1. ВИЗНАЧЕННЯ ТЕМ (ЗМІННІ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* Импортируем шрифты */
+/* Імпортуємо шрифти */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-/* --- :root (СВЕТЛАЯ ТЕМА по умолчанию) --- */
+/* --- :root (СВІТЛА ТЕМА за замовчуванням) --- */
 :root {
   /* Фон */
   --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -19,28 +19,30 @@
   --header-text-color: #1d3557;
   --text-muted-color: #6c757d; 
   
-  /* "Стекло" */
+  /* "Скло" */
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(255, 255, 255, 0.6);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
 
-  /* Ссылки */
+  /* Посилання */
   --link-color: #457b9d;
   --link-color-nav: #1d3557;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.5);
   --link-active-bg-nav: rgba(255, 255, 255, 0.7);
   
-  /* --- Переменные для Лаб/Практик (Светлая Тема) --- */
+  /* --- Змінні для Лаб/Практичних (Світла Тема) --- */
   
   /* Форма */
   --input-bg: rgba(255, 255, 255, 0.5);
   --input-border: rgba(255, 255, 255, 0.7);
   --input-focus-border: var(--link-color-nav);
   --input-text: var(--text-color);
+  --form-btn-bg: var(--header-text-color);
+  --form-btn-text: #ffffff; 
 
-  /* Таблица */
+  /* Таблиця */
   --table-striped-bg: rgba(255, 255, 255, 0.2); 
   --table-striped-color: #333;
   --table-dark-bg: rgba(255, 255, 255, 0.3); 
@@ -61,7 +63,7 @@
   --planner-line: var(--glass-border);
 }
 
-/* --- ТЕМНАЯ ТЕМА --- */
+/* --- ТЕМНА ТЕМА --- */
 html[data-theme='dark'] {
   /* Фон */
   --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
@@ -73,28 +75,30 @@ html[data-theme='dark'] {
   --header-text-color: #ffffff; 
   --text-muted-color: #cccccc; 
 
-  /* "Стекло" */
+  /* "Скло" */
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
   --glass-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
 
-  /* Ссылки */
+  /* Посилання */
   --link-color: #a8dadc;
   --link-color-nav: #ffffff;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.1);
   --link-active-bg-nav: rgba(255, 255, 255, 0.15);
   
-  /* --- Переменные для Лаб/Практик (Темная Тема) --- */
+  /* --- Змінні для Лаб/Практичних (Темна Тема) --- */
   
   /* Форма */
   --input-bg: rgba(255, 255, 255, 0.08);
   --input-border: rgba(255, 255, 255, 0.1);
   --input-focus-border: var(--link-color);
   --input-text: var(--text-color);
+  --form-btn-bg: var(--header-text-color); 
+  --form-btn-text: #1d3557; 
   
-  /* Таблица */
+  /* Таблиця */
   --table-striped-bg: rgba(255, 255, 255, 0.05);
   --table-striped-color: #f1faee;
   --table-dark-bg: rgba(255, 255, 255, 0.1); 
@@ -117,7 +121,7 @@ html[data-theme='dark'] {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 2. ОБЩИЕ СТИЛИ (body, header, footer) --- */
+/* --- 2. ЗАГАЛЬНІ СТИЛІ (body, header, footer) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 html {
   scroll-behavior: smooth;
@@ -136,7 +140,7 @@ body {
   transition: background 0.3s ease, color 0.3s ease; 
 }
 
-/* --- "Кляксы" --- */
+/* --- "Краплі" --- */
 .blob {
     position: fixed; 
     width: 600px;
@@ -158,7 +162,7 @@ body {
     background: var(--blob2-bg);
 }
 
-/* --- Общий стиль для <header> и <footer> НА ВСЕХ СТРАНИЦАХ --- */
+/* --- Загальний стиль для <header> та <footer> НА ВСІХ СТОРІНКАХ --- */
 header, footer {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -176,7 +180,7 @@ header, footer {
     margin: 20px auto; 
     max-width: 1200px; 
 }
-/* Убираем лишние отступы на index.html */
+/* Прибираємо зайві відступи на index.html */
 body.home-page header, 
 body.home-page footer {
     margin: 20px 0;
@@ -213,7 +217,7 @@ nav ul li a.active {
 footer a { color: var(--link-color); text-decoration: none; }
 footer a:hover { color: var(--link-hover-color); text-decoration: underline; }
 
-/* --- Кнопка-переключатель темы --- */
+/* --- Кнопка-перемикач теми --- */
 .theme-toggle-btn {
   position: absolute;
   top: 20px;
@@ -238,11 +242,11 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 3. ОБЩИЙ СТИЛЬ "ПЛАШКИ" (ДЛЯ ВСЕХ) --- */
+/* --- 3. ЗАГАЛЬНИЙ СТИЛЬ "ПЛАШКИ" (ДЛЯ ВСІХ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* --- Главный класс "Стекло" --- */
-/* Применяем к .glass-card (на index) и section (на других) */
+/* --- Головний клас "Скло" --- */
+/* Застосовуємо до .glass-card (на index) та section (на інших) */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -256,9 +260,9 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
     padding: 20px;
     margin: 20px auto; 
     max-width: 900px;
-    color: var(--text-color); /* Адаптивный цвет текста */
+    color: var(--text-color); /* Адаптивний колір тексту */
 }
-/* Ссылки внутри плашек */
+/* Посилання всередині плашок */
 .glass-card a:not(.btn):not(h3 a) {
     color: var(--link-color);
 }
@@ -267,15 +271,15 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 }
 
 
-/* --- СТИЛИ ДЛЯ INDEX.HTML --- */
+/* --- СТИЛІ ДЛЯ INDEX.HTML --- */
 
-/* Применяем hover только к карточкам-статьям (на index) */
+/* Застосовуємо hover тільки до карток-статей (на index) */
 body.home-page article.glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--glass-shadow-hover);
 }
 
-/* Отменяем лишние отступы для карточек на index.html */
+/* Прибираємо зайві відступи для карток на index.html */
 body.home-page .glass-card {
     margin: 0; 
     width: 100%;
@@ -285,7 +289,7 @@ body.home-page section#about.glass-card {
     margin: 20px 0;
 }
 
-/* --- Ссылки и Текст в карточках (index.html) --- */
+/* --- Посилання та Текст в картках (index.html) --- */
 .glass-card h3 a {
   color: var(--header-text-color); 
   transition: color 0.3s ease;
@@ -301,17 +305,16 @@ body.home-page section#about.glass-card {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 4. ИСПРАВЛЕНИЕ КОНФЛИКТОВ --- */
+/* --- 4. ВИРІШЕННЯ КОНФЛІКТІВ --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
 /* --- Форма (для lab1.html) --- */
-/* (Это из вашего старого style.css) */
 section.glass-card form {
   max-width: 500px;
   margin: 0 auto;
   padding: 0; 
   box-shadow: none; 
-  background: transparent; /* ИСПРАВЛЕНИЕ: Убираем фон */
+  background: transparent; /* ВИПРАВЛЕННЯ: Прибираємо фон */
 }
 form h2 { 
     text-align: center; 
@@ -324,7 +327,7 @@ form label {
     font-weight: bold; 
     color: var(--text-color); 
 }
-/* ИСПРАВЛЕНИЕ: Стилизуем инпуты, чтобы они были "стеклянными" */
+/* ВИПРАВЛЕННЯ: Стилізуємо інпути, щоб вони були "скляними" */
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
@@ -334,9 +337,9 @@ form select {
     border: 1px solid var(--input-border);
     color: var(--input-text);
     border-radius: 5px;
-    padding: 8px 12px; /* Увеличим отступы */
+    padding: 8px 12px; 
     width: 100%;
-    box-sizing: border-box; /* Важно */
+    box-sizing: border-box; 
     transition: border-color 0.3s ease, background 0.3s ease;
 }
 form input[type="text"]:focus,
@@ -347,31 +350,36 @@ form select:focus {
     outline: none;
     border-color: var(--input-focus-border);
 }
-/* Стиль для <option> в темной теме */
+/* Стиль для <option> в темній темі */
 html[data-theme='dark'] form select option {
     background: #333;
     color: #fff;
 }
+
+/* ВИПРАВЛЕННЯ КНОПКИ (Скріншот) */
 form input[type="submit"] {
-    /* ...ваши старые стили... */
-    /* Добавляем стили кнопки, чтобы она была заметной */
-    background: var(--link-color-nav);
-    color: var(--bg-gradient);
+    background: var(--form-btn-bg); /* ВИПРАВЛЕНО */
+    color: var(--form-btn-text); /* ВИПРАВЛЕНО */
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
+    width: auto; 
 }
 form input[type="submit"]:hover {
     background: var(--link-hover-color);
+    color: var(--form-btn-text); 
+}
+html[data-theme='dark'] form input[type="submit"]:hover {
+    color: #1d3557;
 }
 
 
-/* --- Таблица (praktichni1.html) --- */
+/* --- Таблиця (praktichni1.html) --- */
 .table {
-    --bs-table-bg: transparent; /* ИСПРАВЛЕНИЕ */
+    --bs-table-bg: transparent; /* ВИПРАВЛЕННЯ */
     color: var(--text-color); 
     border-color: var(--glass-border); 
 }
@@ -386,8 +394,8 @@ form input[type="submit"]:hover {
 }
 
 
-/* --- KEYBOARD STYLES (для practice4.html) --- */
-/* (Мы НЕ МЕНЯЕМ эти стили, как вы и просили) */
+/* --- СТИЛІ КЛАВІАТУРИ (для practice4.html) --- */
+/* (НЕ ЗМІНЮЄМО, як ви і просили) */
 .keyboard-container {
     padding: 20px; margin: 0 auto; max-width: 1400px;
     background-color: #282c34; border-radius: 15px;
@@ -395,7 +403,7 @@ form input[type="submit"]:hover {
     display: grid; grid-template-columns: 1fr auto auto;
     grid-template-areas: "main nav numpad"; gap: 25px; 
 }
-/* ... (все остальные стили .key, .main-keys, .key-row и т.д.) ... */
+/* ... (всі інші стилі .key, .main-keys, .key-row тощо) ... */
 .main-keys { grid-area: main; }
 .nav-keys { grid-area: nav; }
 .numpad-keys { grid-area: numpad; }
@@ -446,14 +454,14 @@ form input[type="submit"]:hover {
 .numpad-grid .num-0 { grid-column: span 2; }
 
 
-/* --- YOUTUBE FLEXBOX STYLES (lab3, practice3) --- */
+/* --- СТИЛІ YOUTUBE (lab3, practice3) --- */
 .youtube-layout {
-    /* ИСПРАВЛЕНИЕ: Этот блок теперь .glass-card */
-    padding: 0; /* Убираем отступы, т.к. они уже есть у .glass-card */
+    /* (Стилі .glass-card вже застосовані до цього блоку) */
+    padding: 0; 
     max-width: 1600px;
     color: var(--text-color); 
     transition: color 0.3s ease;
-    overflow: hidden; /* Обрезаем углы */
+    overflow: hidden; 
 }
 .header-youtube {
     display: flex; justify-content: space-between; align-items: center;
@@ -510,7 +518,7 @@ form input[type="submit"]:hover {
 }
 .categories {
     display: flex; flex-wrap: nowrap; gap: 12px;
-    padding: 10px 0;
+    padding: 10px 20px; 
     border-top: 1px solid var(--glass-border); 
     border-bottom: 1px solid var(--glass-border); 
     position: sticky; top: 56px; z-index: 50; 
@@ -551,9 +559,9 @@ form input[type="submit"]:hover {
 .video-info .meta { font-size: 13px; color: var(--text-muted-color); } 
 
 
-/* --- PLANNER STYLES (lab4) --- */
+/* --- СТИЛІ ПЛАНЕРА (lab4) --- */
 .planner-container {
-    /* (Стили .glass-card уже применены к этому блоку) */
+    /* (Стилі .glass-card вже застосовані до цього блоку) */
     display: grid;
     border-radius: 12px;
     overflow: hidden; 
@@ -656,7 +664,7 @@ form input[type="submit"]:hover {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 5. МЕДИА-ЗАПРОСЫ (АДАПТАЦИЯ) --- */
+/* --- 5. МЕДІА-ЗАПИТИ (АДАПТАЦІЯ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
 @media (max-width: 992px) {
@@ -676,7 +684,7 @@ form input[type="submit"]:hover {
 }
 
 @media (max-width: 768px) {
-    /* Адаптация для index.html и .glass-card */
+    /* Адаптація для index.html та .glass-card */
     .glass-card { margin-left: 10px; margin-right: 10px; padding: 15px; }
     body.home-page section#about.glass-card {
         margin: 20px 10px;
@@ -688,7 +696,7 @@ form input[type="submit"]:hover {
     header nav ul li { display: block; margin: 0; width: 100%; }
     header nav ul li a { display: block; }
     
-    /* Адаптация для lab/practice */
+    /* Адаптація для lab/practice */
     .main-content-wrapper { flex-direction: column; }
     .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); overflow-y: hidden; }
     .video-card { width: calc(50% - 8px); }
@@ -707,10 +715,10 @@ form input[type="submit"]:hover {
 }
 
 @media (max-width: 576px) {
-    /* Адаптация для index.html */
+    /* Адаптація для index.html */
     #praktichni .row > [class*="col-"] { width: 100%; }
     
-    /* Адаптация для lab/practice */
+    /* Адаптація для lab/practice */
     .video-card { width: 100%; margin-bottom: 25px; }
     .video-info .title { font-size: 15px; }
     .planner-header h1 { font-size: 1.8rem; }
