@@ -358,8 +358,8 @@ html[data-theme='dark'] form select option {
 
 /* ВИПРАВЛЕННЯ КНОПКИ (Скріншот) */
 form input[type="submit"] {
-    background: var(--form-btn-bg); /* ВИПРАВЛЕНО */
-    color: var(--form-btn-text); /* ВИПРАВЛЕНО */
+    background: var(--form-btn-bg); 
+    color: var(--form-btn-text); 
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -664,64 +664,84 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 5. МЕДІА-ЗАПИТИ (АДАПТАЦІЯ) --- */
+/* --- 5. СТИЛІ ДЛЯ ЛАБОРАТОРНОЇ №5/6 (СПРАЙТИ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-@media (max-width: 992px) {
-    .video-card { width: calc(33.333% - 11px); }
-    .search-container input { display: none; }
-    .search-container { max-width: fit-content; margin: 0 10px; }
-    .search-btn { border-radius: 40px; margin-left: 0; }
-    .planner-container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "header header" "sidebar sidebar" "monday tuesday" "wednesday thursday" "friday saturday" "sunday sunday";
-    }
-    .planner-container > *:nth-child(n) { border-left: 1px solid var(--planner-border); }
-    .planner-header, .planner-sidebar, .day-monday, .day-wednesday, .day-friday, .day-sunday { border-left: none; }
-    .planner-header h1 { font-size: 2rem; }
-    .keyboard-container { grid-template-columns: 1fr; grid-template-areas: "main" "nav" "numpad"; max-width: 95%; gap: 15px; }
-    .main-keys { max-width: 100%; overflow-x: auto; }
+/* --- Сцена --- */
+.animation-scene {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Висота сцени */
+    border-radius: 10px;
+    overflow: hidden; /* Обрізаємо все, що виходить за межі */
+    border: 1px solid var(--glass-border);
+    
+    /* Анімація неба (вимога "анімація фону") */
+    background: linear-gradient(135deg, 
+        #87CEEB 0%, 
+        #FFB6C1 50%, 
+        #87CEEB 100%
+    );
+    background-size: 400% 400%; 
+    animation: sky-gradient 15s ease infinite;
 }
 
-@media (max-width: 768px) {
-    /* Адаптація для index.html та .glass-card */
-    .glass-card { margin-left: 10px; margin-right: 10px; padding: 15px; }
-    body.home-page section#about.glass-card {
-        margin: 20px 10px;
-    }
-    header { padding-left: 15px; padding-right: 15px; }
-    header h1 { font-size: 1.5rem; }
-    .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 18px; }
-    header nav ul { flex-direction: column; gap: 5px; }
-    header nav ul li { display: block; margin: 0; width: 100%; }
-    header nav ul li a { display: block; }
-    
-    /* Адаптація для lab/practice */
-    .main-content-wrapper { flex-direction: column; }
-    .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); overflow-y: hidden; }
-    .video-card { width: calc(50% - 8px); }
-    .header-right { display: none; }
-    .header-left { gap: 10px; }
-    .logo { font-size: 1.2rem; }
-    .video-grid-container { padding: 15px 10px; }
-    .categories { padding: 8px 10px; margin-bottom: 15px; }
-    .planner-container { grid-template-columns: 1fr; grid-template-areas: "header" "sidebar" "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday"; }
-    .planner-container > * { border-left: none; border-top: 1px solid var(--glass-border); }
-    .planner-header { border-top: none; flex-direction: column; align-items: flex-start; gap: 15px; }
-    .header-fields, .header-checks { flex-direction: column; gap: 10px; align-items: flex-start; }
-    .key { height: 40px; min-width: 35px; flex-basis: 35px; font-size: 12px; }
-    .function-keys, .edit-keys, .arrow-keys { grid-template-columns: repeat(3, 35px); }
-    .numpad-grid { grid-template-columns: repeat(4, 35px); }
+/* Ключові кадри для неба */
+@keyframes sky-gradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-@media (max-width: 576px) {
-    /* Адаптація для index.html */
-    #praktichni .row > [class*="col-"] { width: 100%; }
+/* --- Фон (Трава) --- */
+.scene-foreground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%; 
+    height: 100px; 
     
-    /* Адаптація для lab/practice */
-    .video-card { width: 100%; margin-bottom: 25px; }
-    .video-info .title { font-size: 15px; }
-    .planner-header h1 { font-size: 1.8rem; }
-    .keyboard-container { padding: 10px; gap: 10px; }
-    .key { height: 35px; min-width: 28px; flex-basis: 28px; font-size: 11px; }
+    /*
+      👇👇👇
+      ВАЖЛИВО: Вставте сюди ваше робоче посилання на траву!
+    */
+    background-image: url('https://img.freepik.com/free-vector/green-grass-vector-seamless-texture-lawn-nature-meadow-plant-field-natural-outdoor-illustration_1284-47056.jpg?semt=ais_hybrid&w=740&q=80'); /* <-- ЗАМІНІТЬ ЦЕ! */
+    background-repeat: repeat-x;
+    background-size: auto 100px; 
+    
+    /* ВИПРАВЛЕННЯ: "провалюється" */
+    z-index: 1;
+    
+    animation: move-foreground 4s linear infinite;
+}
+
+/* Ключові кадри для трави (рух) */
+@keyframes move-foreground {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* --- Спрайт Покемона (Cinccino) --- */
+.pokemon-sprite {
+    position: absolute;
+    bottom: 60px; /* Стоїть на траві */
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+    /* ВИПРАВЛЕННЯ: "провалюється" */
+    z-index: 2; 
+
+    /*
+      Налаштування для Cinccino (Gen 5)
+      Розмір 56x53
+    */
+    width: 56px;
+    height: 53px;
+    
+    /*
+      Вставляємо посилання на GIF
+    */
+    background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/cinccino.gif'); 
+    background-repeat: no-repeat;
+    
 }
