@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
   <header>
     <h1>Особистий веб-сайт Бадовської Аріни</h1>
     <nav>
@@ -18,36 +20,36 @@
       </ul>
     </nav>
   </header>
-  <section>
+	<section class="glass-card">
     <h2>Форма реєстрації</h2>
     <form action="https://webhook.site/cbc3ef19-3447-477c-9318-0e2226b5dbb6" method="post">
       
       <label for="firstName">Ім'я:</label>
-      <input type="text" id="firstName" name="firstName" required><br><br>
+      <input type="text" class="glass-card" id="firstName" name="firstName" required><br><br>
 
       <label for="lastName">Прізвище:</label>
-      <input type="text" id="lastName" name="lastName" required><br><br>
+      <input type="text" class="glass-card" id="lastName" name="lastName" required><br><br>
 
       <label for="email">Електронна пошта:</label>
-      <input type="email" id="email" name="email" required><br><br>
+      <input type="email" class="glass-card" id="email" name="email" required><br><br>
 
       <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password" required><br><br>
+      <input type="password" class="glass-card" id="password" name="password" required><br><br>
 
       <label for="confirmPassword">Підтвердження паролю:</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+      <input type="password" class="glass-card" id="confirmPassword" name="confirmPassword" required><br><br>
 
       <label for="birthdate">Дата народження:</label>
-      <input type="date" id="birthdate" name="birthdate"><br><br>
+      <input type="date" class="glass-card" id="birthdate" name="birthdate"><br><br>
 
-      <label for="gender">Стать:</label>
-      <select id="gender" name="gender">
-        <option value="male">Чоловіча</option>
-        <option value="female">Жіноча</option>
-        <option value="other">Інше</option>
+      <label for="gender" class="glass-card">Стать:</label>
+      <select id="gender" name="gender" class="glass-card">
+        <option value="male" class="glass-card">Чоловіча</option>
+        <option value="female" class="glass-card">Жіноча</option>
+        <option value="other" class="glass-card">Інше</option>
       </select><br><br>
 
-      <input type="submit" value="Зареєструватися">
+      <input type="submit" class="glass-card" value="Зареєструватися">
     </form>
   </section>
   <footer>
