@@ -1,85 +1,161 @@
 <!DOCTYPE html>
-<html lang="uk">
-<head>
+<html lang="uk"> <head>
   <meta charset="UTF-8">
-  <title>Особистий веб-сайт Бадовської Аріни</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Особистий веб-сайт Бадовської Аріни (з темами)</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Особистий веб-сайт Бадовської Аріни</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Головна</a></li>
-    	<li><a href="#about">Про мене</a></li>
-    	<li><a href="#praktichni">Практичні роботи</a></li>
-    	<li><a href="#laboratorni">Лабораторні заняття</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section id="about" class="container my-4 p-4 p-md-5 rounded shadow-sm" style="background-color: #f1faee;">
-    
-    <h2 class="text-center mb-4">Про мене</h2>
 
-    <div class="row align-items-center">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
 
-      <div class="col-md-4 text-center mb-3 mb-md-0">
-        <img src="img/student.jpg" alt="Фото студента" 
-     class="img-fluid rounded-circle shadow-sm" 
-     style="width: 200px; height: 200px; object-fit: cover; border: 4px solid #fff;">
-      </div>
+  <div class="container position-relative" style="z-index: 1;">
 
-      <div class="col-md-8">
-        <p><strong>Ім’я:</strong> Бадовська Аріна</p>
-        <p><strong>Email:</strong> diysylveon@gmail.com</p>
-        
-        <hr> 
-        
-        <p class="lead">
-          Я фрілансер з 2022 року. Я навчаюсь в Державному університеті інформаційно-комунікаційних технологій, за спеціальністю "Інженерія програмного забезпечення".
-        </p>
-      </div>
+    <header class="my-3">
+      <h1>Особистий веб-сайт Бадовської Аріни</h1>
+      
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
 
-    </div>
-  </section>
-
-  <div class="container">
-  
-  <div class="row g-4">
-
-    <div class="col-md-6">
-      <section class="p-4 rounded shadow-sm h-100" style="background-color: #f1faee;">
-        <h2>Практичні роботи</h2>
+      <nav>
         <ul>
-          <li><a href="praktichni1.html">Практична робота №1</a></li>
-          <li><a href="praktichni2.html">Практична робота №2</a></li>
-          <li><a href="practice3.html">Практична робота №3</a></li>
-          <li><a href="practice4.html">Практична робота №4</a></li>
+          <li><a href="index.html" class="active">Головна</a></li>
+          <li><a href="#about">Про мене</a></li>
+          <li><a href="#laboratorni">Лабораторні</a></li>
+          <li><a href="#praktichni">Практичні</a></li>
         </ul>
-      </section>
-    </div>
+      </nav>
+    </header>
 
-    <div class="col-md-6">
-      <section class="p-4 rounded shadow-sm h-100" style="background-color: #f1faee;">
-        <h2>Лабораторні заняття</h2>
-        <ul>
-          <li><a href="lab1.html">Лабораторне заняття №1</a></li>
-          <li><a href="lab2.html">Лабораторне заняття №2</a></li>
-          <li><a href="lab3.html">Лабораторне заняття №3</a></li>
-          <li><a href="lab4.html">Лабораторне заняття №4</a></li>
-        </ul>
-      </section>
-    </div>
+    <section id="about" class="container my-4 p-4 p-md-5 rounded glass-card">
+      <h2 class="text-center mb-4">Про мене</h2>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <img src="img/student.jpg" alt="Фото Аріни Бадовської" 
+               class="img-fluid rounded-circle" 
+               style="width: 200px; height: 200px; object-fit: cover; border: 4px solid rgba(255, 255, 255, 0.7);">
+        </div>
+        <div class="col-md-8">
+          <p><strong>Ім’я:</strong> Бадовська Аріна</p>
+          <p><strong>Email:</strong> diysylveon@gmail.com</p>
+          <hr>
+          <p class="lead">
+            Я фрілансер з 2022 року. Я навчаюсь в Державному університеті інформаційно-комунікаційних технологій, за спеціальністю "Інженерія програмного забезпечення".
+          </p>
+        </div>
+      </div>
+    </section>
 
-  </div> </div>
-  <footer>
-    <p>© 2025 Бадовська Аріна | <a href="https://github.com/AriSnowie97">GitHub</a></p>
-    <p>Контакти: diysylveon@gmail.com</p>
-  </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <section id="laboratorni" class="my-5">
+      <h2 class="text-center mb-4">Лабораторні роботи</h2>
+      <div class="row g-4">
+        
+        <div class="col-lg-3 col-md-6">
+          <article class="p-4 rounded h-100 glass-card">
+            <h3><a href="lab1.html" class="text-decoration-none stretched-link">Лабораторна №1</a></h3>
+            <p class="text-muted-custom">Форма реєстрації та основи HTML.</p>
+          </article>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <article class="p-4 rounded h-100 glass-card">
+            <h3><a href="lab2.html" class="text-decoration-none stretched-link">Лабораторна №2</a></h3>
+            <p class="text-muted-custom">Селектори CSS та стилізація.</p>
+          </article>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <article class="p-4 rounded h-100 glass-card">
+            <h3><a href="lab3.html" class="text-decoration-none stretched-link">Лабораторна №3</a></h3>
+            <p class="text-muted-custom">Клон YouTube на FlexBox.</p>
+          </article>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <article class="p-4 rounded h-100 glass-card">
+            <h3><a href="lab4.html" class="text-decoration-none stretched-link">Лабораторна №4</a></h3>
+            <p class="text-muted-custom">Планер на CSS Grid.</p>
+          </article>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="praktichni" class="my-5">
+      <h2 class="text-center mb-4">Практичні роботи</h2>
+      <div class="row g-4">
+
+        <div class="col-lg-6">
+          <article class="glass-card rounded p-4 h-100">
+            <div class="d-flex flex-column h-100">
+              <h3><a href="praktichni1.html" class="text-decoration-none stretched-link">Практична робота №1</a></h3>
+              <p class="text-muted-custom flex-grow-1">Таблиця занять з використанням Bootstrap.</p>
+              <div>
+                <span class="badge bg-primary">HTML</span>
+                <span class="badge bg-info text-dark">Bootstrap</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-6">
+          <article class="glass-card rounded p-4 h-100">
+            <div class="d-flex flex-column h-100">
+              <h3><a href="praktichni2.html" class="text-decoration-none stretched-link">Практична робота №2</a></h3>
+              <p class="text-muted-custom flex-grow-1">Опис для практичної 2 (змініть мене).</p>
+              <div>
+                <span class="badge bg-danger text-white">CSS</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-6">
+          <article class="glass-card rounded p-4 h-100">
+            <div class="d-flex flex-column h-100">
+              <h3><a href="practice3.html" class="text-decoration-none stretched-link">Практична робота №3</a></h3>
+              <p class="text-muted-custom flex-grow-1">Клон структури YouTube за допомогою FlexBox.</p>
+              <div>
+                <span class="badge bg-danger text-white">CSS</span>
+                <span class="badge bg-warning text-dark">FlexBox</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-6">
+          <article class="glass-card rounded p-4 h-100">
+            <div class="d-flex flex-column h-100">
+              <h3><a href="practice4.html" class="text-decoration-none stretched-link">Практична робота №4</a></h3>
+              <p class="text-muted-custom flex-grow-1">Клавіатура на CSS Grid та інтерактивність з JS.</p>
+              <div>
+                <span class="badge bg-danger text-white">CSS</span>
+                <span class="badge bg-success text-white">Grid</span>
+                <span class="badge bg-warning text-dark">JavaScript</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="my-3">
+      <p>© 2025 Бадовська Аріна | <a href="https://github.com/AriSnowie97">GitHub</a></p>
+      <p>Контакти: diysylveon@gmail.com</p>
+    </footer>
+
+  </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="theme-script.js"></script>
 </body>
 </html>
-
-
-

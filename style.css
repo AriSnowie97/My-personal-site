@@ -1,245 +1,374 @@
+/* --- --- --- --- --- --- --- --- --- --- --- */
+/* --- 1. ОПРЕДЕЛЕНИЕ ТЕМ (ПЕРЕМЕННЫЕ) --- */
+/* --- --- --- --- --- --- --- --- --- --- --- */
+
+/* Импортируем шрифты */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap'); /* Добавил, ты его использовал в planner */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap'); /* Добавил, ты его использовал в keyboard */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+/* --- :root (СВЕТЛАЯ ТЕМА по умолчанию) --- */
+:root {
+  /* Фон */
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --blob1-bg: rgba(0, 225, 255, 0.3);
+  --blob2-bg: rgba(132, 0, 255, 0.2);
+
+  /* Текст */
+  --text-color: #333;
+  --header-text-color: #1d3557;
+  --text-muted-color: #6c757d; 
+  
+  /* "Стекло" (для хедера/футера/карточек) */
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+
+  /* Ссылки */
+  --link-color: #457b9d;
+  --link-color-nav: #1d3557;
+  --link-hover-color: #e63946;
+  --link-hover-bg-nav: rgba(255, 255, 255, 0.5);
+  --link-active-bg-nav: rgba(255, 255, 255, 0.7);
+  
+  /* Переменные для суцільного контента (лабы, практики) */
+  --content-solid-bg: #f1faee;
+  --content-solid-text: #333;
+  --form-bg: #ffffff;
+  --table-striped-bg: #f1faee;
+  --table-striped-color: #333;
+  --yt-bg: #fff;
+  --yt-bg-grid: #f9f9f9;
+  --yt-text: #0f0f0f;
+  --yt-text-meta: #606060;
+  --yt-border: #e5e5e5;
+  --yt-btn-bg: #e5e5e5;
+  --yt-btn-hover: #d8d8d8;
+  --yt-btn-active-bg: #0f0f0f;
+  --yt-btn-active-text: #ffffff;
+  --planner-bg: #fff;
+  --planner-sidebar-bg: #fdfdfd;
+  --planner-text: #333;
+  --planner-border: #000;
+  --planner-line: #ccc;
+}
+
+/* --- ТЕМНАЯ ТЕМА --- */
+html[data-theme='dark'] {
+  /* Фон */
+  --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --blob1-bg: rgba(132, 0, 255, 0.4);
+  --blob2-bg: rgba(0, 225, 255, 0.4);
+
+  /* Текст */
+  --text-color: #ffffff; 
+  --header-text-color: #ffffff; 
+  --text-muted-color: #cccccc; 
+
+  /* "Стекло" (для хедера/футера/карточек) */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  --glass-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+
+  /* Ссылки */
+  --link-color: #a8dadc;
+  --link-color-nav: #ffffff;
+  --link-hover-color: #e63946;
+  --link-hover-bg-nav: rgba(255, 255, 255, 0.1);
+  --link-active-bg-nav: rgba(255, 255, 255, 0.15);
+  
+  /* Переменные для суцільного контента (ТЕМНЫЕ) */
+  --content-solid-bg: #222730; 
+  --content-solid-text: #f1faee;
+  --form-bg: #282c34; 
+  --table-striped-bg: #282c34;
+  --table-striped-color: #f1faee;
+  --yt-bg: #212121;
+  --yt-bg-grid: #181818;
+  --yt-text: #ffffff;
+  --yt-text-meta: #aaaaaa;
+  --yt-border: #383838;
+  --yt-btn-bg: #383838;
+  --yt-btn-hover: #555555;
+  --yt-btn-active-bg: #f1f1f1;
+  --yt-btn-active-text: #0f0f0f;
+  --planner-bg: #282c34;
+  --planner-sidebar-bg: #222730;
+  --planner-text: #f1faee;
+  --planner-border: #777;
+  --planner-line: #555;
+}
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- КАСТОМНЫЕ ЦВЕТА ДЛЯ ТАБЛИЦЫ --- */
+/* --- 2. ОБЩИЕ СТИЛИ (body, header, footer) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
-
-/* 1. Переопределяем цвета "темной" шапки (.table-dark) */
-.table-dark {
-  /* Берем твой темно-синий из header */
-  bs-table-bg: #1d3557; 
-  
-  /* Берем твой светло-кремовый из section для текста */
-  bs-table-color: #f1faee; 
-  
-  /* Берем твой средне-синий для рамок */
-  bs-table-border-color: #457b9d; 
+html {
+  scroll-behavior: smooth;
 }
-
-/* 2. Переопределяем цвет "зебры" (.table-striped) */
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-  /* Вместо серого используем твой светло-кремовый */
-  bs-table-striped-bg: #f1faee; 
-  
-  /* Оставляем обычный темный текст */
-  bs-table-striped-color: #333; 
-}
-
-/* 3. Делаем все рамки в цвет сайта (.table-bordered) */
-.table-bordered {
-  /* Используем твой светло-голубой из header/footer */
-  bs-table-border-color: #a8dadc; 
-}
-
-/* Я удалил твой reset (*), так как Bootstrap 
-  уже содержит свой (reboot.css).
-*/
 
 body {
   font-family: 'Mulish', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #fdfdfd;
-  color: #333;
+  background: var(--bg-gradient);
+  color: var(--text-color); 
+  overflow-x: hidden; 
+  position: relative; 
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease; 
 }
 
-/* --- ІСНУЮЧІ СТИЛІ САЙТУ --- */
-
-/* Шапка сайту */
-header {
-  background: #a8dadc;
-  color: #1d3557;
-  padding: 1.5rem 0;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* --- "Кляксы" --- */
+.blob {
+    position: fixed; 
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: 0; 
+    opacity: 0.5; 
+    transition: background 0.5s ease;
+}
+.blob1 {
+    top: -250px;
+    left: -250px;
+    background: var(--blob1-bg);
+}
+.blob2 {
+    bottom: -300px;
+    right: -300px;
+    background: var(--blob2-bg);
 }
 
-/* Плавний скролл */
-html {
-  scroll-behavior: smooth;
+/* --- Общий стиль для <header> и <footer> НА ВСЕХ СТРАНИЦАХ --- */
+header, footer {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 12px; 
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
+    
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin: 20px auto; 
+    max-width: 1200px; 
 }
+/* Убираем лишние отступы на index.html */
+body:has(.container) header, 
+body:has(.container) footer {
+    margin: 20px 0;
+}
+
 
 nav ul {
   list-style: none;
   padding: 0;
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-
-nav ul li {
-  display: inline-block;
-  margin: 0 15px;
-}
+nav ul li { display: inline-block; margin: 0 10px; }
 
 nav ul li a {
-  color: #1d3557;
+  color: var(--link-color-nav);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: color 0.3s, background-color 0.3s;
+}
+nav ul li a:hover {
+  color: var(--link-hover-color);
+  background-color: var(--link-hover-bg-nav);
+}
+nav ul li a.active {
+  color: var(--link-hover-color);
+  background-color: var(--link-active-bg-nav);
 }
 
-nav ul li a:hover, nav ul li a.active {
-  color: #e63946;
+footer a { color: var(--link-color); text-decoration: none; }
+footer a:hover { color: var(--link-hover-color); text-decoration: underline; }
+
+/* --- Кнопка-переключатель темы --- */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 20px;
+  overflow: hidden; 
+  box-shadow: var(--glass-shadow);
+  z-index: 10;
+}
+.theme-toggle-btn .icon-sun { display: none; } 
+.theme-toggle-btn .icon-moon { display: inline-block; }
+
+html[data-theme='dark'] .theme-toggle-btn .icon-sun { display: inline-block; }
+html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
+
+
+/* --- --- --- --- --- --- --- --- --- --- --- */
+/* --- 3. СТИЛИ ДЛЯ INDEX.HTML --- */
+/* --- --- --- --- --- --- --- --- --- --- --- */
+
+/* --- Стиль "Стекло" (только для index.html) --- */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 12px; 
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
 }
 
-/* Секції */
-/*
-  ПОРАДА: Ти вже підключив Bootstrap. 
-  Замість цього стилю, краще в HTML писати:
-  <section class="container my-4 p-4 rounded shadow-sm" style="background-color: #f1faee;">
-  ...це дасть той самий результат, але "мовою" Bootstrap.
-  Поки залишаю, як є.
-*/
-section {
+article.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glass-shadow-hover);
+}
+
+/* --- Ссылки и Текст в карточках (index.html) --- */
+.glass-card h3 a {
+  color: var(--header-text-color); 
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.glass-card h3 a:hover {
+  color: var(--link-hover-color) !important; 
+}
+.text-muted-custom {
+    color: var(--text-muted-color) !important;
+    transition: color 0.3s ease;
+}
+
+
+/* --- --- --- --- --- --- --- --- --- --- --- */
+/* --- 4. СТИЛИ ДЛЯ ДРУГИХ СТРАНИЦ (lab, practice) --- */
+/* --- --- --- --- --- --- --- --- --- --- --- */
+
+/* --- Секции (для lab1, praktichni1, practice4) --- */
+/* (Этот селектор из вашего старого CSS, но теперь с :not) */
+section:not(#about):not(#laboratorni):not(#praktichni) {
   padding: 20px;
   margin: 20px auto;
   max-width: 900px;
-  background: #f1faee;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  
+  background: var(--content-solid-bg); 
+  color: var(--content-solid-text); 
+  transition: background 0.3s ease, color 0.3s ease;
+}
+section:not(#about):not(#laboratorni):not(#praktichni) a {
+    color: var(--link-color);
+}
+section:not(#about):not(#laboratorni):not(#praktichni) a:hover {
+    color: var(--link-hover-color);
 }
 
-/* Форма реєстрації */
-/*
-  ВАЖЛИВО: Я видалив стилі для полів вводу та кнопки.
-  Тобі потрібно додати класи Bootstrap в HTML, щоб форма виглядала добре.
-  Наприклад:
-  <form>
-    ...
-    <label class="form-label">Ім'я</label>
-    <input type="text" class="form-control mb-3">
-    
-    <label class="form-label">Email</label>
-    <input type="email" class="form-control mb-3">
-    
-    <input type="submit" class="btn btn-primary w-100" value="Відправити">
-  </form>
-*/
+
+/* --- Форма (для lab1.html) --- */
+/* (Этот селектор из вашего старого CSS) */
 form {
   max-width: 500px;
   margin: 0 auto;
-  background: #ffffff;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: var(--form-bg);
+  transition: background 0.3s ease;
 }
-
-form h2 {
-  text-align: center;
-  color: #1d3557;
-  margin-bottom: 20px;
+form h2 { 
+    text-align: center; 
+    color: var(--header-text-color);
+    margin-bottom: 20px; 
 }
-
-form label {
-  /* В Bootstrap для <label> використовуй клас .form-label */
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #457b9d;
+form label { 
+    display: block; 
+    margin-bottom: 6px; 
+    font-weight: bold; 
+    color: var(--link-color); 
 }
-
+/* (Остальные стили формы из вашего старого CSS) */
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="date"],
 form select {
-  /* Ці стилі тепер контролює Bootstrap.
-    Додай клас .form-control до інпутів 
-    і .form-select до селектів в HTML.
-  */
+  /* ...ваши старые стили... */
 }
-
 form input[type="submit"] {
-  /* Ці стилі тепер контролює Bootstrap.
-    Додай клас .btn .btn-primary .w-100 до кнопки в HTML.
-  */
+  /* ...ваши старые стили... */
 }
 
 
-/* Футер */
-footer {
-  background: #a8dadc;
-  color: #1d3557;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-  border-top: 3px solid #457b9d;
+/* --- КАСТОМНЫЕ ЦВЕТА ДЛЯ ТАБЛИЦЫ (praktichni1.html) --- */
+/* (Этот селектор из вашего старого CSS) */
+.table-dark {
+  --bs-table-bg: #1d3557; 
+  --bs-table-color: #f1faee; 
+  --bs-table-border-color: #457b9d; 
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-striped-bg: var(--table-striped-bg); 
+  --bs-table-striped-color: var(--table-striped-color); 
+}
+.table-bordered {
+  --bs-table-border-color: #a8dadc; 
 }
 
-/* --- KEYBOARD STYLES --- */
-
+/* --- KEYBOARD STYLES (для practice4.html) --- */
+/* (Остаются без изменений, т.к. у них свой дизайн) */
 .keyboard-container {
-    padding: 20px;
-    margin: 40px auto;
-    max-width: 1400px;
-    background-color: #282c34; 
-    border-radius: 15px;
+    padding: 20px; margin: 40px auto; max-width: 1400px;
+    background-color: #282c34; border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 5px #1e2127; 
-    
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    grid-template-areas: "main nav numpad";
-    gap: 25px; 
+    display: grid; grid-template-columns: 1fr auto auto;
+    grid-template-areas: "main nav numpad"; gap: 25px; 
 }
-
-
+/* ... (все остальные стили .key, .main-keys, .key-row и т.д.) ... */
 .main-keys { grid-area: main; }
 .nav-keys { grid-area: nav; }
 .numpad-keys { grid-area: numpad; }
-
-
-
-.keyboard-container * { 
-    font-family: 'Roboto Mono', monospace; 
-}
-
+.keyboard-container * { font-family: 'Roboto Mono', monospace; }
 .key {
-    background-color: #4b5260;
-    color: #f0f0f0;
-    border: none;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.1s ease;
+    background-color: #4b5260; color: #f0f0f0; border: none;
+    border-radius: 6px; text-align: center; font-size: 14px;
+    cursor: pointer; outline: none; transition: all 0.1s ease;
     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.1), 0 4px 0 #2c313a;
-    height: 45px;
-    padding: 0 5px;
-    
-    flex-grow: 1;
-    flex-basis: 45px;
-    min-width: 45px;
+    height: 45px; padding: 0 5px; flex-grow: 1;
+    flex-basis: 45px; min-width: 45px;
 }
 .key:hover { background-color: #5d6777; }
 .key:active { transform: translateY(2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 #2c313a; }
 .key.pressed {
-    background-color: #e63946;
-    color: #f1faee;
+    background-color: #e63946; color: #f1faee;
     transform: translateY(2px); 
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 #2c313a;
 }
-
-/* --- 1. MAIN KEYS BLOCK --- */
-.main-keys {
-    display: flex;
-    flex-direction: column; 
-    gap: 8px; 
-}
-
-.key-row {
-    display: flex; 
-    gap: 8px; 
-}
-
-
+.main-keys { display: flex; flex-direction: column; gap: 8px; }
+.key-row { display: flex; gap: 8px; }
 .f-row .spacer { flex-basis: 45px; flex-grow: 1; }
 .f-row .spacer-small { flex-basis: 22px; flex-grow: 0.5; }
-
 .backspace { flex-grow: 3; }
 .tab { flex-grow: 2; }
 .slash { flex-grow: 2; }
@@ -251,301 +380,119 @@ footer {
 .win { flex-grow: 1.5; }
 .alt { flex-grow: 1.5; }
 .space { flex-grow: 10; } 
-
-
-/* --- 2. NAV KEYS BLOCK --- */
-.nav-keys {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-}
-
-.function-keys, .edit-keys {
-    display: grid;
-    grid-template-columns: repeat(3, 45px); 
-    gap: 8px;
-}
-
-.arrow-keys {
-    display: grid;
-    grid-template-columns: repeat(3, 45px);
-    grid-template-areas:
-        ". up ."
-        "left down right";
-    gap: 8px;
-}
-
+.nav-keys { display: flex; flex-direction: column; gap: 20px; }
+.function-keys, .edit-keys { display: grid; grid-template-columns: repeat(3, 45px); gap: 8px; }
+.arrow-keys { display: grid; grid-template-columns: repeat(3, 45px); grid-template-areas: ". up ." "left down right"; gap: 8px; }
 .arrow-up { grid-area: up; }
 .arrow-left { grid-area: left; }
 .arrow-down { grid-area: down; }
 .arrow-right { grid-area: right; }
-
-
-/* --- 3. NUMPAD KEYS BLOCK --- */
-.numpad-keys {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.indicator-lights {
-    display: flex;
-    justify-content: flex-end;
-    gap: 5px;
-    height: 10px;
-    padding: 0 5px;
-}
-.indicator-lights span {
-    width: 10px;
-    height: 10px;
-    background: #333;
-    border-radius: 50%;
-    border: 1px solid #555;
-}
-
-.numpad-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 45px); 
-    gap: 8px;
-}
+.numpad-keys { display: flex; flex-direction: column; gap: 8px; }
+.indicator-lights { display: flex; justify-content: flex-end; gap: 5px; height: 10px; padding: 0 5px; }
+.indicator-lights span { width: 10px; height: 10px; background: #333; border-radius: 50%; border: 1px solid #555; }
+.numpad-grid { display: grid; grid-template-columns: repeat(4, 45px); gap: 8px; }
 .numpad-grid .num-plus { grid-row: span 2; height: 100%; }
 .numpad-grid .num-enter { grid-row: span 2; height: 100%; }
 .numpad-grid .num-0 { grid-column: span 2; }
 
-/* --- НОВІ СТИЛІ ДЛЯ ПРАКТИЧНОЇ РОБОТИ №3 (YOUTUBE FLEXBOX) --- */
 
+/* --- YOUTUBE FLEXBOX STYLES (lab3, practice3) --- */
 .youtube-layout {
-    margin: 0; 
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
+    margin: 0 auto; padding: 0; width: 100%;
+    max-width: 1600px;
+    display: flex; flex-direction: column; 
+    color: var(--yt-text);
+    transition: color 0.3s ease;
 }
-
 .header-youtube {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    height: 56px;
-    background-color: #fff;
-    padding: 0 16px;
-    border-bottom: 1px solid #e5e5e5;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    height: 56px; padding: 0 16px;
+    border-bottom: 1px solid var(--yt-border);
+    position: sticky; top: 0; z-index: 100;
+    background-color: var(--yt-bg);
+    transition: background 0.3s ease, border 0.3s ease;
 }
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
-    font-size: 20px;
-}
-
-.logo {
-    font-weight: bold;
-    color: #ff0000; 
-}
-
-.search-container {
-    display: flex;
-    flex-grow: 1; 
-    max-width: 700px; 
-    margin: 0 40px;
-    align-items: center;
-}
-
+.header-left { display: flex; align-items: center; gap: 15px; font-size: 20px; }
+.logo { font-weight: bold; color: #ff0000; }
+.search-container { display: flex; flex-grow: 1; max-width: 700px; margin: 0 40px; align-items: center; }
 .search-container input {
-    flex-grow: 1;
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 40px 0 0 40px; 
-    font-size: 16px;
+    flex-grow: 1; padding: 8px 10px; border: 1px solid var(--yt-border);
+    border-radius: 40px 0 0 40px; font-size: 16px;
+    background-color: var(--yt-bg-grid);
+    color: var(--yt-text);
 }
-
 .search-btn {
-    padding: 8px 20px;
-    border: 1px solid #ccc;
-    background-color: #f8f8f8;
-    border-radius: 0 40px 40px 0; 
-    cursor: pointer;
-    margin-left: -1px; 
-    font-size: 16px;
+    padding: 8px 20px; border: 1px solid var(--yt-border); background-color: var(--yt-btn-bg);
+    border-radius: 0 40px 40px 0; cursor: pointer; margin-left: -1px; font-size: 16px;
+    color: var(--yt-text);
 }
-
-.voice-search {
-    margin-left: 10px;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: #f2f2f2;
-    font-size: 16px;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 20px;
-}
-
-.main-content-wrapper {
-    display: flex;
-    flex-grow: 1;
-}
-
+.voice-search { margin-left: 10px; padding: 8px; border-radius: 50%; background-color: var(--yt-btn-bg); font-size: 16px; color: var(--yt-text); }
+.header-right { display: flex; align-items: center; gap: 20px; font-size: 20px; }
+.main-content-wrapper { display: flex; flex-grow: 1; }
 .sidebar {
-    width: 240px; 
-    min-width: 240px;
-    background-color: #fff;
-    padding-top: 10px;
-    position: sticky; 
-    top: 56px; 
-    height: calc(100vh - 56px); 
-    overflow-y: auto; 
-    border-right: 1px solid #e5e5e5;
+    width: 240px; min-width: 240px; background-color: var(--yt-bg);
+    padding-top: 10px; position: sticky; top: 56px; 
+    height: calc(100vh - 56px); overflow-y: auto; border-right: 1px solid var(--yt-border);
+    transition: background 0.3s ease, border 0.3s ease;
 }
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 10px;
-}
-
-.sidebar ul li {
-    display: flex;
-    align-items: center;
-    padding: 10px 24px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-
-.sidebar ul li:hover {
-    background-color: #f2f2f2;
-}
-
-.sidebar ul li .icon {
-    margin-right: 24px;
-    font-size: 18px;
-    color: #0f0f0f;
-}
-
-.sidebar .active-item {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.sidebar .section-title {
-    font-weight: 600;
-    color: #606060;
-    padding: 10px 24px 5px;
-}
-
-.sidebar hr {
-    border: none;
-    border-top: 1px solid #e5e5e5;
-    margin: 8px 0;
-}
-
+.sidebar ul { list-style: none; padding: 0; margin-bottom: 10px; }
+.sidebar ul li { display: flex; align-items: center; padding: 10px 24px; cursor: pointer; font-size: 14px; font-weight: 500; }
+.sidebar ul li:hover { background-color: var(--yt-btn-hover); }
+.sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--yt-text); }
+.sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; }
+.sidebar .section-title { font-weight: 600; color: var(--yt-text-meta); padding: 10px 24px 5px; }
+.sidebar hr { border: none; border-top: 1px solid var(--yt-border); margin: 8px 0; }
 .video-grid-container {
-    flex-grow: 1; 
-    background-color: #f9f9f9; 
-    padding: 24px 20px; 
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 16px; 
+    flex-grow: 1; background-color: var(--yt-bg-grid); padding: 24px 20px; 
+    display: flex; flex-wrap: wrap; gap: 16px; 
+    transition: background 0.3s ease;
 }
-
 .categories {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 12px;
-    padding: 10px 20px; 
-    background-color: #fff; 
-    border-top: 1px solid #e5e5e5; 
-    border-bottom: 1px solid #e5e5e5;
-    position: sticky;
-    top: 56px; 
-    z-index: 50; 
-    overflow-x: auto; /* Дозволяє скролити категорії по горизонталі */
-    width: 100%; 
-    margin-bottom: 24px; 
+    display: flex; flex-wrap: nowrap; gap: 12px;
+    padding: 10px 20px; background-color: var(--yt-bg); 
+    border-top: 1px solid var(--yt-border); border-bottom: 1px solid var(--yt-border);
+    position: sticky; top: 56px; z-index: 50; 
+    overflow-x: auto; width: 100%; margin-bottom: 24px; 
+    transition: background 0.3s ease, border 0.3s ease;
 }
-
 .category-button {
-    white-space: nowrap; 
-    font-size: 14px;
-    font-weight: 500;
-    background-color: #e5e5e5; 
-    color: #0f0f0f;
-    border: 1px solid #d3d3d3;
-    border-radius: 18px; 
-    padding: 8px 16px;
-    cursor: pointer;
+    white-space: nowrap; font-size: 14px; font-weight: 500;
+    border: 1px solid var(--yt-border);
+    border-radius: 18px; padding: 8px 16px; cursor: pointer;
+    background-color: var(--yt-btn-bg); 
+    color: var(--yt-text);
     transition: background-color 0.2s, color 0.2s; 
 }
-
-.category-button:hover { background-color: #d8d8d8; }
-.category-button.active {
-    background-color: #0f0f0f; 
-    color: #ffffff; 
-    border-color: #0f0f0f;
+.category-button:hover { background-color: var(--yt-btn-hover); }
+.category-button.active { 
+    background-color: var(--yt-btn-active-bg); 
+    color: var(--yt-btn-active-text); 
+    border-color: var(--yt-btn-active-bg);
 }
-
 .video-card {
-    width: calc(25% - 12px); /* 4 колонки */
-    min-height: unset; 
-    padding: 0;
-    text-align: left;
-    display: block; 
-    margin-bottom: 40px; 
-    box-shadow: none;
+    width: calc(25% - 12px); min-height: unset; padding: 0;
+    text-align: left; display: block; margin-bottom: 40px; 
+    box-shadow: none; background: transparent; border: none;
 }
-
 .video-card .thumbnail {
-    width: 100%;
-    height: 0; 
-    padding-bottom: 56.25%; /* 16:9 */
-    background-color: #cccccc; 
-    border-radius: 8px;
-    margin-bottom: 8px;
-    position: relative; 
-    overflow: hidden; 
+    width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 */
+    background-color: #cccccc; border-radius: 8px;
+    margin-bottom: 8px; position: relative; overflow: hidden; 
 }
-
 .video-card .thumbnail img {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 0; 
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; object-fit: cover; border-radius: 0; 
 }
-
-.video-info .title {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.2;
-    color: #0f0f0f;
-    margin-bottom: 4px;
-}
-
+.video-info .title { font-size: 16px; font-weight: 500; line-height: 1.2; color: var(--yt-text); margin-bottom: 4px; }
 .video-info .channel,
-.video-info .meta {
-    font-size: 13px;
-    color: #606060;
-}
+.video-info .meta { font-size: 13px; color: var(--yt-text-meta); }
 
-/* --- PLANNER STYLES --- */
-
+/* --- PLANNER STYLES (lab4) --- */
 .planner-container {
-    display: grid;
-    max-width: 1600px;
-    margin: 0 auto;
-    border: 2px solid #000;
-    background-color: #fff;
+    display: grid; max-width: 1600px; margin: 0 auto;
+    border: 2px solid var(--planner-border);
+    background-color: var(--planner-bg);
+    color: var(--planner-text);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto 1fr 1fr auto;
     grid-template-areas:
@@ -553,100 +500,53 @@ footer {
         "sidebar monday    tuesday   wednesday"
         "sidebar thursday  friday    saturday"
         "sidebar sunday    sunday    sunday";
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
-
-.planner-container > * {
-    border-left: 2px solid #000;
-    border-top: 2px solid #000;
-    padding: 15px;
+.planner-container > * { 
+    border-left: 2px solid var(--planner-border); 
+    border-top: 2px solid var(--planner-border); 
+    padding: 15px; 
+    transition: border 0.3s ease;
 }
 .planner-header,
-.planner-container > *:nth-child(2), /* sidebar */
-.planner-container > *:nth-child(3), /* monday */
-.planner-container > *:nth-child(4), /* tuesday */
-.planner-container > *:nth-child(5) { /* wednesday */
-    border-top: none;
-}
-.planner-header, .planner-sidebar, .day-monday, .day-thursday, .day-sunday {
-    border-left: none;
-}
-
+.planner-container > *:nth-child(2),
+.planner-container > *:nth-child(3),
+.planner-container > *:nth-child(4),
+.planner-container > *:nth-child(5) { border-top: none; }
+.planner-header, .planner-sidebar, .day-monday, .day-thursday, .day-sunday { border-left: none; }
 .planner-header {
-    grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; 
-    gap: 20px;
-    background-color: #fdfdfd;
+    grid-area: header; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 20px; 
+    background-color: var(--planner-sidebar-bg);
+    transition: background 0.3s ease;
 }
-
-.planner-header h1 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
+.planner-header h1 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 2.5rem; letter-spacing: 1px; }
+.header-fields, .header-checks { display: flex; gap: 25px; }
+.check-group, .field-group { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 700; }
+.check-group label { text-transform: uppercase; }
+.planner-sidebar { 
+    grid-area: sidebar; 
+    background-color: var(--planner-sidebar-bg);
+    transition: background 0.3s ease;
 }
-
-.header-fields, .header-checks {
-    display: flex;
-    gap: 25px;
-}
-.check-group, .field-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-.check-group label {
-    text-transform: uppercase;
-}
-
-.planner-sidebar {
-    grid-area: sidebar;
-    background-color: #fdfdfd;
-}
-.sidebar-section {
-    margin-bottom: 25px;
-}
+.sidebar-section { margin-bottom: 25px; }
 .sidebar-section h2 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #000;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.1rem;
+    margin-bottom: 10px; 
+    border-bottom: 2px solid var(--planner-border); 
     padding-bottom: 5px;
+    transition: border 0.3s ease;
 }
-.sidebar-section ul {
-    list-style: none;
-}
-.sidebar-section li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-.day {
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-}
+.sidebar-section ul { list-style: none; padding-left: 0; }
+.sidebar-section li { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.day { min-height: 250px; display: flex; flex-direction: column; }
 .day-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #000;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid var(--planner-border); 
+    padding-bottom: 5px; margin-bottom: 10px;
+    transition: border 0.3s ease;
 }
-.day-header h2 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-}
-
+.day-header h2 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.2rem; }
 .day-monday    { grid-area: monday; }
 .day-tuesday   { grid-area: tuesday; }
 .day-wednesday { grid-area: wednesday; }
@@ -654,263 +554,87 @@ footer {
 .day-friday    { grid-area: friday; }
 .day-saturday  { grid-area: saturday; }
 .day-sunday    { grid-area: sunday; }
-
-.editable-line {
-    border: none;
-    border-bottom: 1.5px solid #ccc;
-    font-family: 'Mulish', sans-serif;
-    font-size: 1rem;
-    width: 100%;
+.editable-line { 
+    border: none; 
+    border-bottom: 1.5px solid var(--planner-line);
+    font-family: 'Mulish', sans-serif; font-size: 1rem; width: 100%;
+    background: transparent;
+    color: var(--planner-text);
+    transition: border 0.3s ease;
 }
-.editable-line:focus {
-    outline: none;
-    border-bottom: 2px solid #000;
+.editable-line:focus { outline: none; border-bottom: 2px solid var(--planner-border); }
+.editable-area { 
+    flex-grow: 1; border: none; resize: none; 
+    font-family: 'Mulish', sans-serif; font-size: 1rem; line-height: 1.6;
+    background: transparent;
+    color: var(--planner-text);
 }
-
-.editable-area {
-    flex-grow: 1; 
-    border: none;
-    resize: none; 
-    font-family: 'Mulish', sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-.editable-area:focus {
-    outline: none;
-}
-
-/*
-  ПОРАДА: Для чекбоксів використовуй структуру Bootstrap:
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="check1">
-    <label class="form-check-label" for="check1">Мій чекбокс</label>
-  </div>
-  Я закоментував твій старий стиль.
-*/
-/*
-input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-*/
-
-.back-link {
-    text-align: center;
-    margin-top: 20px;
-}
+.editable-area:focus { outline: none; }
+.back-link { text-align: center; margin-top: 20px; }
 .back-link a {
-    font-family: 'Oswald', sans-serif;
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background: #fff;
-    border: 2px solid #000;
-    border-radius: 5px;
-    transition: all 0.3s;
+    font-family: 'Oswald', sans-serif; text-decoration: none; 
+    font-size: 1.2rem; padding: 10px 20px; 
+    border-radius: 5px; transition: all 0.3s;
+    background: var(--planner-bg);
+    color: var(--planner-text);
+    border: 2px solid var(--planner-border);
 }
-.back-link a:hover {
-    background: #000;
-    color: #fff;
+.back-link a:hover { 
+    background: var(--planner-text);
+    color: var(--planner-bg);
 }
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- АДАПТАЦІЯ (MEDIA QUERIES) --- */
+/* --- 5. МЕДИА-ЗАПРОСЫ (АДАПТАЦИЯ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* Брейкпойнти Bootstrap:
-  - lg (large): 992px
-  - md (medium): 768px
-  - sm (small): 576px
-  
-  Ми будемо використовувати max-width (спочатку стилі для великого екрану).
-*/
-
-/* 1. Планшети (Medium) і менші */
 @media (max-width: 992px) {
-
-    /* --- YOUTUBE --- */
-    .video-card {
-        width: calc(33.333% - 11px); /* 3 колонки */
-    }
-    .search-container input {
-        display: none; /* Ховаємо поле пошуку, залишаємо іконку */
-    }
-    .search-container {
-        max-width: fit-content;
-        margin: 0 10px;
-    }
-    .search-btn {
-        border-radius: 40px; /* Робимо кнопку круглою */
-        margin-left: 0;
-    }
-
-    /* --- PLANNER --- */
+    .video-card { width: calc(33.333% - 11px); }
+    .search-container input { display: none; }
+    .search-container { max-width: fit-content; margin: 0 10px; }
+    .search-btn { border-radius: 40px; margin-left: 0; }
     .planner-container {
-        /* На планшетах - 2 колонки контенту */
         grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "header  header"
-            "sidebar sidebar"  /* Сайдбар на всю ширину */
-            "monday    tuesday"
-            "wednesday thursday"
-            "friday    saturday"
-            "sunday    sunday";
+        grid-template-areas: "header header" "sidebar sidebar" "monday tuesday" "wednesday thursday" "friday saturday" "sunday sunday";
     }
-    /* Виправляємо рамки для 2-колонкового макету */
-    .planner-container > *:nth-child(n) { border-left: 2px solid #000; } /* Скидання */
-    .planner-header, .planner-sidebar, .day-monday, .day-wednesday, .day-friday, .day-sunday {
-        border-left: none; /* Перший елемент у ряду */
-    }
-    .planner-header h1 {
-        font-size: 2rem; /* Трохи менший заголовок */
-    }
-
-    /* --- KEYBOARD --- */
-    .keyboard-container {
-        /* Клавіатура вже стає завеликою, складаємо її */
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "main"
-            "nav"
-            "numpad";
-        max-width: 95%;
-        gap: 15px;
-    }
-    .main-keys { max-width: 100%; overflow-x: auto; } /* Дозволяємо скрол, якщо не влазить */
+    .planner-container > *:nth-child(n) { border-left: 2px solid var(--planner-border); }
+    .planner-header, .planner-sidebar, .day-monday, .day-wednesday, .day-friday, .day-sunday { border-left: none; }
+    .planner-header h1 { font-size: 2rem; }
+    .keyboard-container { grid-template-columns: 1fr; grid-template-areas: "main" "nav" "numpad"; max-width: 95%; gap: 15px; }
+    .main-keys { max-width: 100%; overflow-x: auto; }
 }
 
-
-/* 2. Телефони (Small) і менші */
 @media (max-width: 768px) {
-
-    /* --- ЗАГАЛЬНІ СТИЛІ --- */
-    body {
-        line-height: 1.5; /* Щільніший текст */
-    }
-    header nav ul li {
-        display: block; /* Складаємо навігацію у стовпчик */
-        margin: 8px 0;
-    }
-    section {
-        margin: 10px; /* Менші відступи по боках */
-        padding: 15px;
-    }
-    form {
-        padding: 20px;
-    }
-
-    /* --- YOUTUBE --- */
-    .main-content-wrapper {
-        flex-direction: column; /* Складаємо сайдбар і контент у стовпчик */
-    }
-    .sidebar {
-        position: static; /* Сайдбар більше не "липне" */
-        height: auto;
-        width: 100%;
-        min-width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #e5e5e5;
-        overflow-y: hidden;
-    }
-    .video-card {
-        width: calc(50% - 8px); /* 2 колонки на телефоні */
-    }
-    .header-right {
-        display: none; /* Ховаємо праві іконки, забагато всього */
-    }
-    .header-left {
-        gap: 10px;
-    }
-    .logo {
-        font-size: 1.2rem;
-    }
-    .video-grid-container {
-        padding: 15px 10px;
-    }
-    .categories {
-        padding: 8px 10px;
-        margin-bottom: 15px;
-    }
-
-    /* --- PLANNER --- */
+    /* Адаптация для index.html */
+    .glass-card { margin-left: 10px; margin-right: 10px; padding: 15px; }
     
-    .planner-container {
-        /* На телефонах - 1 колонка */
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "monday"
-            "tuesday"
-            "wednesday"
-            "thursday"
-            "friday"
-            "saturday"
-            "sunday";
-    }
-    /* Виправляємо рамки для 1-колонкового макету */
-    .planner-container > * {
-        border-left: none; /* Немає лівих рамок */
-        border-top: 2px solid #000; /* Повертаємо верхню рамку для всіх */
-    }
-    .planner-header {
-        border-top: none; /* ...крім хедера */
-        flex-direction: column; /* Складаємо хедер у стовпчик */
-        align-items: flex-start;
-        gap: 15px;
-    }
-    .header-fields, .header-checks {
-        flex-direction: column; /* Складаємо поля хедера */
-        gap: 10px;
-        align-items: flex-start;
-    }
-
-    /* --- KEYBOARD --- */
-    .key {
-        height: 40px;
-        min-width: 35px;
-        flex-basis: 35px;
-        font-size: 12px;
-    }
-    .function-keys, .edit-keys, .numpad-grid, .arrow-keys {
-        grid-template-columns: repeat(3, 35px);
-    }
-    .numpad-grid {
-        grid-template-columns: repeat(4, 35px);
-    }
+    /* Адаптация для lab/practice */
+    .main-content-wrapper { flex-direction: column; }
+    .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--yt-border); overflow-y: hidden; }
+    .video-card { width: calc(50% - 8px); }
+    .header-right { display: none; }
+    .header-left { gap: 10px; }
+    .logo { font-size: 1.2rem; }
+    .video-grid-container { padding: 15px 10px; }
+    .categories { padding: 8px 10px; margin-bottom: 15px; }
+    .planner-container { grid-template-columns: 1fr; grid-template-areas: "header" "sidebar" "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday"; }
+    .planner-container > * { border-left: none; border-top: 2px solid var(--planner-border); }
+    .planner-header { border-top: none; flex-direction: column; align-items: flex-start; gap: 15px; }
+    .header-fields, .header-checks { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .key { height: 40px; min-width: 35px; flex-basis: 35px; font-size: 12px; }
+    .function-keys, .edit-keys, .arrow-keys { grid-template-columns: repeat(3, 35px); }
+    .numpad-grid { grid-template-columns: repeat(4, 35px); }
 }
 
-
-/* 3. Дуже малі екрани (Extra Small) */
 @media (max-width: 576px) {
-    /* --- YOUTUBE --- */
-    .video-card {
-        width: 100%; /* 1 колонка на малих екранах */
-        margin-bottom: 25px;
-    }
-    .video-info .title {
-        font-size: 15px;
-    }
+    /* Адаптация для index.html */
+    #praktichni .row > [class*="col-"] { width: 100%; }
     
-    /* --- PLANNER --- */
-    .planner-header h1 {
-        font-size: 1.8rem;
-    }
-    
-    /* --- KEYBOARD --- */
-    .keyboard-container {
-        padding: 10px;
-        gap: 10px;
-    }
-    .key {
-        height: 35px;
-        min-width: 28px;
-        flex-basis: 28px;
-        font-size: 11px;
-    }
-    /* ...і так далі, клавіатуру адаптувати складно, 
-       можливо, деякі ряди доведеться ховати */
+    /* Адаптация для lab/practice */
+    .video-card { width: 100%; margin-bottom: 25px; }
+    .video-info .title { font-size: 15px; }
+    .planner-header h1 { font-size: 1.8rem; }
+    .keyboard-container { padding: 10px; gap: 10px; }
+    .key { height: 35px; min-width: 28px; flex-basis: 28px; font-size: 11px; }
 }
