@@ -19,7 +19,7 @@
   --header-text-color: #1d3557;
   --text-muted-color: #6c757d; 
   
-  /* "Стекло" (для хедера/футера/карточек) */
+  /* "Стекло" */
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(255, 255, 255, 0.6);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
@@ -32,26 +32,11 @@
   --link-hover-bg-nav: rgba(255, 255, 255, 0.5);
   --link-active-bg-nav: rgba(255, 255, 255, 0.7);
   
-  /* Переменные для суцільного контента (лабы, практики) */
-  --content-solid-bg: #f1faee;
-  --content-solid-text: #333;
-  --form-bg: #ffffff;
-  --table-striped-bg: #f1faee;
+  /* Переменные для лаб/практик */
+  --table-striped-bg: rgba(255, 255, 255, 0.2); /* Полупрозрачный */
   --table-striped-color: #333;
-  --yt-bg: #fff;
-  --yt-bg-grid: #f9f9f9;
-  --yt-text: #0f0f0f;
-  --yt-text-meta: #606060;
-  --yt-border: #e5e5e5;
-  --yt-btn-bg: #e5e5e5;
-  --yt-btn-hover: #d8d8d8;
-  --yt-btn-active-bg: #0f0f0f;
-  --yt-btn-active-text: #ffffff;
-  --planner-bg: #fff;
-  --planner-sidebar-bg: #fdfdfd;
-  --planner-text: #333;
-  --planner-border: #000;
-  --planner-line: #ccc;
+  --table-dark-bg: rgba(255, 255, 255, 0.3); /* Полупрозрачный */
+  --table-dark-color: #1d3557;
 }
 
 /* --- ТЕМНАЯ ТЕМА --- */
@@ -66,7 +51,7 @@ html[data-theme='dark'] {
   --header-text-color: #ffffff; 
   --text-muted-color: #cccccc; 
 
-  /* "Стекло" (для хедера/футера/карточек) */
+  /* "Стекло" */
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
@@ -79,26 +64,11 @@ html[data-theme='dark'] {
   --link-hover-bg-nav: rgba(255, 255, 255, 0.1);
   --link-active-bg-nav: rgba(255, 255, 255, 0.15);
   
-  /* Переменные для суцільного контента (ТЕМНЫЕ) */
-  --content-solid-bg: #222730; 
-  --content-solid-text: #f1faee;
-  --form-bg: #282c34; 
-  --table-striped-bg: #282c34;
+  /* Переменные для лаб/практик (ТЕМНЫЕ) */
+  --table-striped-bg: rgba(255, 255, 255, 0.05); /* Полупрозрачный */
   --table-striped-color: #f1faee;
-  --yt-bg: #212121;
-  --yt-bg-grid: #181818;
-  --yt-text: #ffffff;
-  --yt-text-meta: #aaaaaa;
-  --yt-border: #383838;
-  --yt-btn-bg: #383838;
-  --yt-btn-hover: #555555;
-  --yt-btn-active-bg: #f1f1f1;
-  --yt-btn-active-text: #0f0f0f;
-  --planner-bg: #282c34;
-  --planner-sidebar-bg: #222730;
-  --planner-text: #f1faee;
-  --planner-border: #777;
-  --planner-line: #555;
+  --table-dark-bg: rgba(255, 255, 255, 0.1); /* Полупрозрачный */
+  --table-dark-color: #ffffff;
 }
 
 
@@ -163,11 +133,10 @@ header, footer {
     max-width: 1200px; 
 }
 /* Убираем лишние отступы на index.html */
-body:has(.container) header, 
-body:has(.container) footer {
+body.home-page header, 
+body.home-page footer {
     margin: 20px 0;
 }
-
 
 nav ul {
   list-style: none;
@@ -225,10 +194,12 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 3. СТИЛИ ДЛЯ INDEX.HTML --- */
+/* --- 3. ОБЩИЙ СТИЛЬ "ПЛАШКИ" (ДЛЯ ВСЕХ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* --- Стиль "Стекло" (только для index.html) --- */
+/* --- Главный класс "Стекло" (для index.html) --- */
+/* А также для <section> на lab1, praktichni1 */
+/* И для .youtube-layout, .planner-container */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -239,14 +210,33 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
     position: relative;
     z-index: 2;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
+    padding: 20px;
+    margin: 20px auto; 
+    max-width: 900px;
+}
+/* Стили для .youtube-layout и .planner-container, когда они .glass-card */
+.youtube-layout.glass-card, .planner-container.glass-card {
+    max-width: 1600px;
+    overflow: hidden; /* Важно для обрезки углов */
 }
 
+/* Применяем hover только к карточкам-статьям (на index) */
 article.glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--glass-shadow-hover);
 }
 
-/* --- Ссылки и Текст в карточках (index.html) --- */
+/* Отменяем лишние отступы для карточек на index.html */
+body.home-page .glass-card {
+    margin: 0; 
+    width: 100%;
+    max-width: none;
+}
+body.home-page section#about.glass-card {
+    margin: 20px 0;
+}
+
+/* --- Ссылки и Текст в карточках --- */
 .glass-card h3 a {
   color: var(--header-text-color); 
   transition: color 0.3s ease;
@@ -259,43 +249,26 @@ article.glass-card:hover {
     color: var(--text-muted-color) !important;
     transition: color 0.3s ease;
 }
-
-
-/* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 4. СТИЛИ ДЛЯ ДРУГИХ СТРАНИЦ (lab, practice) --- */
-/* --- --- --- --- --- --- --- --- --- --- --- */
-
-/* --- Секции (для lab1, praktichni1, practice4) --- */
-/* (Этот селектор из вашего старого CSS, но теперь с :not) */
-section:not(#about):not(#laboratorni):not(#praktichni) {
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 900px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  
-  background: var(--content-solid-bg); 
-  color: var(--content-solid-text); 
-  transition: background 0.3s ease, color 0.3s ease;
-}
-section:not(#about):not(#laboratorni):not(#praktichni) a {
+.glass-card a:not(.btn):not(h3 a) {
     color: var(--link-color);
 }
-section:not(#about):not(#laboratorni):not(#praktichni) a:hover {
+.glass-card a:not(.btn):not(h3 a):hover {
     color: var(--link-hover-color);
 }
 
 
+/* --- --- --- --- --- --- --- --- --- --- --- */
+/* --- 4. ИСПРАВЛЕНИЕ КОНФЛИКТОВ --- */
+/* --- --- --- --- --- --- --- --- --- --- --- */
+
 /* --- Форма (для lab1.html) --- */
-/* (Этот селектор из вашего старого CSS) */
-form {
+/* (Это из вашего старого style.css) */
+section.glass-card form {
   max-width: 500px;
   margin: 0 auto;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: var(--form-bg);
-  transition: background 0.3s ease;
+  padding: 0; /* Убираем отступы */
+  box-shadow: none; /* Убираем тень */
+  background: transparent; /* ИСПРАВЛЕНИЕ: Убираем фон */
 }
 form h2 { 
     text-align: center; 
@@ -306,40 +279,45 @@ form label {
     display: block; 
     margin-bottom: 6px; 
     font-weight: bold; 
-    color: var(--link-color); 
+    color: var(--text-color); /* Используем основной цвет текста */
 }
-/* (Остальные стили формы из вашего старого CSS) */
+/* ...остальные стили формы из вашего старого CSS... */
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="date"],
 form select {
-  /* ...ваши старые стили... */
+  /* ... */
 }
 form input[type="submit"] {
-  /* ...ваши старые стили... */
+  /* ... */
 }
 
 
-/* --- КАСТОМНЫЕ ЦВЕТА ДЛЯ ТАБЛИЦЫ (praktichni1.html) --- */
-/* (Этот селектор из вашего старого CSS) */
+/* --- Таблица (praktichni1.html) --- */
+.table {
+    /* ИСПРАВЛЕНИЕ: Убираем фон таблицы, делаем текст адаптивным */
+    --bs-table-bg: transparent;
+    color: var(--text-color); 
+    border-color: var(--glass-border); /* Границы в стиле стекла */
+}
 .table-dark {
-  --bs-table-bg: #1d3557; 
-  --bs-table-color: #f1faee; 
-  --bs-table-border-color: #457b9d; 
+    /* ИСПРАВЛЕНИЕ: делаем шапку таблицы "стеклянной" */
+  --bs-table-bg: var(--table-dark-bg); 
+  --bs-table-color: var(--table-dark-color); 
+  border-color: transparent;
 }
 .table-striped > tbody > tr:nth-of-type(odd) > * {
+    /* ИСПРАВЛЕНИЕ: делаем "зебру" адаптивной */
   --bs-table-striped-bg: var(--table-striped-bg); 
-  --bs-table-striped-color: var(--table-striped-color); 
-}
-.table-bordered {
-  --bs-table-border-color: #a8dadc; 
+  --bs-table-striped-color: var(--text-color); 
 }
 
+
 /* --- KEYBOARD STYLES (для practice4.html) --- */
-/* (Остаются без изменений, т.к. у них свой дизайн) */
+/* (Мы НЕ МЕНЯЕМ эти стили, как вы и просили) */
 .keyboard-container {
-    padding: 20px; margin: 40px auto; max-width: 1400px;
+    padding: 20px; margin: 0 auto; max-width: 1400px;
     background-color: #282c34; border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 5px #1e2127; 
     display: grid; grid-template-columns: 1fr auto auto;
@@ -398,76 +376,91 @@ form input[type="submit"] {
 
 /* --- YOUTUBE FLEXBOX STYLES (lab3, practice3) --- */
 .youtube-layout {
-    margin: 0 auto; padding: 0; width: 100%;
-    max-width: 1600px;
-    display: flex; flex-direction: column; 
-    color: var(--yt-text);
+    /* (Стили .glass-card уже применены к этому блоку) */
+    padding: 20px;
+    color: var(--text-color); /* ИСПРАВЛЕНИЕ: Используем основной текст */
     transition: color 0.3s ease;
 }
 .header-youtube {
     display: flex; justify-content: space-between; align-items: center;
     height: 56px; padding: 0 16px;
-    border-bottom: 1px solid var(--yt-border);
+    border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ: граница в стиле стекла */
     position: sticky; top: 0; z-index: 100;
-    background-color: var(--yt-bg);
-    transition: background 0.3s ease, border 0.3s ease;
+    background-color: transparent; /* ИСПРАВЛЕНИЕ: прозрачный */
 }
 .header-left { display: flex; align-items: center; gap: 15px; font-size: 20px; }
 .logo { font-weight: bold; color: #ff0000; }
 .search-container { display: flex; flex-grow: 1; max-width: 700px; margin: 0 40px; align-items: center; }
 .search-container input {
-    flex-grow: 1; padding: 8px 10px; border: 1px solid var(--yt-border);
+    flex-grow: 1; padding: 8px 10px; 
+    border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     border-radius: 40px 0 0 40px; font-size: 16px;
-    background-color: var(--yt-bg-grid);
-    color: var(--yt-text);
+    background-color: var(--glass-bg); /* ИСПРАВЛЕНИЕ */
+    color: var(--text-color);
 }
 .search-btn {
-    padding: 8px 20px; border: 1px solid var(--yt-border); background-color: var(--yt-btn-bg);
-    border-radius: 0 40px 40px 0; cursor: pointer; margin-left: -1px; font-size: 16px;
-    color: var(--yt-text);
+    padding: 8px 20px; 
+    border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
+    background-color: var(--glass-bg); /* ИСПРАВЛЕНИЕ */
+    border-radius: 0 40px 40px 0; 
+    cursor: pointer; margin-left: -1px; font-size: 16px;
+    color: var(--text-color);
 }
-.voice-search { margin-left: 10px; padding: 8px; border-radius: 50%; background-color: var(--yt-btn-bg); font-size: 16px; color: var(--yt-text); }
+.voice-search { 
+    margin-left: 10px; padding: 8px; border-radius: 50%; 
+    background-color: var(--glass-bg); /* ИСПРАВЛЕНИЕ */
+    font-size: 16px; 
+    color: var(--text-color); 
+}
 .header-right { display: flex; align-items: center; gap: 20px; font-size: 20px; }
 .main-content-wrapper { display: flex; flex-grow: 1; }
 .sidebar {
-    width: 240px; min-width: 240px; background-color: var(--yt-bg);
+    width: 240px; min-width: 240px; 
+    background-color: transparent; /* ИСПРАВЛЕНИЕ */
     padding-top: 10px; position: sticky; top: 56px; 
-    height: calc(100vh - 56px); overflow-y: auto; border-right: 1px solid var(--yt-border);
-    transition: background 0.3s ease, border 0.3s ease;
+    height: calc(100vh - 56px); overflow-y: auto; 
+    border-right: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
 }
 .sidebar ul { list-style: none; padding: 0; margin-bottom: 10px; }
-.sidebar ul li { display: flex; align-items: center; padding: 10px 24px; cursor: pointer; font-size: 14px; font-weight: 500; }
-.sidebar ul li:hover { background-color: var(--yt-btn-hover); }
-.sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--yt-text); }
-.sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; }
-.sidebar .section-title { font-weight: 600; color: var(--yt-text-meta); padding: 10px 24px 5px; }
-.sidebar hr { border: none; border-top: 1px solid var(--yt-border); margin: 8px 0; }
+.sidebar ul li { display: flex; align-items: center; padding: 10px 24px; cursor: pointer; font-size: 14px; font-weight: 500; border-radius: 8px; }
+.sidebar ul li:hover { background-color: var(--glass-bg); } /* ИСПРАВЛЕНИЕ */
+.sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
+.sidebar .active-item { background-color: var(--glass-bg); font-weight: bold; } /* ИСПРАВЛЕНИЕ */
+.sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } /* ИСПРАВЛЕНИЕ */
+.sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } /* ИСПРАВЛЕНИЕ */
 .video-grid-container {
-    flex-grow: 1; background-color: var(--yt-bg-grid); padding: 24px 20px; 
+    flex-grow: 1; 
+    background-color: transparent; /* ИСПРАВЛЕНИЕ */
+    padding: 24px 20px; 
     display: flex; flex-wrap: wrap; gap: 16px; 
-    transition: background 0.3s ease;
 }
 .categories {
     display: flex; flex-wrap: nowrap; gap: 12px;
-    padding: 10px 20px; background-color: var(--yt-bg); 
-    border-top: 1px solid var(--yt-border); border-bottom: 1px solid var(--yt-border);
+    padding: 10px 0; /* Уменьшаем отступы */
+    border-top: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
+    border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     position: sticky; top: 56px; z-index: 50; 
     overflow-x: auto; width: 100%; margin-bottom: 24px; 
-    transition: background 0.3s ease, border 0.3s ease;
+    background-color: transparent; /* ИСПРАВЛЕНИЕ */
 }
 .category-button {
     white-space: nowrap; font-size: 14px; font-weight: 500;
-    border: 1px solid var(--yt-border);
+    border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     border-radius: 18px; padding: 8px 16px; cursor: pointer;
-    background-color: var(--yt-btn-bg); 
-    color: var(--yt-text);
+    background-color: var(--glass-bg); /* ИСПРАВЛЕНИЕ */
+    color: var(--text-color);
     transition: background-color 0.2s, color 0.2s; 
 }
-.category-button:hover { background-color: var(--yt-btn-hover); }
+.category-button:hover { background-color: rgba(255,255,255, 0.3); }
 .category-button.active { 
-    background-color: var(--yt-btn-active-bg); 
-    color: var(--yt-btn-active-text); 
-    border-color: var(--yt-btn-active-bg);
+    background-color: var(--header-text-color); /* ИСПРАВЛЕНИЕ */
+    color: var(--bg-gradient); /* ИСПРАВЛЕНИЕ */
+    border-color: var(--header-text-color);
+}
+html[data-theme='dark'] .category-button.active {
+    background-color: #f1f1f1;
+    color: #0f0f0f;
+    border-color: #f1f1f1;
 }
 .video-card {
     width: calc(25% - 12px); min-height: unset; padding: 0;
@@ -476,23 +469,25 @@ form input[type="submit"] {
 }
 .video-card .thumbnail {
     width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 */
-    background-color: #cccccc; border-radius: 8px;
+    background-color: rgba(128,128,128, 0.3); /* ИСПРАВЛЕНИЕ: полупрозрачный */
+    border-radius: 8px;
     margin-bottom: 8px; position: relative; overflow: hidden; 
 }
 .video-card .thumbnail img {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%; object-fit: cover; border-radius: 0; 
 }
-.video-info .title { font-size: 16px; font-weight: 500; line-height: 1.2; color: var(--yt-text); margin-bottom: 4px; }
+.video-info .title { font-size: 16px; font-weight: 500; line-height: 1.2; color: var(--text-color); margin-bottom: 4px; } /* ИСПРАВЛЕНИЕ */
 .video-info .channel,
-.video-info .meta { font-size: 13px; color: var(--yt-text-meta); }
+.video-info .meta { font-size: 13px; color: var(--text-muted-color); } /* ИСПРАВЛЕНИЕ */
 
 /* --- PLANNER STYLES (lab4) --- */
 .planner-container {
-    display: grid; max-width: 1600px; margin: 0 auto;
-    border: 2px solid var(--planner-border);
-    background-color: var(--planner-bg);
-    color: var(--planner-text);
+    /* (Стили .glass-card уже применены к этому блоку) */
+    display: grid;
+    border-radius: 12px;
+    overflow: hidden; 
+    color: var(--text-color); /* ИСПРАВЛЕНИЕ */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto 1fr 1fr auto;
     grid-template-areas:
@@ -500,13 +495,13 @@ form input[type="submit"] {
         "sidebar monday    tuesday   wednesday"
         "sidebar thursday  friday    saturday"
         "sidebar sunday    sunday    sunday";
-    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 .planner-container > * { 
-    border-left: 2px solid var(--planner-border); 
-    border-top: 2px solid var(--planner-border); 
+    border-left: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ: тонкая граница */
+    border-top: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ: тонкая граница */
     padding: 15px; 
     transition: border 0.3s ease;
+    background-color: transparent; /* ИСПРАВЛЕНИЕ: прозрачный */
 }
 .planner-header,
 .planner-container > *:nth-child(2),
@@ -514,11 +509,14 @@ form input[type="submit"] {
 .planner-container > *:nth-child(4),
 .planner-container > *:nth-child(5) { border-top: none; }
 .planner-header, .planner-sidebar, .day-monday, .day-thursday, .day-sunday { border-left: none; }
+
 .planner-header {
     grid-area: header; display: flex; justify-content: space-between;
     align-items: center; flex-wrap: wrap; gap: 20px; 
-    background-color: var(--planner-sidebar-bg);
-    transition: background 0.3s ease;
+    background-color: rgba(255,255,255, 0.1); /* ИСПРАВЛЕНИЕ: легкий акцент */
+}
+html[data-theme='dark'] .planner-header {
+     background-color: rgba(0,0,0, 0.1);
 }
 .planner-header h1 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 2.5rem; letter-spacing: 1px; }
 .header-fields, .header-checks { display: flex; gap: 25px; }
@@ -526,25 +524,25 @@ form input[type="submit"] {
 .check-group label { text-transform: uppercase; }
 .planner-sidebar { 
     grid-area: sidebar; 
-    background-color: var(--planner-sidebar-bg);
-    transition: background 0.3s ease;
+    background-color: rgba(255,255,255, 0.05); /* ИСПРАВЛЕНИЕ: легкий акцент */
+}
+html[data-theme='dark'] .planner-sidebar {
+     background-color: rgba(0,0,0, 0.05);
 }
 .sidebar-section { margin-bottom: 25px; }
 .sidebar-section h2 {
     font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.1rem;
     margin-bottom: 10px; 
-    border-bottom: 2px solid var(--planner-border); 
+    border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     padding-bottom: 5px;
-    transition: border 0.3s ease;
 }
 .sidebar-section ul { list-style: none; padding-left: 0; }
 .sidebar-section li { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .day { min-height: 250px; display: flex; flex-direction: column; }
 .day-header {
     display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 2px solid var(--planner-border); 
+    border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     padding-bottom: 5px; margin-bottom: 10px;
-    transition: border 0.3s ease;
 }
 .day-header h2 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.2rem; }
 .day-monday    { grid-area: monday; }
@@ -556,32 +554,40 @@ form input[type="submit"] {
 .day-sunday    { grid-area: sunday; }
 .editable-line { 
     border: none; 
-    border-bottom: 1.5px solid var(--planner-line);
+    border-bottom: 1.5px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     font-family: 'Mulish', sans-serif; font-size: 1rem; width: 100%;
     background: transparent;
-    color: var(--planner-text);
-    transition: border 0.3s ease;
+    color: var(--text-color); /* ИСПРАВЛЕНИЕ */
 }
-.editable-line:focus { outline: none; border-bottom: 2px solid var(--planner-border); }
+.editable-line:focus { outline: none; border-bottom: 2px solid var(--text-color); } /* ИСПРАВЛЕНИЕ */
 .editable-area { 
     flex-grow: 1; border: none; resize: none; 
     font-family: 'Mulish', sans-serif; font-size: 1rem; line-height: 1.6;
     background: transparent;
-    color: var(--planner-text);
+    color: var(--text-color); /* ИСПРАВЛЕНИЕ */
 }
 .editable-area:focus { outline: none; }
-.back-link { text-align: center; margin-top: 20px; }
+.back-link { 
+    text-align: center; margin-top: 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 12px; 
+    padding: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+}
 .back-link a {
     font-family: 'Oswald', sans-serif; text-decoration: none; 
     font-size: 1.2rem; padding: 10px 20px; 
     border-radius: 5px; transition: all 0.3s;
-    background: var(--planner-bg);
-    color: var(--planner-text);
-    border: 2px solid var(--planner-border);
+    color: var(--text-color);
 }
 .back-link a:hover { 
-    background: var(--planner-text);
-    color: var(--planner-bg);
+    background: var(--text-color);
+    color: var(--bg-gradient);
 }
 
 
@@ -598,7 +604,7 @@ form input[type="submit"] {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "header header" "sidebar sidebar" "monday tuesday" "wednesday thursday" "friday saturday" "sunday sunday";
     }
-    .planner-container > *:nth-child(n) { border-left: 2px solid var(--planner-border); }
+    .planner-container > *:nth-child(n) { border-left: 1px solid var(--glass-border); }
     .planner-header, .planner-sidebar, .day-monday, .day-wednesday, .day-friday, .day-sunday { border-left: none; }
     .planner-header h1 { font-size: 2rem; }
     .keyboard-container { grid-template-columns: 1fr; grid-template-areas: "main" "nav" "numpad"; max-width: 95%; gap: 15px; }
@@ -606,12 +612,21 @@ form input[type="submit"] {
 }
 
 @media (max-width: 768px) {
-    /* Адаптация для index.html */
+    /* Адаптация для index.html и .glass-card */
     .glass-card { margin-left: 10px; margin-right: 10px; padding: 15px; }
+    body.home-page section#about.glass-card {
+        margin: 20px 10px;
+    }
+    header { padding-left: 15px; padding-right: 15px; }
+    header h1 { font-size: 1.5rem; }
+    .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 18px; }
+    header nav ul { flex-direction: column; gap: 5px; }
+    header nav ul li { display: block; margin: 0; width: 100%; }
+    header nav ul li a { display: block; }
     
     /* Адаптация для lab/practice */
     .main-content-wrapper { flex-direction: column; }
-    .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--yt-border); overflow-y: hidden; }
+    .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); overflow-y: hidden; }
     .video-card { width: calc(50% - 8px); }
     .header-right { display: none; }
     .header-left { gap: 10px; }
@@ -619,7 +634,7 @@ form input[type="submit"] {
     .video-grid-container { padding: 15px 10px; }
     .categories { padding: 8px 10px; margin-bottom: 15px; }
     .planner-container { grid-template-columns: 1fr; grid-template-areas: "header" "sidebar" "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday"; }
-    .planner-container > * { border-left: none; border-top: 2px solid var(--planner-border); }
+    .planner-container > * { border-left: none; border-top: 1px solid var(--glass-border); }
     .planner-header { border-top: none; flex-direction: column; align-items: flex-start; gap: 15px; }
     .header-fields, .header-checks { flex-direction: column; gap: 10px; align-items: flex-start; }
     .key { height: 40px; min-width: 35px; flex-basis: 35px; font-size: 12px; }
