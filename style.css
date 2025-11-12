@@ -33,10 +33,13 @@
   --link-active-bg-nav: rgba(255, 255, 255, 0.7);
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   /* --- Переменные для Лаб/Практик (Светлая Тема) --- */
   
   /* Таблица */
 =======
+=======
+>>>>>>> origin/main
   /* --- Змінні для Лаб/Практичних (Світла Тема) --- */
   
   /* Форма */
@@ -48,7 +51,10 @@
   --form-btn-text: #ffffff; 
 
   /* Таблиця */
+<<<<<<< HEAD
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+>>>>>>> origin/main
   --table-striped-bg: rgba(255, 255, 255, 0.2); 
   --table-striped-color: #333;
   --table-dark-bg: rgba(255, 255, 255, 0.3); 
@@ -95,10 +101,13 @@ html[data-theme='dark'] {
   --link-active-bg-nav: rgba(255, 255, 255, 0.15);
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   /* --- Переменные для Лаб/Практик (Темная Тема) --- */
   
   /* Таблица */
 =======
+=======
+>>>>>>> origin/main
   /* --- Змінні для Лаб/Практичних (Темна Тема) --- */
   
   /* Форма */
@@ -110,7 +119,10 @@ html[data-theme='dark'] {
   --form-btn-text: #1d3557; 
   
   /* Таблиця */
+<<<<<<< HEAD
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+>>>>>>> origin/main
   --table-striped-bg: rgba(255, 255, 255, 0.05);
   --table-striped-color: #f1faee;
   --table-dark-bg: rgba(255, 255, 255, 0.1); 
@@ -258,12 +270,15 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* --- Главный класс "Стекло" --- */
 /* Применяем к .glass-card (на index) и section (на других) */
 .glass-card,
 section:not([class*="lab2-"]) /* Исключаем lab2 */
 {
 =======
+=======
+>>>>>>> origin/main
 /* --- Головний клас "Скло" --- */
 /* Застосовуємо до .glass-card (на index) та section (на інших) */
 .glass-card {
@@ -281,6 +296,7 @@ section:not([class*="lab2-"]) /* Исключаем lab2 */
     margin: 20px auto; 
     max-width: 900px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     color: var(--text-color); /* Адаптивный цвет текста */
 }
 /* Ссылки внутри плашек */
@@ -293,16 +309,24 @@ section:not([class*="lab2-"]) a:not(.btn):not(h3 a):hover {
 =======
     color: var(--text-color); /* Адаптивний колір тексту */
 }
+=======
+    color: var(--text-color); /* Адаптивний колір тексту */
+}
+>>>>>>> origin/main
 /* Посилання всередині плашок */
 .glass-card a:not(.btn):not(h3 a) {
     color: var(--link-color);
 }
 .glass-card a:not(.btn):not(h3 a):hover {
+<<<<<<< HEAD
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+>>>>>>> origin/main
     color: var(--link-hover-color);
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* --- СТИЛИ ДЛЯ INDEX.HTML --- */
 
@@ -312,6 +336,11 @@ section:not([class*="lab2-"]) a:not(.btn):not(h3 a):hover {
 
 /* Застосовуємо hover тільки до карток-статей (на index) */
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+/* --- СТИЛІ ДЛЯ INDEX.HTML --- */
+
+/* Застосовуємо hover тільки до карток-статей (на index) */
+>>>>>>> origin/main
 body.home-page article.glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--glass-shadow-hover);
@@ -328,10 +357,14 @@ body.home-page section#about.glass-card {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* --- Ссылки и Текст в карточках (index.html) --- */
 =======
 /* --- Посилання та Текст в картках (index.html) --- */
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+/* --- Посилання та Текст в картках (index.html) --- */
+>>>>>>> origin/main
 .glass-card h3 a {
   color: var(--header-text-color); 
   transition: color 0.3s ease;
@@ -352,9 +385,12 @@ body.home-page section#about.glass-card {
 
 /* --- Форма (для lab1.html) --- */
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* (Это из вашего старого style.css) */
 section form {
 =======
+=======
+>>>>>>> origin/main
 section.glass-card form {
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
   max-width: 500px;
@@ -362,10 +398,14 @@ section.glass-card form {
   padding: 0; 
   box-shadow: none; 
 <<<<<<< HEAD
+<<<<<<< HEAD
   background: transparent; /* ИСПРАВЛЕНИЕ: Убираем фон */
 =======
   background: transparent; /* ВИПРАВЛЕННЯ: Прибираємо фон */
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+  background: transparent; /* ВИПРАВЛЕННЯ: Прибираємо фон */
+>>>>>>> origin/main
 }
 form h2 { 
     text-align: center; 
@@ -379,15 +419,20 @@ form label {
     color: var(--text-color); 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Стилизуем инпуты, чтобы их было видно */
 =======
 /* ВИПРАВЛЕННЯ: Стилізуємо інпути, щоб вони були "скляними" */
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+/* ВИПРАВЛЕННЯ: Стилізуємо інпути, щоб вони були "скляними" */
+>>>>>>> origin/main
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="date"],
 form select {
+<<<<<<< HEAD
 <<<<<<< HEAD
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -396,6 +441,8 @@ form select {
     padding: 5px;
     width: 100%;
 =======
+=======
+>>>>>>> origin/main
     background: var(--input-bg);
     border: 1px solid var(--input-border);
     color: var(--input-text);
@@ -404,7 +451,10 @@ form select {
     width: 100%;
     box-sizing: border-box; 
     transition: border-color 0.3s ease, background 0.3s ease;
+<<<<<<< HEAD
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+>>>>>>> origin/main
 }
 form input[type="text"]:focus,
 form input[type="email"]:focus,
@@ -423,8 +473,11 @@ html[data-theme='dark'] form select option {
 /* ВИПРАВЛЕННЯ КНОПКИ (Скріншот) */
 form input[type="submit"] {
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* ...ваши старые стили... */
 =======
+=======
+>>>>>>> origin/main
     background: var(--form-btn-bg); 
     color: var(--form-btn-text); 
     border: none;
@@ -441,17 +494,24 @@ form input[type="submit"]:hover {
 }
 html[data-theme='dark'] form input[type="submit"]:hover {
     color: #1d3557;
+<<<<<<< HEAD
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+>>>>>>> origin/main
 }
 
 
 /* --- Таблиця (praktichni1.html) --- */
 .table {
 <<<<<<< HEAD
+<<<<<<< HEAD
     --bs-table-bg: transparent; /* ИСПРАВЛЕНИЕ */
 =======
     --bs-table-bg: transparent; /* ВИПРАВЛЕННЯ */
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    --bs-table-bg: transparent; /* ВИПРАВЛЕННЯ */
+>>>>>>> origin/main
     color: var(--text-color); 
     border-color: var(--glass-border); 
 }
@@ -529,12 +589,17 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 /* --- СТИЛІ YOUTUBE (lab3, practice3) --- */
 .youtube-layout {
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* ИСПРАВЛЕНИЕ: Этот блок теперь .glass-card */
     padding: 20px;
 =======
     /* (Стилі .glass-card вже застосовані до цього блоку) */
     padding: 0; 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    /* (Стилі .glass-card вже застосовані до цього блоку) */
+    padding: 0; 
+>>>>>>> origin/main
     max-width: 1600px;
     color: var(--text-color); 
     transition: color 0.3s ease;
@@ -544,6 +609,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     display: flex; justify-content: space-between; align-items: center;
     height: 56px; padding: 0 16px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     position: sticky; top: 0; z-index: 100;
     background-color: transparent; /* ИСПРАВЛЕНИЕ */
@@ -552,6 +618,11 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     position: sticky; top: 0; z-index: 100;
     background-color: transparent; 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    border-bottom: 1px solid var(--glass-border); 
+    position: sticky; top: 0; z-index: 100;
+    background-color: transparent; 
+>>>>>>> origin/main
 }
 .header-left { display: flex; align-items: center; gap: 15px; font-size: 20px; }
 .logo { font-weight: bold; color: #ff0000; }
@@ -561,14 +632,19 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     border: 1px solid var(--glass-border); 
     border-radius: 40px 0 0 40px; font-size: 16px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: var(--yt-bg); /* ИСПРАВЛЕНИЕ */
 =======
     background-color: var(--yt-bg); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    background-color: var(--yt-bg); 
+>>>>>>> origin/main
     color: var(--text-color);
 }
 .search-btn {
     padding: 8px 20px; 
+<<<<<<< HEAD
 <<<<<<< HEAD
     border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
@@ -576,6 +652,10 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     border: 1px solid var(--glass-border); 
     background-color: var(--yt-btn-bg); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    border: 1px solid var(--glass-border); 
+    background-color: var(--yt-btn-bg); 
+>>>>>>> origin/main
     border-radius: 0 40px 40px 0; 
     cursor: pointer; margin-left: -1px; font-size: 16px;
     color: var(--text-color);
@@ -583,10 +663,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .voice-search { 
     margin-left: 10px; padding: 8px; border-radius: 50%; 
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
 =======
     background-color: var(--yt-btn-bg); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    background-color: var(--yt-btn-bg); 
+>>>>>>> origin/main
     font-size: 16px; 
     color: var(--text-color); 
 }
@@ -602,6 +686,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .sidebar ul { list-style: none; padding: 0; margin-bottom: 10px; }
 .sidebar ul li { display: flex; align-items: center; padding: 10px 24px; cursor: pointer; font-size: 14px; font-weight: 500; border-radius: 8px; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .sidebar ul li:hover { background-color: var(--yt-btn-hover); } /* ИСПРАВЛЕНИЕ */
 .sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
 .sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; } /* ИСПРАВЛЕНИЕ */
@@ -614,6 +699,13 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } 
 .sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+.sidebar ul li:hover { background-color: var(--yt-btn-hover); } 
+.sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
+.sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; } 
+.sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } 
+.sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } 
+>>>>>>> origin/main
 .video-grid-container {
     flex-grow: 1; 
     background-color: transparent; 
@@ -623,6 +715,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .categories {
     display: flex; flex-wrap: nowrap; gap: 12px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding: 10px 0;
     border-top: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
@@ -631,6 +724,11 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     border-top: 1px solid var(--glass-border); 
     border-bottom: 1px solid var(--glass-border); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    padding: 10px 20px; 
+    border-top: 1px solid var(--glass-border); 
+    border-bottom: 1px solid var(--glass-border); 
+>>>>>>> origin/main
     position: sticky; top: 56px; z-index: 50; 
     overflow-x: auto; width: 100%; margin-bottom: 24px; 
     background-color: transparent; 
@@ -640,10 +738,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     border: 1px solid var(--glass-border); 
     border-radius: 18px; padding: 8px 16px; cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
 =======
     background-color: var(--yt-btn-bg); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    background-color: var(--yt-btn-bg); 
+>>>>>>> origin/main
     color: var(--text-color);
     transition: background-color 0.2s, color 0.2s; 
 }
@@ -672,10 +774,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .video-info .channel,
 .video-info .meta { font-size: 13px; color: var(--text-muted-color); } 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 
+=======
+
+>>>>>>> origin/main
 
 /* --- СТИЛІ ПЛАНЕРА (lab4) --- */
 .planner-container {
@@ -694,6 +800,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 }
 .planner-container > * { 
 <<<<<<< HEAD
+<<<<<<< HEAD
     border-left: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
     border-top: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
     padding: 15px; 
@@ -706,6 +813,13 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     transition: border 0.3s ease;
     background-color: transparent; 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    border-left: 1px solid var(--planner-border); 
+    border-top: 1px solid var(--planner-border); 
+    padding: 15px; 
+    transition: border 0.3s ease;
+    background-color: transparent; 
+>>>>>>> origin/main
 }
 .planner-header,
 .planner-container > *:nth-child(2),
@@ -718,10 +832,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     grid-area: header; display: flex; justify-content: space-between;
     align-items: center; flex-wrap: wrap; gap: 20px; 
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: var(--planner-accent-bg); /* ИСПРАВЛЕНИЕ */
 =======
     background-color: var(--planner-accent-bg); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    background-color: var(--planner-accent-bg); 
+>>>>>>> origin/main
 }
 .planner-header h1 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 2.5rem; letter-spacing: 1px; }
 .header-fields, .header-checks { display: flex; gap: 25px; }
@@ -730,20 +848,28 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .planner-sidebar { 
     grid-area: sidebar; 
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: var(--planner-accent-bg); /* ИСПРАВЛЕНИЕ */
 =======
     background-color: var(--planner-accent-bg); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    background-color: var(--planner-accent-bg); 
+>>>>>>> origin/main
 }
 .sidebar-section { margin-bottom: 25px; }
 .sidebar-section h2 {
     font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.1rem;
     margin-bottom: 10px; 
 <<<<<<< HEAD
+<<<<<<< HEAD
     border-bottom: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
 =======
     border-bottom: 1px solid var(--planner-border); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    border-bottom: 1px solid var(--planner-border); 
+>>>>>>> origin/main
     padding-bottom: 5px;
 }
 .sidebar-section ul { list-style: none; padding-left: 0; }
@@ -752,10 +878,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .day-header {
     display: flex; justify-content: space-between; align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
     border-bottom: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
 =======
     border-bottom: 1px solid var(--planner-border); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    border-bottom: 1px solid var(--planner-border); 
+>>>>>>> origin/main
     padding-bottom: 5px; margin-bottom: 10px;
 }
 .day-header h2 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.2rem; }
@@ -769,10 +899,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .editable-line { 
     border: none; 
 <<<<<<< HEAD
+<<<<<<< HEAD
     border-bottom: 1.5px solid var(--planner-line); /* ИСПРАВЛЕНИЕ */
 =======
     border-bottom: 1.5px solid var(--planner-line); 
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+    border-bottom: 1.5px solid var(--planner-line); 
+>>>>>>> origin/main
     font-family: 'Mulish', sans-serif; font-size: 1rem; width: 100%;
     background: transparent;
     color: var(--text-color);
@@ -814,6 +948,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @media (max-width: 992px) {
     .video-card { width: calc(33.333% - 11px); }
     .search-container input { display: none; }
@@ -829,6 +964,8 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     .keyboard-container { grid-template-columns: 1fr; grid-template-areas: "main" "nav" "numpad"; max-width: 95%; gap: 15px; }
     .main-keys { max-width: 100%; overflow-x: auto; }
 =======
+=======
+>>>>>>> origin/main
 /* --- Сцена --- */
 .animation-scene {
     position: relative;
@@ -846,7 +983,10 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     );
     background-size: 400% 400%; 
     animation: sky-gradient 15s ease infinite;
+<<<<<<< HEAD
 >>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
+=======
+>>>>>>> origin/main
 }
 
 /* Ключові кадри для неба */
