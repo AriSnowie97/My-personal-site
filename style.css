@@ -1,13 +1,13 @@
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 1. ОПРЕДЕЛЕНИЕ ТЕМ (ПЕРЕМЕННЫЕ) --- */
+/* --- 1. ВИЗНАЧЕННЯ ТЕМ (ЗМІННІ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* Импортируем шрифты */
+/* Імпортуємо шрифти */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-/* --- :root (СВЕТЛАЯ ТЕМА по умолчанию) --- */
+/* --- :root (СВІТЛА ТЕМА за замовчуванням) --- */
 :root {
   /* Фон */
   --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -19,22 +19,36 @@
   --header-text-color: #1d3557;
   --text-muted-color: #6c757d; 
   
-  /* "Стекло" */
+  /* "Скло" */
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(255, 255, 255, 0.6);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
 
-  /* Ссылки */
+  /* Посилання */
   --link-color: #457b9d;
   --link-color-nav: #1d3557;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.5);
   --link-active-bg-nav: rgba(255, 255, 255, 0.7);
   
+<<<<<<< HEAD
   /* --- Переменные для Лаб/Практик (Светлая Тема) --- */
   
   /* Таблица */
+=======
+  /* --- Змінні для Лаб/Практичних (Світла Тема) --- */
+  
+  /* Форма */
+  --input-bg: rgba(255, 255, 255, 0.5);
+  --input-border: rgba(255, 255, 255, 0.7);
+  --input-focus-border: var(--link-color-nav);
+  --input-text: var(--text-color);
+  --form-btn-bg: var(--header-text-color);
+  --form-btn-text: #ffffff; 
+
+  /* Таблиця */
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
   --table-striped-bg: rgba(255, 255, 255, 0.2); 
   --table-striped-color: #333;
   --table-dark-bg: rgba(255, 255, 255, 0.3); 
@@ -55,7 +69,7 @@
   --planner-line: var(--glass-border);
 }
 
-/* --- ТЕМНАЯ ТЕМА --- */
+/* --- ТЕМНА ТЕМА --- */
 html[data-theme='dark'] {
   /* Фон */
   --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
@@ -67,22 +81,36 @@ html[data-theme='dark'] {
   --header-text-color: #ffffff; 
   --text-muted-color: #cccccc; 
 
-  /* "Стекло" */
+  /* "Скло" */
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
   --glass-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
 
-  /* Ссылки */
+  /* Посилання */
   --link-color: #a8dadc;
   --link-color-nav: #ffffff;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.1);
   --link-active-bg-nav: rgba(255, 255, 255, 0.15);
   
+<<<<<<< HEAD
   /* --- Переменные для Лаб/Практик (Темная Тема) --- */
   
   /* Таблица */
+=======
+  /* --- Змінні для Лаб/Практичних (Темна Тема) --- */
+  
+  /* Форма */
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-border: var(--link-color);
+  --input-text: var(--text-color);
+  --form-btn-bg: var(--header-text-color); 
+  --form-btn-text: #1d3557; 
+  
+  /* Таблиця */
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
   --table-striped-bg: rgba(255, 255, 255, 0.05);
   --table-striped-color: #f1faee;
   --table-dark-bg: rgba(255, 255, 255, 0.1); 
@@ -105,7 +133,7 @@ html[data-theme='dark'] {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 2. ОБЩИЕ СТИЛИ (body, header, footer) --- */
+/* --- 2. ЗАГАЛЬНІ СТИЛІ (body, header, footer) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 html {
   scroll-behavior: smooth;
@@ -124,7 +152,7 @@ body {
   transition: background 0.3s ease, color 0.3s ease; 
 }
 
-/* --- "Кляксы" --- */
+/* --- "Краплі" --- */
 .blob {
     position: fixed; 
     width: 600px;
@@ -146,7 +174,7 @@ body {
     background: var(--blob2-bg);
 }
 
-/* --- Общий стиль для <header> и <footer> НА ВСЕХ СТРАНИЦАХ --- */
+/* --- Загальний стиль для <header> та <footer> НА ВСІХ СТОРІНКАХ --- */
 header, footer {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -164,7 +192,7 @@ header, footer {
     margin: 20px auto; 
     max-width: 1200px; 
 }
-/* Убираем лишние отступы на index.html */
+/* Прибираємо зайві відступи на index.html */
 body.home-page header, 
 body.home-page footer {
     margin: 20px 0;
@@ -201,7 +229,7 @@ nav ul li a.active {
 footer a { color: var(--link-color); text-decoration: none; }
 footer a:hover { color: var(--link-hover-color); text-decoration: underline; }
 
-/* --- Кнопка-переключатель темы --- */
+/* --- Кнопка-перемикач теми --- */
 .theme-toggle-btn {
   position: absolute;
   top: 20px;
@@ -226,14 +254,20 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 3. ОБЩИЙ СТИЛЬ "ПЛАШКИ" (ДЛЯ ВСЕХ) --- */
+/* --- 3. ЗАГАЛЬНИЙ СТИЛЬ "ПЛАШКИ" (ДЛЯ ВСІХ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
+<<<<<<< HEAD
 /* --- Главный класс "Стекло" --- */
 /* Применяем к .glass-card (на index) и section (на других) */
 .glass-card,
 section:not([class*="lab2-"]) /* Исключаем lab2 */
 {
+=======
+/* --- Головний клас "Скло" --- */
+/* Застосовуємо до .glass-card (на index) та section (на інших) */
+.glass-card {
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -246,6 +280,7 @@ section:not([class*="lab2-"]) /* Исключаем lab2 */
     padding: 20px;
     margin: 20px auto; 
     max-width: 900px;
+<<<<<<< HEAD
     color: var(--text-color); /* Адаптивный цвет текста */
 }
 /* Ссылки внутри плашек */
@@ -255,19 +290,34 @@ section:not([class*="lab2-"]) a:not(.btn):not(h3 a) {
 }
 .glass-card a:not(.btn):not(h3 a):hover,
 section:not([class*="lab2-"]) a:not(.btn):not(h3 a):hover {
+=======
+    color: var(--text-color); /* Адаптивний колір тексту */
+}
+/* Посилання всередині плашок */
+.glass-card a:not(.btn):not(h3 a) {
+    color: var(--link-color);
+}
+.glass-card a:not(.btn):not(h3 a):hover {
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     color: var(--link-hover-color);
 }
 
 
+<<<<<<< HEAD
 /* --- СТИЛИ ДЛЯ INDEX.HTML --- */
 
 /* Применяем hover только к карточкам-статьям (на index) */
+=======
+/* --- СТИЛІ ДЛЯ INDEX.HTML --- */
+
+/* Застосовуємо hover тільки до карток-статей (на index) */
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 body.home-page article.glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--glass-shadow-hover);
 }
 
-/* Отменяем лишние отступы для карточек на index.html */
+/* Прибираємо зайві відступи для карток на index.html */
 body.home-page .glass-card {
     margin: 0; 
     width: 100%;
@@ -277,7 +327,11 @@ body.home-page section#about.glass-card {
     margin: 20px 0;
 }
 
+<<<<<<< HEAD
 /* --- Ссылки и Текст в карточках (index.html) --- */
+=======
+/* --- Посилання та Текст в картках (index.html) --- */
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 .glass-card h3 a {
   color: var(--header-text-color); 
   transition: color 0.3s ease;
@@ -293,17 +347,25 @@ body.home-page section#about.glass-card {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 4. ИСПРАВЛЕНИЕ КОНФЛИКТОВ --- */
+/* --- 4. ВИРІШЕННЯ КОНФЛІКТІВ --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
 /* --- Форма (для lab1.html) --- */
+<<<<<<< HEAD
 /* (Это из вашего старого style.css) */
 section form {
+=======
+section.glass-card form {
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
   max-width: 500px;
   margin: 0 auto;
   padding: 0; 
   box-shadow: none; 
+<<<<<<< HEAD
   background: transparent; /* ИСПРАВЛЕНИЕ: Убираем фон */
+=======
+  background: transparent; /* ВИПРАВЛЕННЯ: Прибираємо фон */
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
 form h2 { 
     text-align: center; 
@@ -316,27 +378,80 @@ form label {
     font-weight: bold; 
     color: var(--text-color); 
 }
+<<<<<<< HEAD
 /* Стилизуем инпуты, чтобы их было видно */
+=======
+/* ВИПРАВЛЕННЯ: Стилізуємо інпути, щоб вони були "скляними" */
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="date"],
 form select {
+<<<<<<< HEAD
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     color: var(--text-color);
     border-radius: 5px;
     padding: 5px;
     width: 100%;
+=======
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--input-text);
+    border-radius: 5px;
+    padding: 8px 12px; 
+    width: 100%;
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease, background 0.3s ease;
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+}
+/* Стиль для <option> в темній темі */
+html[data-theme='dark'] form select option {
+    background: #333;
+    color: #fff;
+}
+
+/* ВИПРАВЛЕННЯ КНОПКИ (Скріншот) */
 form input[type="submit"] {
+<<<<<<< HEAD
     /* ...ваши старые стили... */
+=======
+    background: var(--form-btn-bg); 
+    color: var(--form-btn-text); 
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    width: auto; 
+}
+form input[type="submit"]:hover {
+    background: var(--link-hover-color);
+    color: var(--form-btn-text); 
+}
+html[data-theme='dark'] form input[type="submit"]:hover {
+    color: #1d3557;
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
 
 
-/* --- Таблица (praktichni1.html) --- */
+/* --- Таблиця (praktichni1.html) --- */
 .table {
+<<<<<<< HEAD
     --bs-table-bg: transparent; /* ИСПРАВЛЕНИЕ */
+=======
+    --bs-table-bg: transparent; /* ВИПРАВЛЕННЯ */
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     color: var(--text-color); 
     border-color: var(--glass-border); 
 }
@@ -351,8 +466,8 @@ form input[type="submit"] {
 }
 
 
-/* --- KEYBOARD STYLES (для practice4.html) --- */
-/* (Мы НЕ МЕНЯЕМ эти стили, как вы и просили) */
+/* --- СТИЛІ КЛАВІАТУРИ (для practice4.html) --- */
+/* (НЕ ЗМІНЮЄМО, як ви і просили) */
 .keyboard-container {
     padding: 20px; margin: 0 auto; max-width: 1400px;
     background-color: #282c34; border-radius: 15px;
@@ -360,7 +475,7 @@ form input[type="submit"] {
     display: grid; grid-template-columns: 1fr auto auto;
     grid-template-areas: "main nav numpad"; gap: 25px; 
 }
-/* ... (все остальные стили .key, .main-keys, .key-row и т.д.) ... */
+/* ... (всі інші стилі .key, .main-keys, .key-row тощо) ... */
 .main-keys { grid-area: main; }
 .nav-keys { grid-area: nav; }
 .numpad-keys { grid-area: numpad; }
@@ -411,42 +526,67 @@ form input[type="submit"] {
 .numpad-grid .num-0 { grid-column: span 2; }
 
 
-/* --- YOUTUBE FLEXBOX STYLES (lab3, practice3) --- */
+/* --- СТИЛІ YOUTUBE (lab3, practice3) --- */
 .youtube-layout {
+<<<<<<< HEAD
     /* ИСПРАВЛЕНИЕ: Этот блок теперь .glass-card */
     padding: 20px;
+=======
+    /* (Стилі .glass-card вже застосовані до цього блоку) */
+    padding: 0; 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     max-width: 1600px;
     color: var(--text-color); 
     transition: color 0.3s ease;
+    overflow: hidden; 
 }
 .header-youtube {
     display: flex; justify-content: space-between; align-items: center;
     height: 56px; padding: 0 16px;
+<<<<<<< HEAD
     border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     position: sticky; top: 0; z-index: 100;
     background-color: transparent; /* ИСПРАВЛЕНИЕ */
+=======
+    border-bottom: 1px solid var(--glass-border); 
+    position: sticky; top: 0; z-index: 100;
+    background-color: transparent; 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
 .header-left { display: flex; align-items: center; gap: 15px; font-size: 20px; }
 .logo { font-weight: bold; color: #ff0000; }
 .search-container { display: flex; flex-grow: 1; max-width: 700px; margin: 0 40px; align-items: center; }
 .search-container input {
     flex-grow: 1; padding: 8px 10px; 
-    border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
+    border: 1px solid var(--glass-border); 
     border-radius: 40px 0 0 40px; font-size: 16px;
+<<<<<<< HEAD
     background-color: var(--yt-bg); /* ИСПРАВЛЕНИЕ */
+=======
+    background-color: var(--yt-bg); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     color: var(--text-color);
 }
 .search-btn {
     padding: 8px 20px; 
+<<<<<<< HEAD
     border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
+=======
+    border: 1px solid var(--glass-border); 
+    background-color: var(--yt-btn-bg); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     border-radius: 0 40px 40px 0; 
     cursor: pointer; margin-left: -1px; font-size: 16px;
     color: var(--text-color);
 }
 .voice-search { 
     margin-left: 10px; padding: 8px; border-radius: 50%; 
+<<<<<<< HEAD
     background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
+=======
+    background-color: var(--yt-btn-bg); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     font-size: 16px; 
     color: var(--text-color); 
 }
@@ -454,38 +594,56 @@ form input[type="submit"] {
 .main-content-wrapper { display: flex; flex-grow: 1; }
 .sidebar {
     width: 240px; min-width: 240px; 
-    background-color: transparent; /* ИСПРАВЛЕНИЕ */
+    background-color: transparent; 
     padding-top: 10px; position: sticky; top: 56px; 
     height: calc(100vh - 56px); overflow-y: auto; 
-    border-right: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
+    border-right: 1px solid var(--glass-border); 
 }
 .sidebar ul { list-style: none; padding: 0; margin-bottom: 10px; }
 .sidebar ul li { display: flex; align-items: center; padding: 10px 24px; cursor: pointer; font-size: 14px; font-weight: 500; border-radius: 8px; }
+<<<<<<< HEAD
 .sidebar ul li:hover { background-color: var(--yt-btn-hover); } /* ИСПРАВЛЕНИЕ */
 .sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
 .sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; } /* ИСПРАВЛЕНИЕ */
 .sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } /* ИСПРАВЛЕНИЕ */
 .sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } /* ИСПРАВЛЕНИЕ */
+=======
+.sidebar ul li:hover { background-color: var(--yt-btn-hover); } 
+.sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
+.sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; } 
+.sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } 
+.sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 .video-grid-container {
     flex-grow: 1; 
-    background-color: transparent; /* ИСПРАВЛЕНИЕ */
+    background-color: transparent; 
     padding: 24px 20px; 
     display: flex; flex-wrap: wrap; gap: 16px; 
 }
 .categories {
     display: flex; flex-wrap: nowrap; gap: 12px;
+<<<<<<< HEAD
     padding: 10px 0;
     border-top: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
     border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
+=======
+    padding: 10px 20px; 
+    border-top: 1px solid var(--glass-border); 
+    border-bottom: 1px solid var(--glass-border); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     position: sticky; top: 56px; z-index: 50; 
     overflow-x: auto; width: 100%; margin-bottom: 24px; 
-    background-color: transparent; /* ИСПРАВЛЕНИЕ */
+    background-color: transparent; 
 }
 .category-button {
     white-space: nowrap; font-size: 14px; font-weight: 500;
-    border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
+    border: 1px solid var(--glass-border); 
     border-radius: 18px; padding: 8px 16px; cursor: pointer;
+<<<<<<< HEAD
     background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
+=======
+    background-color: var(--yt-btn-bg); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     color: var(--text-color);
     transition: background-color 0.2s, color 0.2s; 
 }
@@ -502,7 +660,7 @@ form input[type="submit"] {
 }
 .video-card .thumbnail {
     width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 */
-    background-color: rgba(128,128,128, 0.3); /* ИСПРАВЛЕНИЕ: полупрозрачный */
+    background-color: rgba(128,128,128, 0.3); 
     border-radius: 8px;
     margin-bottom: 8px; position: relative; overflow: hidden; 
 }
@@ -513,11 +671,15 @@ form input[type="submit"] {
 .video-info .title { font-size: 16px; font-weight: 500; line-height: 1.2; color: var(--text-color); margin-bottom: 4px; } 
 .video-info .channel,
 .video-info .meta { font-size: 13px; color: var(--text-muted-color); } 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 
 
-/* --- PLANNER STYLES (lab4) --- */
+/* --- СТИЛІ ПЛАНЕРА (lab4) --- */
 .planner-container {
-    /* (Стили .glass-card уже применены к этому блоку) */
+    /* (Стилі .glass-card вже застосовані до цього блоку) */
     display: grid;
     border-radius: 12px;
     overflow: hidden; 
@@ -531,11 +693,19 @@ form input[type="submit"] {
         "sidebar sunday    sunday    sunday";
 }
 .planner-container > * { 
+<<<<<<< HEAD
     border-left: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
     border-top: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
     padding: 15px; 
     transition: border 0.3s ease;
     background-color: transparent; /* ИСПРАВЛЕНИЕ */
+=======
+    border-left: 1px solid var(--planner-border); 
+    border-top: 1px solid var(--planner-border); 
+    padding: 15px; 
+    transition: border 0.3s ease;
+    background-color: transparent; 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
 .planner-header,
 .planner-container > *:nth-child(2),
@@ -547,7 +717,11 @@ form input[type="submit"] {
 .planner-header {
     grid-area: header; display: flex; justify-content: space-between;
     align-items: center; flex-wrap: wrap; gap: 20px; 
+<<<<<<< HEAD
     background-color: var(--planner-accent-bg); /* ИСПРАВЛЕНИЕ */
+=======
+    background-color: var(--planner-accent-bg); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
 .planner-header h1 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 2.5rem; letter-spacing: 1px; }
 .header-fields, .header-checks { display: flex; gap: 25px; }
@@ -555,13 +729,21 @@ form input[type="submit"] {
 .check-group label { text-transform: uppercase; }
 .planner-sidebar { 
     grid-area: sidebar; 
+<<<<<<< HEAD
     background-color: var(--planner-accent-bg); /* ИСПРАВЛЕНИЕ */
+=======
+    background-color: var(--planner-accent-bg); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
 .sidebar-section { margin-bottom: 25px; }
 .sidebar-section h2 {
     font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.1rem;
     margin-bottom: 10px; 
+<<<<<<< HEAD
     border-bottom: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
+=======
+    border-bottom: 1px solid var(--planner-border); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     padding-bottom: 5px;
 }
 .sidebar-section ul { list-style: none; padding-left: 0; }
@@ -569,7 +751,11 @@ form input[type="submit"] {
 .day { min-height: 250px; display: flex; flex-direction: column; }
 .day-header {
     display: flex; justify-content: space-between; align-items: center;
+<<<<<<< HEAD
     border-bottom: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
+=======
+    border-bottom: 1px solid var(--planner-border); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     padding-bottom: 5px; margin-bottom: 10px;
 }
 .day-header h2 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.2rem; }
@@ -582,12 +768,16 @@ form input[type="submit"] {
 .day-sunday    { grid-area: sunday; }
 .editable-line { 
     border: none; 
+<<<<<<< HEAD
     border-bottom: 1.5px solid var(--planner-line); /* ИСПРАВЛЕНИЕ */
+=======
+    border-bottom: 1.5px solid var(--planner-line); 
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     font-family: 'Mulish', sans-serif; font-size: 1rem; width: 100%;
     background: transparent;
     color: var(--text-color);
 }
-.editable-line:focus { outline: none; border-bottom: 2px solid var(--text-color); } /* ИСПРАВЛЕНИЕ */
+.editable-line:focus { outline: none; border-bottom: 2px solid var(--text-color); } 
 .editable-area { 
     flex-grow: 1; border: none; resize: none; 
     font-family: 'Mulish', sans-serif; font-size: 1rem; line-height: 1.6;
@@ -620,9 +810,10 @@ form input[type="submit"] {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 5. МЕДИА-ЗАПРОСЫ (АДАПТАЦИЯ) --- */
+/* --- 5. СТИЛІ ДЛЯ ЛАБОРАТОРНОЇ №5/6 (СПРАЙТИ) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
+<<<<<<< HEAD
 @media (max-width: 992px) {
     .video-card { width: calc(33.333% - 11px); }
     .search-container input { display: none; }
@@ -637,47 +828,83 @@ form input[type="submit"] {
     .planner-header h1 { font-size: 2rem; }
     .keyboard-container { grid-template-columns: 1fr; grid-template-areas: "main" "nav" "numpad"; max-width: 95%; gap: 15px; }
     .main-keys { max-width: 100%; overflow-x: auto; }
+=======
+/* --- Сцена --- */
+.animation-scene {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Висота сцени */
+    border-radius: 10px;
+    overflow: hidden; /* Обрізаємо все, що виходить за межі */
+    border: 1px solid var(--glass-border);
+    
+    /* Анімація неба (вимога "анімація фону") */
+    background: linear-gradient(135deg, 
+        #87CEEB 0%, 
+        #FFB6C1 50%, 
+        #87CEEB 100%
+    );
+    background-size: 400% 400%; 
+    animation: sky-gradient 15s ease infinite;
+>>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 }
 
-@media (max-width: 768px) {
-    /* Адаптация для index.html и .glass-card */
-    .glass-card { margin-left: 10px; margin-right: 10px; padding: 15px; }
-    body.home-page section#about.glass-card {
-        margin: 20px 10px;
-    }
-    header { padding-left: 15px; padding-right: 15px; }
-    header h1 { font-size: 1.5rem; }
-    .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 18px; }
-    header nav ul { flex-direction: column; gap: 5px; }
-    header nav ul li { display: block; margin: 0; width: 100%; }
-    header nav ul li a { display: block; }
-    
-    /* Адаптация для lab/practice */
-    .main-content-wrapper { flex-direction: column; }
-    .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); overflow-y: hidden; }
-    .video-card { width: calc(50% - 8px); }
-    .header-right { display: none; }
-    .header-left { gap: 10px; }
-    .logo { font-size: 1.2rem; }
-    .video-grid-container { padding: 15px 10px; }
-    .categories { padding: 8px 10px; margin-bottom: 15px; }
-    .planner-container { grid-template-columns: 1fr; grid-template-areas: "header" "sidebar" "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday"; }
-    .planner-container > * { border-left: none; border-top: 1px solid var(--glass-border); }
-    .planner-header { border-top: none; flex-direction: column; align-items: flex-start; gap: 15px; }
-    .header-fields, .header-checks { flex-direction: column; gap: 10px; align-items: flex-start; }
-    .key { height: 40px; min-width: 35px; flex-basis: 35px; font-size: 12px; }
-    .function-keys, .edit-keys, .arrow-keys { grid-template-columns: repeat(3, 35px); }
-    .numpad-grid { grid-template-columns: repeat(4, 35px); }
+/* Ключові кадри для неба */
+@keyframes sky-gradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-@media (max-width: 576px) {
-    /* Адаптация для index.html */
-    #praktichni .row > [class*="col-"] { width: 100%; }
+/* --- Фон (Трава) --- */
+.scene-foreground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%; 
+    height: 100px; 
     
-    /* Адаптация для lab/practice */
-    .video-card { width: 100%; margin-bottom: 25px; }
-    .video-info .title { font-size: 15px; }
-    .planner-header h1 { font-size: 1.8rem; }
-    .keyboard-container { padding: 10px; gap: 10px; }
-    .key { height: 35px; min-width: 28px; flex-basis: 28px; font-size: 11px; }
+    /*
+      👇👇👇
+      ВАЖЛИВО: Вставте сюди ваше робоче посилання на траву!
+    */
+    background-image: url('https://img.freepik.com/free-vector/green-grass-vector-seamless-texture-lawn-nature-meadow-plant-field-natural-outdoor-illustration_1284-47056.jpg?semt=ais_hybrid&w=740&q=80'); /* <-- ЗАМІНІТЬ ЦЕ! */
+    background-repeat: repeat-x;
+    background-size: auto 100px; 
+    
+    /* ВИПРАВЛЕННЯ: "провалюється" */
+    z-index: 1;
+    
+    animation: move-foreground 4s linear infinite;
+}
+
+/* Ключові кадри для трави (рух) */
+@keyframes move-foreground {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* --- Спрайт Покемона (Cinccino) --- */
+.pokemon-sprite {
+    position: absolute;
+    bottom: 60px; /* Стоїть на траві */
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+    /* ВИПРАВЛЕННЯ: "провалюється" */
+    z-index: 2; 
+
+    /*
+      Налаштування для Cinccino (Gen 5)
+      Розмір 56x53
+    */
+    width: 56px;
+    height: 53px;
+    
+    /*
+      Вставляємо посилання на GIF
+    */
+    background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/cinccino.gif'); 
+    background-repeat: no-repeat;
+    
 }
