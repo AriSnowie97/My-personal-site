@@ -1,48 +1,40 @@
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 1. ВИЗНАЧЕННЯ ТЕМ (ЗМІННІ) --- */
+/* --- 1. ?????????? ??? (??????) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* Імпортуємо шрифти */
+/* ?????????? ?????? */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-/* --- :root (СВІТЛА ТЕМА за замовчуванням) --- */
+/* --- :root (?????? ???? ?? ?????????????) --- */
 :root {
-  /* Фон */
+  /* ??? */
   --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --blob1-bg: rgba(0, 225, 255, 0.3);
   --blob2-bg: rgba(132, 0, 255, 0.2);
 
-  /* Текст */
+  /* ????? */
   --text-color: #333;
   --header-text-color: #1d3557;
   --text-muted-color: #6c757d; 
   
-  /* "Скло" */
+  /* "????" */
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(255, 255, 255, 0.6);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
 
-  /* Посилання */
+  /* ????????? */
   --link-color: #457b9d;
   --link-color-nav: #1d3557;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.5);
   --link-active-bg-nav: rgba(255, 255, 255, 0.7);
   
-<<<<<<< HEAD
-<<<<<<< HEAD
-  /* --- Переменные для Лаб/Практик (Светлая Тема) --- */
+  /* --- ?????? ??? ???/?????????? (?????? ????) --- */
   
-  /* Таблица */
-=======
-=======
->>>>>>> origin/main
-  /* --- Змінні для Лаб/Практичних (Світла Тема) --- */
-  
-  /* Форма */
+  /* ????? */
   --input-bg: rgba(255, 255, 255, 0.5);
   --input-border: rgba(255, 255, 255, 0.7);
   --input-focus-border: var(--link-color-nav);
@@ -50,11 +42,7 @@
   --form-btn-bg: var(--header-text-color);
   --form-btn-text: #ffffff; 
 
-  /* Таблиця */
-<<<<<<< HEAD
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
->>>>>>> origin/main
+  /* ??????? */
   --table-striped-bg: rgba(255, 255, 255, 0.2); 
   --table-striped-color: #333;
   --table-dark-bg: rgba(255, 255, 255, 0.3); 
@@ -69,48 +57,40 @@
   --yt-btn-active-bg: var(--header-text-color);
   --yt-btn-active-text: #ffffff;
   
-  /* Планер */
+  /* ?????? */
   --planner-accent-bg: rgba(255, 255, 255, 0.1);
   --planner-border: var(--glass-border);
   --planner-line: var(--glass-border);
 }
 
-/* --- ТЕМНА ТЕМА --- */
+/* --- ????? ???? --- */
 html[data-theme='dark'] {
-  /* Фон */
+  /* ??? */
   --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   --blob1-bg: rgba(132, 0, 255, 0.4);
   --blob2-bg: rgba(0, 225, 255, 0.4);
 
-  /* Текст */
+  /* ????? */
   --text-color: #ffffff; 
   --header-text-color: #ffffff; 
   --text-muted-color: #cccccc; 
 
-  /* "Скло" */
+  /* "????" */
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
   --glass-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
 
-  /* Посилання */
+  /* ????????? */
   --link-color: #a8dadc;
   --link-color-nav: #ffffff;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.1);
   --link-active-bg-nav: rgba(255, 255, 255, 0.15);
   
-<<<<<<< HEAD
-<<<<<<< HEAD
-  /* --- Переменные для Лаб/Практик (Темная Тема) --- */
+  /* --- ?????? ??? ???/?????????? (????? ????) --- */
   
-  /* Таблица */
-=======
-=======
->>>>>>> origin/main
-  /* --- Змінні для Лаб/Практичних (Темна Тема) --- */
-  
-  /* Форма */
+  /* ????? */
   --input-bg: rgba(255, 255, 255, 0.08);
   --input-border: rgba(255, 255, 255, 0.1);
   --input-focus-border: var(--link-color);
@@ -118,11 +98,7 @@ html[data-theme='dark'] {
   --form-btn-bg: var(--header-text-color); 
   --form-btn-text: #1d3557; 
   
-  /* Таблиця */
-<<<<<<< HEAD
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
->>>>>>> origin/main
+  /* ??????? */
   --table-striped-bg: rgba(255, 255, 255, 0.05);
   --table-striped-color: #f1faee;
   --table-dark-bg: rgba(255, 255, 255, 0.1); 
@@ -137,7 +113,7 @@ html[data-theme='dark'] {
   --yt-btn-active-bg: #f1f1f1;
   --yt-btn-active-text: #0f0f0f;
   
-  /* Планер */
+  /* ?????? */
   --planner-accent-bg: rgba(0, 0, 0, 0.1);
   --planner-border: var(--glass-border);
   --planner-line: var(--glass-border);
@@ -145,7 +121,7 @@ html[data-theme='dark'] {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 2. ЗАГАЛЬНІ СТИЛІ (body, header, footer) --- */
+/* --- 2. ???????? ????? (body, header, footer) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 html {
   scroll-behavior: smooth;
@@ -164,7 +140,7 @@ body {
   transition: background 0.3s ease, color 0.3s ease; 
 }
 
-/* --- "Краплі" --- */
+/* --- "??????" --- */
 .blob {
     position: fixed; 
     width: 600px;
@@ -186,7 +162,7 @@ body {
     background: var(--blob2-bg);
 }
 
-/* --- Загальний стиль для <header> та <footer> НА ВСІХ СТОРІНКАХ --- */
+/* --- ????????? ????? ??? <header> ?? <footer> ?? ???? ????????? --- */
 header, footer {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -204,7 +180,7 @@ header, footer {
     margin: 20px auto; 
     max-width: 1200px; 
 }
-/* Прибираємо зайві відступи на index.html */
+/* ?????????? ????? ???????? ?? index.html */
 body.home-page header, 
 body.home-page footer {
     margin: 20px 0;
@@ -241,7 +217,7 @@ nav ul li a.active {
 footer a { color: var(--link-color); text-decoration: none; }
 footer a:hover { color: var(--link-hover-color); text-decoration: underline; }
 
-/* --- Кнопка-перемикач теми --- */
+/* --- ??????-????????? ???? --- */
 .theme-toggle-btn {
   position: absolute;
   top: 20px;
@@ -266,23 +242,12 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 3. ЗАГАЛЬНИЙ СТИЛЬ "ПЛАШКИ" (ДЛЯ ВСІХ) --- */
+/* --- 3. ????????? ????? "??????" (??? ????) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* --- Главный класс "Стекло" --- */
-/* Применяем к .glass-card (на index) и section (на других) */
-.glass-card,
-section:not([class*="lab2-"]) /* Исключаем lab2 */
-{
-=======
-=======
->>>>>>> origin/main
-/* --- Головний клас "Скло" --- */
-/* Застосовуємо до .glass-card (на index) та section (на інших) */
+/* --- ???????? ???? "????" --- */
+/* ???????????? ?? .glass-card (?? index) ?? section (?? ?????) */
 .glass-card {
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -295,58 +260,26 @@ section:not([class*="lab2-"]) /* Исключаем lab2 */
     padding: 20px;
     margin: 20px auto; 
     max-width: 900px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    color: var(--text-color); /* Адаптивный цвет текста */
+    color: var(--text-color); /* ?????????? ????? ?????? */
 }
-/* Ссылки внутри плашек */
-.glass-card a:not(.btn):not(h3 a),
-section:not([class*="lab2-"]) a:not(.btn):not(h3 a) {
-    color: var(--link-color);
-}
-.glass-card a:not(.btn):not(h3 a):hover,
-section:not([class*="lab2-"]) a:not(.btn):not(h3 a):hover {
-=======
-    color: var(--text-color); /* Адаптивний колір тексту */
-}
-=======
-    color: var(--text-color); /* Адаптивний колір тексту */
-}
->>>>>>> origin/main
-/* Посилання всередині плашок */
+/* ????????? ????????? ?????? */
 .glass-card a:not(.btn):not(h3 a) {
     color: var(--link-color);
 }
 .glass-card a:not(.btn):not(h3 a):hover {
-<<<<<<< HEAD
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
->>>>>>> origin/main
     color: var(--link-hover-color);
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* --- СТИЛИ ДЛЯ INDEX.HTML --- */
+/* --- ????? ??? INDEX.HTML --- */
 
-/* Применяем hover только к карточкам-статьям (на index) */
-=======
-/* --- СТИЛІ ДЛЯ INDEX.HTML --- */
-
-/* Застосовуємо hover тільки до карток-статей (на index) */
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-/* --- СТИЛІ ДЛЯ INDEX.HTML --- */
-
-/* Застосовуємо hover тільки до карток-статей (на index) */
->>>>>>> origin/main
+/* ???????????? hover ?????? ?? ??????-?????? (?? index) */
 body.home-page article.glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--glass-shadow-hover);
 }
 
-/* Прибираємо зайві відступи для карток на index.html */
+/* ?????????? ????? ???????? ??? ?????? ?? index.html */
 body.home-page .glass-card {
     margin: 0; 
     width: 100%;
@@ -356,15 +289,7 @@ body.home-page section#about.glass-card {
     margin: 20px 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* --- Ссылки и Текст в карточках (index.html) --- */
-=======
-/* --- Посилання та Текст в картках (index.html) --- */
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-/* --- Посилання та Текст в картках (index.html) --- */
->>>>>>> origin/main
+/* --- ????????? ?? ????? ? ??????? (index.html) --- */
 .glass-card h3 a {
   color: var(--header-text-color); 
   transition: color 0.3s ease;
@@ -380,32 +305,16 @@ body.home-page section#about.glass-card {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 4. ВИРІШЕННЯ КОНФЛІКТІВ --- */
+/* --- 4. ????????? ?????????? --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* --- Форма (для lab1.html) --- */
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* (Это из вашего старого style.css) */
-section form {
-=======
-=======
->>>>>>> origin/main
+/* --- ????? (??? lab1.html) --- */
 section.glass-card form {
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
   max-width: 500px;
   margin: 0 auto;
   padding: 0; 
   box-shadow: none; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  background: transparent; /* ИСПРАВЛЕНИЕ: Убираем фон */
-=======
-  background: transparent; /* ВИПРАВЛЕННЯ: Прибираємо фон */
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-  background: transparent; /* ВИПРАВЛЕННЯ: Прибираємо фон */
->>>>>>> origin/main
+  background: transparent; /* ???????????: ?????????? ??? */
 }
 form h2 { 
     text-align: center; 
@@ -418,31 +327,12 @@ form label {
     font-weight: bold; 
     color: var(--text-color); 
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* Стилизуем инпуты, чтобы их было видно */
-=======
-/* ВИПРАВЛЕННЯ: Стилізуємо інпути, щоб вони були "скляними" */
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-/* ВИПРАВЛЕННЯ: Стилізуємо інпути, щоб вони були "скляними" */
->>>>>>> origin/main
+/* ???????????: ?????????? ??????, ??? ???? ???? "????????" */
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="date"],
 form select {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    color: var(--text-color);
-    border-radius: 5px;
-    padding: 5px;
-    width: 100%;
-=======
-=======
->>>>>>> origin/main
     background: var(--input-bg);
     border: 1px solid var(--input-border);
     color: var(--input-text);
@@ -451,10 +341,6 @@ form select {
     width: 100%;
     box-sizing: border-box; 
     transition: border-color 0.3s ease, background 0.3s ease;
-<<<<<<< HEAD
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
->>>>>>> origin/main
 }
 form input[type="text"]:focus,
 form input[type="email"]:focus,
@@ -464,20 +350,14 @@ form select:focus {
     outline: none;
     border-color: var(--input-focus-border);
 }
-/* Стиль для <option> в темній темі */
+/* ????? ??? <option> ? ?????? ???? */
 html[data-theme='dark'] form select option {
     background: #333;
     color: #fff;
 }
 
-/* ВИПРАВЛЕННЯ КНОПКИ (Скріншот) */
+/* ??????????? ?????? (????????) */
 form input[type="submit"] {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* ...ваши старые стили... */
-=======
-=======
->>>>>>> origin/main
     background: var(--form-btn-bg); 
     color: var(--form-btn-text); 
     border: none;
@@ -494,24 +374,12 @@ form input[type="submit"]:hover {
 }
 html[data-theme='dark'] form input[type="submit"]:hover {
     color: #1d3557;
-<<<<<<< HEAD
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
->>>>>>> origin/main
 }
 
 
-/* --- Таблиця (praktichni1.html) --- */
+/* --- ??????? (praktichni1.html) --- */
 .table {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    --bs-table-bg: transparent; /* ИСПРАВЛЕНИЕ */
-=======
-    --bs-table-bg: transparent; /* ВИПРАВЛЕННЯ */
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    --bs-table-bg: transparent; /* ВИПРАВЛЕННЯ */
->>>>>>> origin/main
+    --bs-table-bg: transparent; /* ??????????? */
     color: var(--text-color); 
     border-color: var(--glass-border); 
 }
@@ -526,8 +394,8 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 }
 
 
-/* --- СТИЛІ КЛАВІАТУРИ (для practice4.html) --- */
-/* (НЕ ЗМІНЮЄМО, як ви і просили) */
+/* --- ????? ?????????? (??? practice4.html) --- */
+/* (?? ????????, ?? ?? ? ???????) */
 .keyboard-container {
     padding: 20px; margin: 0 auto; max-width: 1400px;
     background-color: #282c34; border-radius: 15px;
@@ -535,7 +403,6 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     display: grid; grid-template-columns: 1fr auto auto;
     grid-template-areas: "main nav numpad"; gap: 25px; 
 }
-/* ... (всі інші стилі .key, .main-keys, .key-row тощо) ... */
 .main-keys { grid-area: main; }
 .nav-keys { grid-area: nav; }
 .numpad-keys { grid-area: numpad; }
@@ -586,20 +453,10 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .numpad-grid .num-0 { grid-column: span 2; }
 
 
-/* --- СТИЛІ YOUTUBE (lab3, practice3) --- */
+/* --- ????? YOUTUBE (lab3, practice3) --- */
 .youtube-layout {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* ИСПРАВЛЕНИЕ: Этот блок теперь .glass-card */
-    padding: 20px;
-=======
-    /* (Стилі .glass-card вже застосовані до цього блоку) */
+    /* (????? .glass-card ??? ??????????? ?? ????? ?????) */
     padding: 0; 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    /* (Стилі .glass-card вже застосовані до цього блоку) */
-    padding: 0; 
->>>>>>> origin/main
     max-width: 1600px;
     color: var(--text-color); 
     transition: color 0.3s ease;
@@ -608,21 +465,9 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .header-youtube {
     display: flex; justify-content: space-between; align-items: center;
     height: 56px; padding: 0 16px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
-    position: sticky; top: 0; z-index: 100;
-    background-color: transparent; /* ИСПРАВЛЕНИЕ */
-=======
     border-bottom: 1px solid var(--glass-border); 
     position: sticky; top: 0; z-index: 100;
     background-color: transparent; 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    border-bottom: 1px solid var(--glass-border); 
-    position: sticky; top: 0; z-index: 100;
-    background-color: transparent; 
->>>>>>> origin/main
 }
 .header-left { display: flex; align-items: center; gap: 15px; font-size: 20px; }
 .logo { font-weight: bold; color: #ff0000; }
@@ -631,46 +476,20 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     flex-grow: 1; padding: 8px 10px; 
     border: 1px solid var(--glass-border); 
     border-radius: 40px 0 0 40px; font-size: 16px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background-color: var(--yt-bg); /* ИСПРАВЛЕНИЕ */
-=======
     background-color: var(--yt-bg); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    background-color: var(--yt-bg); 
->>>>>>> origin/main
     color: var(--text-color);
 }
 .search-btn {
     padding: 8px 20px; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    border: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
-    background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
-=======
     border: 1px solid var(--glass-border); 
     background-color: var(--yt-btn-bg); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    border: 1px solid var(--glass-border); 
-    background-color: var(--yt-btn-bg); 
->>>>>>> origin/main
     border-radius: 0 40px 40px 0; 
     cursor: pointer; margin-left: -1px; font-size: 16px;
     color: var(--text-color);
 }
 .voice-search { 
     margin-left: 10px; padding: 8px; border-radius: 50%; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
-=======
     background-color: var(--yt-btn-bg); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    background-color: var(--yt-btn-bg); 
->>>>>>> origin/main
     font-size: 16px; 
     color: var(--text-color); 
 }
@@ -685,27 +504,11 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 }
 .sidebar ul { list-style: none; padding: 0; margin-bottom: 10px; }
 .sidebar ul li { display: flex; align-items: center; padding: 10px 24px; cursor: pointer; font-size: 14px; font-weight: 500; border-radius: 8px; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-.sidebar ul li:hover { background-color: var(--yt-btn-hover); } /* ИСПРАВЛЕНИЕ */
-.sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
-.sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; } /* ИСПРАВЛЕНИЕ */
-.sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } /* ИСПРАВЛЕНИЕ */
-.sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } /* ИСПРАВЛЕНИЕ */
-=======
 .sidebar ul li:hover { background-color: var(--yt-btn-hover); } 
 .sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
 .sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; } 
 .sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } 
 .sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-.sidebar ul li:hover { background-color: var(--yt-btn-hover); } 
-.sidebar ul li .icon { margin-right: 24px; font-size: 18px; color: var(--text-color); }
-.sidebar .active-item { background-color: var(--yt-btn-hover); font-weight: bold; } 
-.sidebar .section-title { font-weight: 600; color: var(--text-muted-color); padding: 10px 24px 5px; } 
-.sidebar hr { border: none; border-top: 1px solid var(--glass-border); margin: 8px 0; } 
->>>>>>> origin/main
 .video-grid-container {
     flex-grow: 1; 
     background-color: transparent; 
@@ -714,21 +517,9 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 }
 .categories {
     display: flex; flex-wrap: nowrap; gap: 12px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    padding: 10px 0;
-    border-top: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
-    border-bottom: 1px solid var(--glass-border); /* ИСПРАВЛЕНИЕ */
-=======
     padding: 10px 20px; 
     border-top: 1px solid var(--glass-border); 
     border-bottom: 1px solid var(--glass-border); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    padding: 10px 20px; 
-    border-top: 1px solid var(--glass-border); 
-    border-bottom: 1px solid var(--glass-border); 
->>>>>>> origin/main
     position: sticky; top: 56px; z-index: 50; 
     overflow-x: auto; width: 100%; margin-bottom: 24px; 
     background-color: transparent; 
@@ -737,15 +528,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     white-space: nowrap; font-size: 14px; font-weight: 500;
     border: 1px solid var(--glass-border); 
     border-radius: 18px; padding: 8px 16px; cursor: pointer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background-color: var(--yt-btn-bg); /* ИСПРАВЛЕНИЕ */
-=======
     background-color: var(--yt-btn-bg); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    background-color: var(--yt-btn-bg); 
->>>>>>> origin/main
     color: var(--text-color);
     transition: background-color 0.2s, color 0.2s; 
 }
@@ -773,19 +556,11 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .video-info .title { font-size: 16px; font-weight: 500; line-height: 1.2; color: var(--text-color); margin-bottom: 4px; } 
 .video-info .channel,
 .video-info .meta { font-size: 13px; color: var(--text-muted-color); } 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
 
-=======
-
->>>>>>> origin/main
-
-/* --- СТИЛІ ПЛАНЕРА (lab4) --- */
+/* --- ????? ??????? (lab4) --- */
 .planner-container {
-    /* (Стилі .glass-card вже застосовані до цього блоку) */
+    /* (????? .glass-card ??? ??????????? ?? ????? ?????) */
     display: grid;
     border-radius: 12px;
     overflow: hidden; 
@@ -799,27 +574,11 @@ html[data-theme='dark'] form input[type="submit"]:hover {
         "sidebar sunday    sunday    sunday";
 }
 .planner-container > * { 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    border-left: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
-    border-top: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
-    padding: 15px; 
-    transition: border 0.3s ease;
-    background-color: transparent; /* ИСПРАВЛЕНИЕ */
-=======
     border-left: 1px solid var(--planner-border); 
     border-top: 1px solid var(--planner-border); 
     padding: 15px; 
     transition: border 0.3s ease;
     background-color: transparent; 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    border-left: 1px solid var(--planner-border); 
-    border-top: 1px solid var(--planner-border); 
-    padding: 15px; 
-    transition: border 0.3s ease;
-    background-color: transparent; 
->>>>>>> origin/main
 }
 .planner-header,
 .planner-container > *:nth-child(2),
@@ -831,15 +590,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .planner-header {
     grid-area: header; display: flex; justify-content: space-between;
     align-items: center; flex-wrap: wrap; gap: 20px; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background-color: var(--planner-accent-bg); /* ИСПРАВЛЕНИЕ */
-=======
     background-color: var(--planner-accent-bg); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    background-color: var(--planner-accent-bg); 
->>>>>>> origin/main
 }
 .planner-header h1 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 2.5rem; letter-spacing: 1px; }
 .header-fields, .header-checks { display: flex; gap: 25px; }
@@ -847,29 +598,13 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .check-group label { text-transform: uppercase; }
 .planner-sidebar { 
     grid-area: sidebar; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background-color: var(--planner-accent-bg); /* ИСПРАВЛЕНИЕ */
-=======
     background-color: var(--planner-accent-bg); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    background-color: var(--planner-accent-bg); 
->>>>>>> origin/main
 }
 .sidebar-section { margin-bottom: 25px; }
 .sidebar-section h2 {
     font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.1rem;
     margin-bottom: 10px; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    border-bottom: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
-=======
     border-bottom: 1px solid var(--planner-border); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    border-bottom: 1px solid var(--planner-border); 
->>>>>>> origin/main
     padding-bottom: 5px;
 }
 .sidebar-section ul { list-style: none; padding-left: 0; }
@@ -877,15 +612,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .day { min-height: 250px; display: flex; flex-direction: column; }
 .day-header {
     display: flex; justify-content: space-between; align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    border-bottom: 1px solid var(--planner-border); /* ИСПРАВЛЕНИЕ */
-=======
     border-bottom: 1px solid var(--planner-border); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    border-bottom: 1px solid var(--planner-border); 
->>>>>>> origin/main
     padding-bottom: 5px; margin-bottom: 10px;
 }
 .day-header h2 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.2rem; }
@@ -898,15 +625,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .day-sunday    { grid-area: sunday; }
 .editable-line { 
     border: none; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    border-bottom: 1.5px solid var(--planner-line); /* ИСПРАВЛЕНИЕ */
-=======
     border-bottom: 1.5px solid var(--planner-line); 
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
-    border-bottom: 1.5px solid var(--planner-line); 
->>>>>>> origin/main
     font-family: 'Mulish', sans-serif; font-size: 1rem; width: 100%;
     background: transparent;
     color: var(--text-color);
@@ -944,11 +663,108 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 5. СТИЛІ ДЛЯ ЛАБОРАТОРНОЇ №5/6 (СПРАЙТИ) --- */
+/* --- 5. ????? ??? ???????????? ?5/6 (???????) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+/* --- ????? --- */
+.animation-scene {
+    position: relative;
+    width: 100%;
+    height: 300px; /* ?????? ????? */
+    border-radius: 10px;
+    overflow: hidden; /* ????????? ???, ?? ???????? ?? ???? */
+    border: 1px solid var(--glass-border);
+    
+    /* ???????? ???? (?????? "???????? ????") */
+    background: linear-gradient(135deg, 
+        #87CEEB 0%, 
+        #FFB6C1 50%, 
+        #87CEEB 100%
+    );
+    background-size: 400% 400%; 
+    animation: sky-gradient 15s ease infinite;
+}
+
+/* ??????? ????? ??? ???? */
+@keyframes sky-gradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- ??? (?????) --- */
+.scene-foreground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%; 
+    height: 100px; 
+    
+    /*
+      ??????
+      ???????: ??????? ???? ???? ?????? ????????? ?? ?????!
+    */
+    background-image: url('https://i.imgur.com/bUEyYk4.png'); /* <-- ???????? ??! */
+    background-repeat: repeat-x;
+    background-size: auto 100px; 
+    
+    /* ???????????: "????????????" */
+    z-index: 1;
+    
+    animation: move-foreground 4s linear infinite;
+}
+
+/* ??????? ????? ??? ????? (???) */
+@keyframes move-foreground {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* --- ?????? ???????? (Sentret) --- */
+.pokemon-sprite {
+    position: absolute;
+    bottom: 60px; /* ?????? ?? ????? */
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+    /* ???????????: "????????????" */
+    z-index: 2; 
+
+    /*
+      ???????????? ??? Sentret (Black/White sprite)
+      ? ????? 4 ?????, ?????? ~34x42
+    */
+    width: 34px;
+    height: 42px;
+    
+    /*
+      ??????
+      ???????????: "????????". ??????? ???? ?????????!
+      (?? ?????? Sentret. ?? ?????? ???????? ???? ?? ????-???? ?????)
+    */
+    background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/sentret.png'); 
+    background-repeat: no-repeat;
+    
+    /* ????????: steps(4) - ???? ?? ? Sentret 4 ????? ???? */
+    animation: walk-cycle 0.8s steps(4) infinite;
+}
+
+/* ??????? ????? ??? ??????? (??????) */
+@keyframes walk-cycle {
+    0%   { background-position: 0 0; }
+    /*
+      ??????? ???????:
+      -132px = (???????? ?????? ??????-????? Sentret)
+      (34px + 32px + 34px + 32px = 132px)
+    */
+    100% { background-position: -132px 0; }
+}
+
+
+/* --- --- --- --- --- --- --- --- --- --- --- */
+/* --- 6. ?????-?????? (?????????) --- */
+/* --- --- --- --- --- --- --- --- --- --- --- */
+
 @media (max-width: 992px) {
     .video-card { width: calc(33.333% - 11px); }
     .search-container input { display: none; }
@@ -963,88 +779,61 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     .planner-header h1 { font-size: 2rem; }
     .keyboard-container { grid-template-columns: 1fr; grid-template-areas: "main" "nav" "numpad"; max-width: 95%; gap: 15px; }
     .main-keys { max-width: 100%; overflow-x: auto; }
-=======
-=======
->>>>>>> origin/main
-/* --- Сцена --- */
-.animation-scene {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Висота сцени */
-    border-radius: 10px;
-    overflow: hidden; /* Обрізаємо все, що виходить за межі */
-    border: 1px solid var(--glass-border);
-    
-    /* Анімація неба (вимога "анімація фону") */
-    background: linear-gradient(135deg, 
-        #87CEEB 0%, 
-        #FFB6C1 50%, 
-        #87CEEB 100%
-    );
-    background-size: 400% 400%; 
-    animation: sky-gradient 15s ease infinite;
-<<<<<<< HEAD
->>>>>>> 66c4d31a790bfe9d841fc891e6f492fc211f8b5c
-=======
->>>>>>> origin/main
 }
 
-/* Ключові кадри для неба */
-@keyframes sky-gradient {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@media (max-width: 768px) {
+    /* ????????? ??? index.html ?? .glass-card */
+    .glass-card { margin-left: 10px; margin-right: 10px; padding: 15px; }
+    body.home-page section#about.glass-card {
+        margin: 20px 10px;
+    }
+    header { padding-left: 15px; padding-right: 15px; }
+    header h1 { font-size: 1.5rem; }
+    .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 18px; }
+    header nav ul { flex-direction: column; gap: 5px; }
+    header nav ul li { display: block; margin: 0; width: 100%; }
+    header nav ul li a { display: block; }
+    
+    /* ????????? ??? lab/practice */
+    .main-content-wrapper { flex-direction: column; }
+    .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); overflow-y: hidden; }
+    .video-card { width: calc(50% - 8px); }
+    .header-right { display: none; }
+    .header-left { gap: 10px; }
+    .logo { font-size: 1.2rem; }
+    .video-grid-container { padding: 15px 10px; }
+    .categories { padding: 8px 10px; margin-bottom: 15px; }
+    .planner-container { grid-template-columns: 1fr; grid-template-areas: "header" "sidebar" "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday"; }
+    .planner-container > * { border-left: none; border-top: 1px solid var(--glass-border); }
+    .planner-header { border-top: none; flex-direction: column; align-items: flex-start; gap: 15px; }
+    .header-fields, .header-checks { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .key { height: 40px; min-width: 35px; flex-basis: 35px; font-size: 12px; }
+    .function-keys, .edit-keys, .arrow-keys { grid-template-columns: repeat(3, 35px); }
+    .numpad-grid { grid-template-columns: repeat(4, 35px); }
+    
+    /* ????????? ??? lab6 (??????) */
+    .animation-scene {
+        height: 250px;
+    }
+    .pokemon-sprite {
+        image-rendering: pixelated; 
+        transform: translateX(-50%) scale(1.8);
+        bottom: 50px; 
+    }
+    .scene-foreground {
+        height: 60px;
+        background-size: auto 60px;
+    }
 }
 
-/* --- Фон (Трава) --- */
-.scene-foreground {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200%; 
-    height: 100px; 
+@media (max-width: 576px) {
+    /* ????????? ??? index.html */
+    #praktichni .row > [class*="col-"] { width: 100%; }
     
-    /*
-      👇👇👇
-      ВАЖЛИВО: Вставте сюди ваше робоче посилання на траву!
-    */
-    background-image: url('https://img.freepik.com/free-vector/green-grass-vector-seamless-texture-lawn-nature-meadow-plant-field-natural-outdoor-illustration_1284-47056.jpg?semt=ais_hybrid&w=740&q=80'); /* <-- ЗАМІНІТЬ ЦЕ! */
-    background-repeat: repeat-x;
-    background-size: auto 100px; 
-    
-    /* ВИПРАВЛЕННЯ: "провалюється" */
-    z-index: 1;
-    
-    animation: move-foreground 4s linear infinite;
-}
-
-/* Ключові кадри для трави (рух) */
-@keyframes move-foreground {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); } 
-}
-
-/* --- Спрайт Покемона (Cinccino) --- */
-.pokemon-sprite {
-    position: absolute;
-    bottom: 60px; /* Стоїть на траві */
-    left: 50%; 
-    transform: translateX(-50%); 
-    
-    /* ВИПРАВЛЕННЯ: "провалюється" */
-    z-index: 2; 
-
-    /*
-      Налаштування для Cinccino (Gen 5)
-      Розмір 56x53
-    */
-    width: 56px;
-    height: 53px;
-    
-    /*
-      Вставляємо посилання на GIF
-    */
-    background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/cinccino.gif'); 
-    background-repeat: no-repeat;
-    
+    /* ????????? ??? lab/practice */
+    .video-card { width: 100%; margin-bottom: 25px; }
+    .video-info .title { font-size: 15px; }
+    .planner-header h1 { font-size: 1.8rem; }
+    .keyboard-container { padding: 10px; gap: 10px; }
+    .key { height: 35px; min-width: 28px; flex-basis: 28px; font-size: 11px; }
 }
