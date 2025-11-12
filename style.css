@@ -1,40 +1,40 @@
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 1. ?????????? ??? (??????) --- */
+/* --- 1. IMPORTS & SETUP (ROOT) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* ?????????? ?????? */
+/* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-/* --- :root (?????? ???? ?? ?????????????) --- */
+/* --- :root (Variables Declaration) --- */
 :root {
-  /* ??? */
+  /* Background */
   --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --blob1-bg: rgba(0, 225, 255, 0.3);
   --blob2-bg: rgba(132, 0, 255, 0.2);
 
-  /* ????? */
+  /* Text */
   --text-color: #333;
   --header-text-color: #1d3557;
   --text-muted-color: #6c757d; 
   
-  /* "????" */
+  /* "Glass" Effect */
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(255, 255, 255, 0.6);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
 
-  /* ????????? */
+  /* Links */
   --link-color: #457b9d;
   --link-color-nav: #1d3557;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.5);
   --link-active-bg-nav: rgba(255, 255, 255, 0.7);
   
-  /* --- ?????? ??? ???/?????????? (?????? ????) --- */
+  /* --- Component Styles (Light Mode) --- */
   
-  /* ????? */
+  /* Forms */
   --input-bg: rgba(255, 255, 255, 0.5);
   --input-border: rgba(255, 255, 255, 0.7);
   --input-focus-border: var(--link-color-nav);
@@ -42,7 +42,7 @@
   --form-btn-bg: var(--header-text-color);
   --form-btn-text: #ffffff; 
 
-  /* ??????? */
+  /* Tables */
   --table-striped-bg: rgba(255, 255, 255, 0.2); 
   --table-striped-color: #333;
   --table-dark-bg: rgba(255, 255, 255, 0.3); 
@@ -57,40 +57,40 @@
   --yt-btn-active-bg: var(--header-text-color);
   --yt-btn-active-text: #ffffff;
   
-  /* ?????? */
+  /* Planner */
   --planner-accent-bg: rgba(255, 255, 255, 0.1);
   --planner-border: var(--glass-border);
   --planner-line: var(--glass-border);
 }
 
-/* --- ????? ???? --- */
+/* --- Dark Theme --- */
 html[data-theme='dark'] {
-  /* ??? */
+  /* Background */
   --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   --blob1-bg: rgba(132, 0, 255, 0.4);
   --blob2-bg: rgba(0, 225, 255, 0.4);
 
-  /* ????? */
+  /* Text */
   --text-color: #ffffff; 
   --header-text-color: #ffffff; 
   --text-muted-color: #cccccc; 
 
-  /* "????" */
+  /* "Glass" Effect */
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
   --glass-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
 
-  /* ????????? */
+  /* Links */
   --link-color: #a8dadc;
   --link-color-nav: #ffffff;
   --link-hover-color: #e63946;
   --link-hover-bg-nav: rgba(255, 255, 255, 0.1);
   --link-active-bg-nav: rgba(255, 255, 255, 0.15);
   
-  /* --- ?????? ??? ???/?????????? (????? ????) --- */
+  /* --- Component Styles (Dark Mode) --- */
   
-  /* ????? */
+  /* Forms */
   --input-bg: rgba(255, 255, 255, 0.08);
   --input-border: rgba(255, 255, 255, 0.1);
   --input-focus-border: var(--link-color);
@@ -98,7 +98,7 @@ html[data-theme='dark'] {
   --form-btn-bg: var(--header-text-color); 
   --form-btn-text: #1d3557; 
   
-  /* ??????? */
+  /* Tables */
   --table-striped-bg: rgba(255, 255, 255, 0.05);
   --table-striped-color: #f1faee;
   --table-dark-bg: rgba(255, 255, 255, 0.1); 
@@ -113,7 +113,7 @@ html[data-theme='dark'] {
   --yt-btn-active-bg: #f1f1f1;
   --yt-btn-active-text: #0f0f0f;
   
-  /* ?????? */
+  /* Planner */
   --planner-accent-bg: rgba(0, 0, 0, 0.1);
   --planner-border: var(--glass-border);
   --planner-line: var(--glass-border);
@@ -121,7 +121,7 @@ html[data-theme='dark'] {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 2. ???????? ????? (body, header, footer) --- */
+/* --- 2. General Layout (body, header, footer) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 html {
   scroll-behavior: smooth;
@@ -140,7 +140,7 @@ body {
   transition: background 0.3s ease, color 0.3s ease; 
 }
 
-/* --- "??????" --- */
+/* --- "Blobs" (Background effect) --- */
 .blob {
     position: fixed; 
     width: 600px;
@@ -162,7 +162,7 @@ body {
     background: var(--blob2-bg);
 }
 
-/* --- ????????? ????? ??? <header> ?? <footer> ?? ???? ????????? --- */
+/* --- Shared Glass Style for <header> and <footer> --- */
 header, footer {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -180,7 +180,7 @@ header, footer {
     margin: 20px auto; 
     max-width: 1200px; 
 }
-/* ?????????? ????? ???????? ?? index.html */
+/* Specific margins for index.html */
 body.home-page header, 
 body.home-page footer {
     margin: 20px 0;
@@ -217,7 +217,7 @@ nav ul li a.active {
 footer a { color: var(--link-color); text-decoration: none; }
 footer a:hover { color: var(--link-hover-color); text-decoration: underline; }
 
-/* --- ??????-????????? ???? --- */
+/* --- Theme Toggle Button --- */
 .theme-toggle-btn {
   position: absolute;
   top: 20px;
@@ -242,11 +242,11 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 3. ????????? ????? "??????" (??? ????) --- */
+/* --- 3. Main "Glass" Card Style (Default) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* --- ???????? ???? "????" --- */
-/* ???????????? ?? .glass-card (?? index) ?? section (?? ?????) */
+/* --- Base "Glass" Style --- */
+/* Applies to .glass-card (on index) and section (on pages) */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -260,9 +260,9 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
     padding: 20px;
     margin: 20px auto; 
     max-width: 900px;
-    color: var(--text-color); /* ?????????? ????? ?????? */
+    color: var(--text-color); /* Inherit text color */
 }
-/* ????????? ????????? ?????? */
+/* Default link colors inside */
 .glass-card a:not(.btn):not(h3 a) {
     color: var(--link-color);
 }
@@ -271,15 +271,15 @@ html[data-theme='dark'] .theme-toggle-btn .icon-moon { display: none; }
 }
 
 
-/* --- ????? ??? INDEX.HTML --- */
+/* --- STYLES FOR INDEX.HTML --- */
 
-/* ???????????? hover ?????? ?? ??????-?????? (?? index) */
+/* Add hover effect for article cards (on index) */
 body.home-page article.glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--glass-shadow-hover);
 }
 
-/* ?????????? ????? ???????? ??? ?????? ?? index.html */
+/* Override default margins for cards on index.html */
 body.home-page .glass-card {
     margin: 0; 
     width: 100%;
@@ -289,7 +289,7 @@ body.home-page section#about.glass-card {
     margin: 20px 0;
 }
 
-/* --- ????????? ?? ????? ? ??????? (index.html) --- */
+/* Links in headers and subtext (index.html) */
 .glass-card h3 a {
   color: var(--header-text-color); 
   transition: color 0.3s ease;
@@ -305,16 +305,16 @@ body.home-page section#about.glass-card {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 4. ????????? ?????????? --- */
+/* --- 4. Specific Components --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* --- ????? (??? lab1.html) --- */
+/* --- Forms (for lab1.html) --- */
 section.glass-card form {
   max-width: 500px;
   margin: 0 auto;
   padding: 0; 
   box-shadow: none; 
-  background: transparent; /* ???????????: ?????????? ??? */
+  background: transparent; /* Override: remove default background */
 }
 form h2 { 
     text-align: center; 
@@ -327,7 +327,7 @@ form label {
     font-weight: bold; 
     color: var(--text-color); 
 }
-/* ???????????: ?????????? ??????, ??? ???? ???? "????????" */
+/* Override: Inputs should also have "glass" style */
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
@@ -350,13 +350,13 @@ form select:focus {
     outline: none;
     border-color: var(--input-focus-border);
 }
-/* ????? ??? <option> ? ?????? ???? */
+/* <option> color in dark mode */
 html[data-theme='dark'] form select option {
     background: #333;
     color: #fff;
 }
 
-/* ??????????? ?????? (????????) */
+/* Submit button (override) */
 form input[type="submit"] {
     background: var(--form-btn-bg); 
     color: var(--form-btn-text); 
@@ -377,9 +377,9 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 }
 
 
-/* --- ??????? (praktichni1.html) --- */
+/* --- Tables (praktichni1.html) --- */
 .table {
-    --bs-table-bg: transparent; /* ??????????? */
+    --bs-table-bg: transparent; /* Transparent bg */
     color: var(--text-color); 
     border-color: var(--glass-border); 
 }
@@ -394,8 +394,8 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 }
 
 
-/* --- ????? ?????????? (??? practice4.html) --- */
-/* (?? ????????, ?? ?? ? ???????) */
+/* --- Keyboard Layout (for practice4.html) --- */
+/* (Not glass, dark background) */
 .keyboard-container {
     padding: 20px; margin: 0 auto; max-width: 1400px;
     background-color: #282c34; border-radius: 15px;
@@ -453,9 +453,9 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .numpad-grid .num-0 { grid-column: span 2; }
 
 
-/* --- ????? YOUTUBE (lab3, practice3) --- */
+/* --- YouTube Layout (lab3, practice3) --- */
 .youtube-layout {
-    /* (????? .glass-card ??? ??????????? ?? ????? ?????) */
+    /* (Uses .glass-card but overrides padding/max-width) */
     padding: 0; 
     max-width: 1600px;
     color: var(--text-color); 
@@ -544,7 +544,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     box-shadow: none; background: transparent; border: none;
 }
 .video-card .thumbnail {
-    width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 */
+    width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     background-color: rgba(128,128,128, 0.3); 
     border-radius: 8px;
     margin-bottom: 8px; position: relative; overflow: hidden; 
@@ -558,9 +558,9 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 .video-info .meta { font-size: 13px; color: var(--text-muted-color); } 
 
 
-/* --- ????? ??????? (lab4) --- */
+/* --- Planner Layout (lab4) --- */
 .planner-container {
-    /* (????? .glass-card ??? ??????????? ?? ????? ?????) */
+    /* (Uses .glass-card but overrides padding/display) */
     display: grid;
     border-radius: 12px;
     overflow: hidden; 
@@ -663,19 +663,19 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 
 
 /* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 5. ????? ??? ???????????? ?5/6 (???????) --- */
+/* --- 5. STYLES FOR LAB #5/6 (SPRITES) --- */
 /* --- --- --- --- --- --- --- --- --- --- --- */
 
-/* --- ????? --- */
+/* --- Scene --- */
 .animation-scene {
     position: relative;
     width: 100%;
-    height: 300px; /* ?????? ????? */
+    height: 300px; /* Scene height */
     border-radius: 10px;
-    overflow: hidden; /* ????????? ???, ?? ???????? ?? ???? */
+    overflow: hidden; /* Clip everything that goes outside */
     border: 1px solid var(--glass-border);
     
-    /* ???????? ???? (?????? "???????? ????") */
+    /* Sky animation (requirement "background animation") */
     background: linear-gradient(135deg, 
         #87CEEB 0%, 
         #FFB6C1 50%, 
@@ -685,14 +685,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     animation: sky-gradient 15s ease infinite;
 }
 
-/* ??????? ????? ??? ???? */
+/* Keyframes for the sky */
 @keyframes sky-gradient {
     0%   { background-position: 0% 50%; }
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* --- ??? (?????) --- */
+/* --- Foreground (Grass) --- */
 .scene-foreground {
     position: absolute;
     bottom: 0;
@@ -701,88 +701,59 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     height: 100px; 
     
     /*
-      ??????
-      ???????: ??????? ???? ???? ?????? ????????? ?? ?????!
+      👇👇👇
+      IMPORTANT: Insert your working link to the grass here!
     */
-    background-image: url('https://i.imgur.com/bUEyYk4.png'); /* <-- ???????? ??! */
+    background-image: url('https://gpng.net/wp-content/uploads/2020/10/grass-png-free-png-images-5.png'); /* <-- REPLACE THIS! */
     background-repeat: repeat-x;
     background-size: auto 100px; 
     
-    /* ???????????: "????????????" */
+    /* FIX: "falls through" (z-index) */
     z-index: 1;
     
     animation: move-foreground 4s linear infinite;
 }
 
-/* ??????? ????? ??? ????? (???) */
+/* Keyframes for grass (movement) */
 @keyframes move-foreground {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
 }
 
-/* --- ?????? ???????? (Sentret) --- */
+/* --- Pokemon Sprite (Cinccino) --- */
 .pokemon-sprite {
     position: absolute;
-    bottom: 60px; /* ?????? ?? ????? */
+    bottom: 60px; /* Stands on the grass */
     left: 50%; 
     transform: translateX(-50%); 
     
-    /* ???????????: "????????????" */
+    /* FIX: "falls through" (z-index) */
     z-index: 2; 
 
     /*
-      ???????????? ??? Sentret (Black/White sprite)
-      ? ????? 4 ?????, ?????? ~34x42
+      Settings for Cinccino (Gen 5)
+      Size 56x53
     */
-    width: 34px;
-    height: 42px;
+    width: 56px;
+    height: 53px;
     
     /*
-      ??????
-      ???????????: "????????". ??????? ???? ?????????!
-      (?? ?????? Sentret. ?? ?????? ???????? ???? ?? ????-???? ?????)
+      Inserting the link to the GIF
     */
-    background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/sentret.png'); 
+    background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/cinccino.gif'); 
     background-repeat: no-repeat;
     
-    /* ????????: steps(4) - ???? ?? ? Sentret 4 ????? ???? */
-    animation: walk-cycle 0.8s steps(4) infinite;
-}
-
-/* ??????? ????? ??? ??????? (??????) */
-@keyframes walk-cycle {
-    0%   { background-position: 0 0; }
-    /*
-      ??????? ???????:
-      -132px = (???????? ?????? ??????-????? Sentret)
-      (34px + 32px + 34px + 32px = 132px)
+    /* The 'animation: ...' property is REMOVED from here, 
+       because the GIF animates itself.
     */
-    100% { background-position: -132px 0; }
 }
 
-
-/* --- --- --- --- --- --- --- --- --- --- --- */
-/* --- 6. ?????-?????? (?????????) --- */
-/* --- --- --- --- --- --- --- --- --- --- --- */
-
-@media (max-width: 992px) {
-    .video-card { width: calc(33.333% - 11px); }
-    .search-container input { display: none; }
-    .search-container { max-width: fit-content; margin: 0 10px; }
-    .search-btn { border-radius: 40px; margin-left: 0; }
-    .planner-container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "header header" "sidebar sidebar" "monday tuesday" "wednesday thursday" "friday saturday" "sunday sunday";
-    }
-    .planner-container > *:nth-child(n) { border-left: 1px solid var(--planner-border); }
-    .planner-header, .planner-sidebar, .day-monday, .day-wednesday, .day-friday, .day-sunday { border-left: none; }
-    .planner-header h1 { font-size: 2rem; }
-    .keyboard-container { grid-template-columns: 1fr; grid-template-areas: "main" "nav" "numpad"; max-width: 95%; gap: 15px; }
-    .main-keys { max-width: 100%; overflow-x: auto; }
-}
+/* @keyframes walk-cycle was completely removed, 
+   as it is no longer needed for the GIF.
+*/
 
 @media (max-width: 768px) {
-    /* ????????? ??? index.html ?? .glass-card */
+    /* Overrides for index.html .glass-card */
     .glass-card { margin-left: 10px; margin-right: 10px; padding: 15px; }
     body.home-page section#about.glass-card {
         margin: 20px 10px;
@@ -794,7 +765,7 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     header nav ul li { display: block; margin: 0; width: 100%; }
     header nav ul li a { display: block; }
     
-    /* ????????? ??? lab/practice */
+    /* Overrides for lab/practice pages */
     .main-content-wrapper { flex-direction: column; }
     .sidebar { position: static; height: auto; width: 100%; min-width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); overflow-y: hidden; }
     .video-card { width: calc(50% - 8px); }
@@ -804,14 +775,14 @@ html[data-theme='dark'] form input[type="submit"]:hover {
     .video-grid-container { padding: 15px 10px; }
     .categories { padding: 8px 10px; margin-bottom: 15px; }
     .planner-container { grid-template-columns: 1fr; grid-template-areas: "header" "sidebar" "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday"; }
-    .planner-container > * { border-left: none; border-top: 1px solid var(--glass-border); }
+    .planner-container > * { border-left: none; border-top: 1px solid var(--planner-border); }
     .planner-header { border-top: none; flex-direction: column; align-items: flex-start; gap: 15px; }
     .header-fields, .header-checks { flex-direction: column; gap: 10px; align-items: flex-start; }
     .key { height: 40px; min-width: 35px; flex-basis: 35px; font-size: 12px; }
     .function-keys, .edit-keys, .arrow-keys { grid-template-columns: repeat(3, 35px); }
     .numpad-grid { grid-template-columns: repeat(4, 35px); }
     
-    /* ????????? ??? lab6 (??????) */
+    /* Overrides for lab6 (animation) */
     .animation-scene {
         height: 250px;
     }
@@ -827,10 +798,10 @@ html[data-theme='dark'] form input[type="submit"]:hover {
 }
 
 @media (max-width: 576px) {
-    /* ????????? ??? index.html */
+    /* Overrides for index.html */
     #praktichni .row > [class*="col-"] { width: 100%; }
     
-    /* ????????? ??? lab/practice */
+    /* Overrides for lab/practice pages */
     .video-card { width: 100%; margin-bottom: 25px; }
     .video-info .title { font-size: 15px; }
     .planner-header h1 { font-size: 1.8rem; }
