@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №7 | Новорічна листівка</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <div class="container position-relative" style="z-index: 1;">
+
+    <header class="my-3">
+      <h1>Особистий веб-сайт Бадовської Аріни</h1>
+      
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="index.html#about">Про мене</a></li>
+          <li><a href="index.html#laboratorni" class="active">Лабораторні</a></li>
+          <li><a href="index.html#praktichni">Практичні</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="glass-card">
+        <h2 class="text-center mb-4">Лабораторна №7: Новорічна листівка (BEM)</h2>
+        
+        <article class="ny-card">
+            
+            <div class="ny-card__decoration">❄️</div>
+            
+            <header class="ny-card__header">
+                <h3 class="ny-card__title">З Новим 2026 Роком!</h3>
+                <p class="ny-card__subtitle">Бажаю успіхів у кодуванні!</p>
+            </header>
+
+            <div class="ny-card__content">
+                <div class="ny-card__image-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3760/3760263.png" alt="Сніговик" class="ny-card__img">
+                </div>
+                
+                <p class="ny-card__text">
+                    Нехай твій код компілюється з першого разу, а баги обходять стороною!
+                </p>
+
+                <button class="ny-card__btn ny-card__btn--festive">Отримати подарунок</button>
+            </div>
+
+        </article>
+    </section>
+
+    <footer class="my-3">
+      <p>© 2025 Бадовська Аріна | <a href="https://github.com/AriSnowie97">GitHub</a></p>
+      <p>Контакти: diysylveon@gmail.com</p>
+    </footer>
+
+  </div> 
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="theme-script.js"></script>
+</body>
+</html>
