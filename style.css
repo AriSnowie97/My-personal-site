@@ -886,3 +886,71 @@ html[data-theme='dark'] form input[type="submit"]:hover {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* ================================================= */
+/* Секція: Стилі для Практичного завдання 8 */
+/* ================================================= */
+
+.animated-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: #fff; /* Білий текст */
+    background-color: #007bff; /* Синій фон за замовчуванням */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+
+    /* Застосування анімації */
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Стиль при наведенні (Hover) */
+.animated-button:hover {
+    background-color: #0056b3; /* Темніший синій */
+    transform: scale(1.05); /* Невелике збільшення при наведенні */
+}
+
+/* Визначення анімації */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    50% {
+        transform: scale(1.05); /* Збільшення розміру */
+        box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.8); /* Яскравіша тінь */
+        background-color: #28a745; /* Зміна кольору на зелений */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+}
+
+
+/* Додатковий стиль для dark theme (якщо ви використовуєте перемикач) */
+body.dark-theme .animated-button {
+    background-color: #ffc107; /* Жовтий для темної теми */
+    color: #212529; /* Темний текст */
+    animation-name: dark-pulse;
+}
+
+@keyframes dark-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px 5px rgba(255, 193, 7, 0.8);
+        background-color: #dc3545; /* Зміна кольору на червоний */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+}
